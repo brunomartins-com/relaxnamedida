@@ -57,7 +57,6 @@ class Handler extends ExceptionHandler
     }
 
     /**
-<<<<<<< HEAD:relaxnamedida/app/Exceptions/Handler.php
      * Render an exception using Whoops.
      *
      * @param  \Exception $e
@@ -73,7 +72,9 @@ class Handler extends ExceptionHandler
             $e->getStatusCode(),
             $e->getHeaders()
         );
-=======
+    }
+
+    /*
      * @param $filename
      * @throws Exception
      * @return array
@@ -109,6 +110,5 @@ class Handler extends ExceptionHandler
         } catch (Exception $e) {
             throw new Exception("Error open file: " . $e->getMessage());
         }
->>>>>>> 4d4d98111cb1bedc5c66f9812fa731a90052cff9:app/Exceptions/Handler.php
     }
 }
