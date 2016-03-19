@@ -123,17 +123,17 @@ Contact: hello@brunomartins.com
             </div>
         </section>
 
-        <section class="visible-xs col-xs-6">
+        <section class="visible-xs col-xs-5 margin-top-10 home-buttons-xs">
             <div class="col-xs-12 remove-padding-l margin-top-10">
-                <a href="" class="btn btn-block btn-main" title="Como participar?">Como participar?</a>
+                <a href="" class="btn btn-block btn-main" title="Como participar?">Como<br class="line-break"> participar?</a>
             </div>
 
             <div class="col-xs-12 remove-padding-l margin-top-10">
-                <a href="" class="btn btn-block btn-main" title="Quero Participar!">Quero Participar!</a>
+                <a href="" class="btn btn-block btn-main" title="Quero Participar!">Quero<br class="line-break"> Participar!</a>
             </div>
         </section>
 
-        <section class="col-lg-6 col-md-6 col-sm-8 col-xs-6">
+        <section class="col-lg-6 col-md-6 col-sm-8 col-xs-7 margin-top-20 image-home-woman">
             <img src="{{ asset('assets/images/image-home-woman.png') }}" class="img-responsive" alt="Concurso Relax na Medida - 4ª Edição">
         </section>
     </div>

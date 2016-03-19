@@ -9,7 +9,7 @@ body{
   width: 100%;
   font-family: 'Roboto Slab', serif;
   color: $brown;
-  background-color: $white;
+  background-color: $orange;
   a{
     cursor: pointer !important;
   }
@@ -174,7 +174,7 @@ body{
       }
     }
     .btn-main{
-      margin: 40px 0 0 0;
+      margin: 0;
     }
     img.img-responsive{
       margin: 120px 0 0 0;
@@ -200,7 +200,7 @@ body{
       }
     }
     .logo {
-      margin-top: 80px;
+      margin-top: 70px;
       background-size: contain;
     }
     .phrases{
@@ -233,7 +233,7 @@ body{
     img.img-responsive{
       position: relative;
       bottom: 0;
-      margin: 90px 0 0 0;
+      margin: 70px 0 0 0;
     }
   }
   @media (max-width: $screen-xs-max) {
@@ -246,7 +246,7 @@ body{
       background-size: contain !important;
     }
     .phrases{
-      margin: 40px 0 0 0;
+      margin: 50px 0 0 0;
       &:before{
         margin-right: 15px;
       }
@@ -260,7 +260,7 @@ body{
       h4{
         width: 100%;
         font-size: 55px;
-        line-height: 50px;
+        line-height: 55px;
       }
       h5{
         width: 70%;
@@ -269,27 +269,55 @@ body{
         margin: 0;
       }
     }
+    .margin-top-75{
+      margin-top: 35px !important;
+    }
+    .home-buttons-xs{
+      margin-top: 60px !important;
+    }
     .btn-main{
       margin: 0 !important;
     }
     img.img-responsive{
       position: relative;
       bottom: 0;
-      margin: 90px 0 0 0;
+      margin: 0;
     }
   }
   @media (max-width: $screen-xs-min) {
+    .logo {
+      margin: 20px 0 0 0;
+    }
     .phrases{
+      margin: 35px 0 0 0;
       h3{
         width: 70%;
       }
       h4{
-        font-size: 50px;
+        font-size: 48px;
         line-height: 45px;
       }
       h5{
         width: 100%;
       }
+    }
+    .margin-top-75{
+      margin-top: 15px !important;
+    }
+    .home-buttons-xs{
+      width: 100% !important;
+      display: block;
+      text-align: center !important;
+      margin-top: 15px !important;
+      .btn{
+        width: 100%;
+        .line-break{
+          display: none;
+        }
+      }
+    }
+    .image-home-woman{
+      margin-left: 17.5%;
     }
   }
 }
