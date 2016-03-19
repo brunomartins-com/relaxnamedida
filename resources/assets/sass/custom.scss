@@ -1,0 +1,225 @@
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+::selection { background:$orange; color:$white; } /* WebKit, Opera, & IE9 */
+::-moz-selection { background:$orange; color:$white; } /* Firefox */
+
+body{
+  width: 100%;
+  font-family: 'Roboto Slab', serif;
+  color: $brown;
+  background-color: $white;
+  a{
+    cursor: pointer !important;
+  }
+}
+
+
+
+
+/* BTN MAIN */
+.btn-main{
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
+  color: $white;
+  border: 2px solid $dark-blue;
+  background: url(../images/bg-button.png);
+  &:hover{
+    color: $white;
+    border-color: lighten($dark-blue, 10%);
+    background-color: $orange;
+  }
+}
+/* INPUT MAIN */
+.input-main{
+  font-weight: bold;
+  height: 36px;
+  padding: 5px 10px;
+  color: $orange;
+  background-color: $orange-water;
+  border: 2px solid $orange;
+  @include border-radius(5px);
+  @include placeholder($orange);
+  &:focus {
+    @include box-shadow(none);
+    background-color: $white;
+    border-color: $orange-lighter;
+  }
+}
+
+form {
+  label.radio-check {
+    display: inline-block;
+    vertical-align: middle;
+    input[type=radio] {
+      width: 14px;
+      height: 14px;
+      float: left;
+      margin-right: 11px;
+      background-color: $orange-water;
+      border: 2px solid $orange;
+      @include border-radius(14px);
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      &:checked{
+        &::before {
+          content: '';
+          width: 6px;
+          height: 6px;
+          position: absolute;
+          margin: 2px 0 0 2px;
+          @include border-radius(8px);
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
+
+/* MARGINS */
+.margin-top-0{ margin-top: 0 !important; }
+.margin-top-5{ margin-top: 5px !important; }
+.margin-top-10{ margin-top: 10px !important; }
+.margin-top-15{ margin-top: 15px !important; }
+.margin-top-20{ margin-top: 20px !important; }
+.margin-top-25{ margin-top: 25px !important; }
+.margin-top-30{ margin-top: 30px !important; }
+.margin-top-35{ margin-top: 35px !important; }
+.margin-top-40{ margin-top: 40px !important; }
+.margin-top-45{ margin-top: 45px !important; }
+.margin-top-75{ margin-top: 75px !important; }
+.margin-right-0{ margin-right: 0 !important; }
+.margin-right-5{ margin-right: 5px !important; }
+.margin-right-10{ margin-right: 10px !important; }
+.margin-right-15{ margin-right: 15px !important; }
+.margin-right-20{ margin-right: 20px !important; }
+.margin-right-25{ margin-right: 25px !important; }
+.margin-bottom-0{ margin-bottom: 0 !important; }
+.margin-bottom-5{ margin-bottom: 5px !important; }
+.margin-bottom-10{ margin-bottom: 10px !important; }
+.margin-bottom-15{ margin-bottom: 15px !important; }
+.margin-bottom-20{ margin-bottom: 20px !important; }
+.margin-bottom-25{ margin-bottom: 25px !important; }
+.margin-bottom-30{ margin-bottom: 30px !important; }
+.margin-bottom-35{ margin-bottom: 35px !important; }
+.margin-bottom-40{ margin-bottom: 40px !important; }
+.margin-bottom-45{ margin-bottom: 45px !important; }
+.margin-left-0{ margin-left: 0 !important; }
+.margin-left-5{ margin-left: 5px !important; }
+.margin-left-10{ margin-left: 10px !important; }
+.margin-left-15{ margin-left: 15px !important; }
+.margin-left-20{ margin-left: 20px !important; }
+.margin-left-25{ margin-left: 25px !important; }
+/* PADDINGS */
+.padding-top-0{ padding-top: 0 !important; }
+.padding-top-5{ padding-top: 5px !important; }
+.padding-top-7{ padding-top: 7px !important; }
+.padding-top-10{ padding-top: 10px !important; }
+.padding-top-15{ padding-top: 15px !important; }
+.padding-top-20{ padding-top: 20px !important; }
+.padding-right-0{ padding-right: 0 !important; }
+.padding-right-5{ padding-right: 5px !important; }
+.padding-right-10{ padding-right: 10px !important; }
+.padding-right-15{ padding-right: 15px !important; }
+.padding-right-20{ padding-right: 20px !important; }
+.padding-bottom-0{ padding-bottom: 0 !important; }
+.padding-bottom-5{ padding-bottom: 5px !important; }
+.padding-bottom-10{ padding-bottom: 10px !important; }
+.padding-bottom-15{ padding-bottom: 15px !important; }
+.padding-bottom-20{ padding-bottom: 20px !important; }
+.padding-left-0{ padding-left: 0 !important; }
+.padding-left-5{ padding-left: 5px !important; }
+.padding-left-10{ padding-left: 10px !important; }
+.padding-left-15{ padding-left: 15px !important; }
+.padding-left-20{ padding-left: 20px !important; }
+/* FONT */
+.lobster-two{
+  font-family: 'Lobster Two', cursive !important;
+}
+.roboto-slab{
+  font-family: 'Roboto Slab', serif !important;
+}
+/* COLOR */
+.text-orange{
+  color: $orange;
+}
+a.text-orange:hover{
+  color: lighten($orange, 10%);
+  text-decoration: none;
+}
+.text-brown {
+  color: $brown;
+}
+a.text-brown:hover{
+  color: lighten($brown, 10%);
+  text-decoration: none;
+}
+.text-light-brown {
+  color: $light-brown;
+}
+a.text-light-brown:hover{
+  color: lighten($light-brown, 10%);
+  text-decoration: none;
+}
+.text-white {
+  color: $white;
+}
+a.text-white:hover{
+  color: darken($white, 10%);
+  text-decoration: none;
+}
+.text-black {
+  color: $black;
+}
+a.text-black:hover{
+  color: lighten($black, 10%);
+  text-decoration: none;
+}
+
+/* FONT WEIGHT */
+.lighter{ font-weight: lighter; }
+.normal{ font-weight: normal; }
+.strong{ font-weight: bold; }
+
+/* FONT SIZE */
+.font-size-10{ font-size: 10px; }
+.font-size-11{ font-size: 11px; }
+.font-size-12{ font-size: 12px; }
+.font-size-14{ font-size: 14px; }
+.font-size-16{ font-size: 16px; }
+.font-size-18{ font-size: 18px; }
+.font-size-20{ font-size: 20px; }
+.font-size-22{ font-size: 22px; }
+.font-size-24{ font-size: 24px; }
+.font-size-26{ font-size: 26px; }
+.font-size-28{ font-size: 28px; }
+.font-size-30{ font-size: 30px; }
+.font-size-35{ font-size: 35px; }
+
+.remove-padding{ padding: 0 !important; }
+.remove-padding-t{ padding-top: 0 !important; }
+.remove-padding-r{ padding-right: 0 !important; }
+.remove-padding-b{ padding-bottom: 0 !important; }
+.remove-padding-l{ padding-left: 0 !important; }
+
+.remove-margin{ margin: 0 !important; }
+.remove-margin-t{ margin-top: 0 !important; }
+.remove-margin-r{ margin-right: 0 !important; }
+.remove-margin-b{ margin-bottom: 0 !important; }
+.remove-margin-l{ margin-left: 0 !important; }
+
+.pc10{ width: 10%; }
+.pc20{ width: 20%; }
+.pc30{ width: 30%; }
+.pc40{ width: 40%; }
+.pc50{ width: 50%; }
+.pc60{ width: 60%; }
+.pc70{ width: 70%; }
+.pc80{ width: 80%; }
+.pc90{ width: 90%; }
+.pc100{ width: 100%; }
+
+.clear{ width: 100%; float: left; clear: both; }
