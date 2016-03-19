@@ -10,6 +10,8 @@ elixir(function(mix) {
     mix.scripts(['bootstrap.js', 'custom.js', 'jquery.print.js', 'jquery.validate.min.js', 'jquery.mask.min.js'], '../public_html/concursonamedida/assets/js/main.min.js');
     mix.scripts(['wow.slider.js'], '../public_html/concursonamedida/assets/js/wow.slider.min.js');
 
+    mix.copy( "resources/assets/images/**", "../public_html/concursonamedida/assets/images");
+
     // ADMIN
     mix.styles([
             '../../../resources/assets/admin/css/bootstrap.min.css',
