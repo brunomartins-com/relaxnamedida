@@ -91,6 +91,7 @@ body{
     background: url(../images/logo-concurso-relax-na-medida.png) no-repeat center;
   }
   .phrases{
+    margin: 30px 0 0 0;
     &:before{
       content: '';
       width: 66px;
@@ -98,6 +99,9 @@ body{
       float: left;
       margin: 0 30px 0 0;
       background: url(../images/sprite.png) no-repeat -407px 0;
+    }
+    h3{
+      width: 45%;
     }
     h3,h5{
       float: left;
@@ -108,35 +112,72 @@ body{
       margin: 0;
     }
     h4{
+      width: 100%;
       float: left;
       clear: both;
-      font-size: 81px;
+      font-size: 82px;
       font-weight: bold;
       line-height: 80px;
       color: $orange;
+    }
+    h5{
+      width: 70%;
     }
     &:after{
       content: '';
       width: 68px;
       height: 66px;
       float: right;
+      margin: 0 50px 0 30px;
       background: url(../images/sprite.png) no-repeat -473px 0;
     }
   }
+  @media (min-width: $screen-lg-min) {
+    .navigation {
+      left: 50%;
+      margin: 0 0 0 -585px;
+    }
+  }
   @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
-    .navigation{
-      ul{
-        li{
+    .navigation {
+      ul {
+        li {
           margin-bottom: 3px !important;
-          a{
+          a {
             font-size: 16px !important;
           }
         }
       }
-      .btn{
+      .btn {
         font-size: 16px !important;
         padding: 7px 12px;
       }
+    }
+    .phrases{
+      margin: 100px 0 0 0;
+      h3{
+        width: 60%;
+      }
+      h3,h5{
+        font-size: 24px;
+        line-height: 20px;
+      }
+      h4{
+        font-size: 60px;
+        line-height: 55px;
+      }
+      h5{
+        width: 100%;
+      }
+      &:after{
+        margin: 0 30px 0;
+      }
+    }
+    .btn-main{
+      margin: 40px 0 0 0;
+    }
+    img.img-responsive{
+      margin: 120px 0 0 0;
     }
   }
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
@@ -155,24 +196,100 @@ body{
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     .navigation {
       ul {
-        margin: -8px 0 0 0;
+        margin: -10px 0 0 0;
       }
     }
     .logo {
+      margin-top: 80px;
       background-size: contain;
+    }
+    .phrases{
+      margin: 90px 0 0 0;
+      &:before{
+        margin-right: 15px;
+      }
+      h3{
+        width: 60%;
+        padding-top: 25px;
+      }
+      h3,h5{
+        font-size: 16px;
+        line-height: 14px;
+      }
+      h4{
+        font-size: 38px;
+        line-height: 33px;
+      }
+      h5{
+        width: 100%;
+      }
+      &:after{
+        margin: 0;
+      }
+    }
+    .btn-main{
+      margin: 0 !important;
+    }
+    img.img-responsive{
+      position: relative;
+      bottom: 0;
+      margin: 90px 0 0 0;
     }
   }
   @media (max-width: $screen-xs-max) {
-    .container{
-      padding: 0 !important;
-      .navigation{
-        background-size: auto 90px !important;
-      }
+    .navigation{
+      background-size: auto 90px !important;
     }
     .logo {
       height: 180px;
       margin: 30px 0 0 0;
       background-size: contain !important;
+    }
+    .phrases{
+      margin: 40px 0 0 0;
+      &:before{
+        margin-right: 15px;
+      }
+      h3{
+        padding-top: 25px;
+      }
+      h3,h5{
+        font-size: 20px;
+        line-height: 16px;
+      }
+      h4{
+        width: 100%;
+        font-size: 55px;
+        line-height: 50px;
+      }
+      h5{
+        width: 70%;
+      }
+      &:after{
+        margin: 0;
+      }
+    }
+    .btn-main{
+      margin: 0 !important;
+    }
+    img.img-responsive{
+      position: relative;
+      bottom: 0;
+      margin: 90px 0 0 0;
+    }
+  }
+  @media (max-width: $screen-xs-min) {
+    .phrases{
+      h3{
+        width: 70%;
+      }
+      h4{
+        font-size: 50px;
+        line-height: 45px;
+      }
+      h5{
+        width: 100%;
+      }
     }
   }
 }
@@ -208,8 +325,9 @@ body{
   background: url(../images/bg-button.png);
   &:hover{
     color: $white;
-    border-color: lighten($dark-blue, 10%);
-    background-color: $orange;
+    border-color: darken($dark-blue, 10%);
+    background-image: none;
+    background-color: lighten($dark-blue, 20%);
   }
 }
 /* INPUT MAIN */

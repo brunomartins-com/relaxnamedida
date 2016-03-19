@@ -51,33 +51,32 @@ Contact: hello@brunomartins.com
 </head>
 <body>
 <header class="header">
+    <nav class="navigation">
+        <ul class="pull-left hidden-xs">
+            <li><a href="">Quero Participar</a></li>
+            <li><a href="">Regulamento</a></li>
+            <li><a href="">Produtos</a></li>
+            <br class="visible-sm">
+            <li><a href="">Prêmios</a></li>
+            <li><a href="">Ganhadores 2014/15</a></li>
+            <li><a href="">Fale Conosco</a></li>
+        </ul>
+        <button class="btn btn-transparent hidden-xs pull-right">Fazer login</button>
+        <select class="input-transparent visible-xs">
+            <option value="">Menu...</option>
+            <option value="">Quero Participar</option>
+            <option value="">Regulamento</option>
+            <option value="">Produtos</option>
+            <option value="">Prêmios</option>
+            <option value="">Ganhadores 2014/15</option>
+            <option value="">Fale Conosco</option>
+
+            <optgroup label="Área Restrita">
+                <option value="">Fazer Login</option>
+            </optgroup>
+        </select>
+    </nav>
     <div class="container">
-        <nav class="navigation">
-            <ul class="pull-left hidden-xs">
-                <li><a href="">Quero Participar</a></li>
-                <li><a href="">Regulamento</a></li>
-                <li><a href="">Produtos</a></li>
-                <br class="visible-sm">
-                <li><a href="">Prêmios</a></li>
-                <li><a href="">Ganhadores 2014/15</a></li>
-                <li><a href="">Fale Conosco</a></li>
-            </ul>
-            <button class="btn btn-transparent hidden-xs pull-right">Fazer login</button>
-            <select class="input-transparent visible-xs">
-                <option value="">Menu...</option>
-                <option value="">Quero Participar</option>
-                <option value="">Regulamento</option>
-                <option value="">Produtos</option>
-                <option value="">Prêmios</option>
-                <option value="">Ganhadores 2014/15</option>
-                <option value="">Fale Conosco</option>
-
-                <optgroup label="Área Restrita">
-                    <option value="">Fazer Login</option>
-                </optgroup>
-            </select>
-        </nav>
-
         <section class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center">
             <p class="text-white font-size-14 strong margin-top-20 margin-bottom-5">Compartilhe:</p>
             <ul class="social-network-header">
@@ -94,25 +93,47 @@ Contact: hello@brunomartins.com
             <h1 class="logo">Concurso Relax na Medida - 4ª Edição</h1>
         </section>
 
-        <section class="col-lg-6 phrases">
-            <h3>
-                Faça o cadastro
-                <br>
-                e responda:
-            </h3>
-            <h4 class="lobster-two">
-                Porque a melhor forma de ficar relax é com o Teuto?
-            </h4>
-            <h5>
-                Você concorre
-                <br>
-                a 3 vales-viagem pra ficar
-                <br>
-                relax longe da rotina
-            </h5>
+        <section class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+            <div class="phrases">
+                <h3>
+                    Faça o cadastro
+                    e responda:
+                </h3>
+                <h4 class="lobster-two">
+                    Porque a
+                    melhor forma
+                    de ficar relax
+                    é com o Teuto?
+                </h4>
+                <h5>
+                    Você concorre
+                    a 3 vales-viagem pra ficar
+                    relax longe da rotina
+                </h5>
+            </div>
+
+            <div class="clear margin-top-75"></div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
+                <a href="" class="btn btn-block btn-main" title="Como participar?">Como participar?</a>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
+                <a href="" class="btn btn-block btn-main" title="Quero Participar!">Quero Participar!</a>
+            </div>
         </section>
 
-        <section class="col-lg-6">
+        <section class="visible-xs col-xs-6">
+            <div class="col-xs-12 remove-padding-l margin-top-10">
+                <a href="" class="btn btn-block btn-main" title="Como participar?">Como participar?</a>
+            </div>
+
+            <div class="col-xs-12 remove-padding-l margin-top-10">
+                <a href="" class="btn btn-block btn-main" title="Quero Participar!">Quero Participar!</a>
+            </div>
+        </section>
+
+        <section class="col-lg-6 col-md-6 col-sm-8 col-xs-6">
             <img src="{{ asset('assets/images/image-home-woman.png') }}" class="img-responsive" alt="Concurso Relax na Medida - 4ª Edição">
         </section>
     </div>
