@@ -48,4 +48,42 @@ class Handler extends ExceptionHandler
 
         return parent::render($request, $e);
     }
+
+    /**
+     * @param $filename
+     * @throws Exception
+     * @return array
+     */
+    public static function readFile($filename)
+    {
+        try {
+            $file = "assets/json/" . $filename;
+            $content = file_get_contents($file);
+        } catch (Exception $e) {
+            throw new Exception("Error open file: " . $e->getMessage());
+        }
+        return json_decode($content, true);
+    }
+
+    /**
+     * @param $file
+     * @param $content
+     * @throws Exception
+     */
+    public static function writeFile($file, $content)
+    {
+        $file = "assets/json/" . $file;
+        try {
+            if (file_exists($file)) {
+                unlink($file);
+            }
+
+            $fh = fopen($file, 'w+');
+            fwrite($fh, $content);
+            fclose($fh);
+
+        } catch (Exception $e) {
+            throw new Exception("Error open file: " . $e->getMessage());
+        }
+    }
 }

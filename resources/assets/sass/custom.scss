@@ -15,8 +15,188 @@ body{
   }
 }
 
+.header{
+  width: 100%;
+  max-height: 1135px;
+  display: block;
+  padding-top: 90px;
+  border-bottom: 18px solid $orange;
+  background: url(../images/bg-header.jpg) repeat-x center top;
+
+  .navigation{
+    width: 100%;
+    max-width: 1170px;
+    height: 90px;
+    display: block;
+    position: fixed;
+    top: 0;
+    padding: 25px 35px;
+    background: url(../images/bg-nav.png) no-repeat center top;
+    background-size: 100% 100%;
+    z-index: 9999;
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 3px 0 0 0;
+      li{
+        display: inline-block;
+        margin: 0 28px 0 0;
+        a{
+          font-size: 18px;
+          font-weight: bold;
+          color: $white;
+        }
+      }
+    }
+    .btn{
+      padding: 7px 20px;
+      margin-top: -7px;
+    }
+    select{
+      width: 100%;
+      display: block;
+    }
+  }
+  .social-network-header{
+    margin: 0;
+    padding: 0;
+    li{
+      width: 38px;
+      height: 38px;
+      display: inline-block;
+      a{
+        width: 38px;
+        height: 38px;
+        display: block;
+        text-align: left;
+        text-indent: -9999px;
+        background: url(../images/sprite.png) no-repeat;
+        &.facebook {
+          background-position: 0 0;
+        }
+        &.twitter {
+          background-position: -38px 0;
+        }
+        &:hover{
+          @include opacity(0.9);
+        }
+      }
+    }
+  }
+  .logo{
+    width: 100%;
+    height: 280px;
+    margin: 50px 0 0 0;
+    text-indent: -99999px;
+    background: url(../images/logo-concurso-relax-na-medida.png) no-repeat center;
+  }
+  .phrases{
+    &:before{
+      content: '';
+      width: 66px;
+      height: 72px;
+      float: left;
+      margin: 0 30px 0 0;
+      background: url(../images/sprite.png) no-repeat -407px 0;
+    }
+    h3,h5{
+      float: left;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 28px;
+      padding: 10px 0 0 0;
+      margin: 0;
+    }
+    h4{
+      float: left;
+      clear: both;
+      font-size: 81px;
+      font-weight: bold;
+      line-height: 80px;
+      color: $orange;
+    }
+    &:after{
+      content: '';
+      width: 68px;
+      height: 66px;
+      float: right;
+      background: url(../images/sprite.png) no-repeat -473px 0;
+    }
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+    .navigation{
+      ul{
+        li{
+          margin-bottom: 3px !important;
+          a{
+            font-size: 16px !important;
+          }
+        }
+      }
+      .btn{
+        font-size: 16px !important;
+        padding: 7px 12px;
+      }
+    }
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .navigation {
+      ul {
+        margin: 5px 0 0 0;
+        li{
+          margin-right: 15px;
+        }
+      }
+    }
+    .logo {
+      margin: -15px 0 0 0;
+    }
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .navigation {
+      ul {
+        margin: -8px 0 0 0;
+      }
+    }
+    .logo {
+      background-size: contain;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .container{
+      padding: 0 !important;
+      .navigation{
+        background-size: auto 90px !important;
+      }
+    }
+    .logo {
+      height: 180px;
+      margin: 30px 0 0 0;
+      background-size: contain !important;
+    }
+  }
+}
 
 
+.btn-transparent{
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
+  color: $white;
+  border: 2px solid $white;
+  background: transparent;
+  &:hover{
+    color: $orange;
+    background-color: $white;
+  }
+}
+
+.input-transparent{
+  font-family: 'Roboto Slab', serif;
+  color: $white;
+  border: 2px solid $white;
+  background: transparent;
+}
 
 /* BTN MAIN */
 .btn-main{
@@ -37,15 +217,14 @@ body{
   font-weight: bold;
   height: 36px;
   padding: 5px 10px;
-  color: $orange;
-  background-color: $orange-water;
-  border: 2px solid $orange;
+  color: $brown;
+  background-color: transparent;
+  border: 2px solid $light-brown;
   @include border-radius(5px);
-  @include placeholder($orange);
+  @include placeholder($light-brown);
   &:focus {
     @include box-shadow(none);
-    background-color: $white;
-    border-color: $orange-lighter;
+    background-color: transparent;
   }
 }
 
@@ -54,25 +233,25 @@ form {
     display: inline-block;
     vertical-align: middle;
     input[type=radio] {
-      width: 14px;
-      height: 14px;
+      width: 23px;
+      height: 23px;
       float: left;
       margin-right: 11px;
-      background-color: $orange-water;
-      border: 2px solid $orange;
-      @include border-radius(14px);
+      background-color: $bg-gray;
+      border: 1px solid $light-brown;
+      @include border-radius(23px);
       appearance: none;
       -moz-appearance: none;
       -webkit-appearance: none;
       &:checked{
         &::before {
           content: '';
-          width: 6px;
-          height: 6px;
+          width: 10px;
+          height: 10px;
           position: absolute;
-          margin: 2px 0 0 2px;
-          @include border-radius(8px);
-          background-color: $orange;
+          margin: 6px 0 0 6px;
+          @include border-radius(10px);
+          background-color: $light-brown;
         }
       }
     }
