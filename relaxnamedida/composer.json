@@ -1,13 +1,13 @@
 {
-    "name": "concursonamedida.com.br",
+    "name": "brunomartins-com/relaxnamedida",
     "description": "Concurso Relax na Medida - Teuto/Pfizer",
     "keywords": ["Teuto", "Pfizer", "Concurso Relax na Medida"],
     "type": "project",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "filp/whoops": "^1.1",
-        "doctrine/dbal": "2.5.*",
+        "filp/whoops": "2.1.*",
+        "doctrine/dbal": "~2.5",
         "guzzlehttp/guzzle": "~6.0",
         "laravelcollective/html": "5.1.*",
         "intervention/image": "~2.3",
@@ -17,8 +17,6 @@
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1",
         "symfony/css-selector": "2.7.*|3.0.*",
         "symfony/dom-crawler": "2.7.*|3.0.*"
     },
@@ -29,11 +27,6 @@
         "psr-4": {
             "App\\": "app/"
         }
-    },
-    "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
     },
     "scripts": {
         "post-install-cmd": [
