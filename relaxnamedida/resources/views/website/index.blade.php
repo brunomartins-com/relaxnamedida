@@ -137,8 +137,18 @@ Contact: hello@brunomartins.com
             <img src="{{ asset('assets/images/image-home-woman.png') }}" class="img-responsive" alt="Concurso Relax na Medida - 4ª Edição">
         </section>
     </div>
-</header>
+</header><!-- /HEADER -->
 
+<!-- PARA PARTICIPAR -->
+<section class="for-participate">
+    <article class="container">
+        <div class="horizontal-bar margin-top-75 margin-bottom-20"></div>
+        <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
+            <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Para Participar</h2>
+            <h3 class="text-white font-size-36 lobster-two">e só seguir os passos</h3>
+        </header>
+    </article>
+</section><!-- /PARA PARTICIPAR -->
 
 <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}" />
 <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}" />
