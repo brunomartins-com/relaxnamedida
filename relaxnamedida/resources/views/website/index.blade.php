@@ -151,52 +151,37 @@ Contact: hello@brunomartins.com
     <article class="container">
         <div class="margin-top-40 margin-bottom-30"></div>
         <!-- Step 01 -->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/step-2.png') }}" class="img-responsive">
             <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">1° Passo</h2>
-            <p class="text-black font-size-16">É fácil. Basta comprar um dos produtos:
+            <p class="font-size-16">É fácil. Basta comprar um dos produtos:
                 Max Air, Biosoak (480ml), Cicatriderm, A-Z polivitamínico e ou Linha Segurdent.</p>
         </div> <!-- Step 01 -->
         <!-- Step 02 -->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/step-2.png') }}" class="img-responsive">
             <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">2° Passo</h2>
-            <p class="text-black font-size-16">Leia o regulamento, preencha
+            <p class="font-size-16">Leia o regulamento, preencha
                 corretamente o formulário de participação e
                 depois confirme seu cadastro no seu
                 e-mail.</p>
         </div> <!-- Step 02 -->
         <!-- Step 03 -->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/step-3.png') }}" class="img-responsive">
             <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">3° Passo</h2>
-            <p class="text-black font-size-16">Por último, cadastre a foto do cupom fiscal
+            <p class="font-size-16">Por último, cadastre a foto do cupom fiscal
             e responda à pergunta "Por que a melhor
             forma de ficar relax é com o Teuto?".
             Depois é só torcer.</p>
         </div><!-- Step 03 -->
-        {{--<div class="col-lg-10 col-md-10 col-sm-12 col-xs9 margin-top-50 margin-bottom-50">--}}
-            {{--<!-- Image Warning  -->--}}
-            {{--<div class="col-lg-2 col-lg-offset-1 col-md-2 col-sm-2 col-xs-3">--}}
-                {{--<div class="warning"></div>--}}
-            {{--</div><!-- Image Warning -->--}}
-            {{--<p class="text-black font-size-14">--}}
-                {{--Guarde bem o cupom fiscal até o fim do concurso. Você vai precisar dele para retirar o prêmio se for--}}
-                {{--um dos venedores. Todas as respostas cadastradas serão avaliadas conforme critérios do--}}
-                {{--regulamento. Cada usuário poderá se cadastrar uma única vez neste concurso.--}}
-            {{--</p>--}}
-        {{--</div>--}}
 
-        <div class="col-lg-10 col-md-10 col-sm-12 col-xs9 margin-top-50 margin-bottom-50">
-            <!-- Image Warning  -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 warning">
-                <p class="text-black font-size-14">
-                    Guarde bem o cupom fiscal até o fim do concurso. Você vai precisar dele para retirar o prêmio se for
-                    um dos venedores. Todas as respostas cadastradas serão avaliadas conforme critérios do
-                    regulamento. Cada usuário poderá se cadastrar uma única vez neste concurso.
-                </p>
-            </div><!-- Image Warning -->
-        </div>
+        <!-- Image Warning  -->
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-50 margin-bottom-50 warning">
+            Guarde bem o cupom fiscal até o fim do concurso. Você vai precisar dele para retirar o prêmio se for
+            um dos venedores. Todas as respostas cadastradas serão avaliadas conforme critérios do
+            regulamento. Cada usuário poderá se cadastrar uma única vez neste concurso.
+        </div><!-- Image Warning -->
 
     </article>
 </section><!-- /PARA PARTICIPAR -->
