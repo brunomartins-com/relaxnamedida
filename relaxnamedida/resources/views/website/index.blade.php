@@ -148,6 +148,43 @@ Contact: hello@brunomartins.com
             <h3 class="text-white font-size-36 lobster-two">e só seguir os passos</h3>
         </header>
     </article>
+    <article class="container">
+        <div class="margin-top-40 margin-bottom-30"></div>
+        <!-- Step 01 -->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 steps">
+            <img src="{{ asset('assets/images/step-2.png') }}" class="img-responsive">
+            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">1° Passo</h2>
+            <p class="text-black font-size-18">É fácil. Basta comprar um dos produtos:
+                Max Air, Biosoak (480ml), Cicatriderm, A-Z polivitamínico e ou Linha Segurdent.</p>
+        </div> <!-- Step 01 -->
+        <!-- Step 02 -->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 steps">
+            <img src="{{ asset('assets/images/step-2.png') }}" class="img-responsive">
+            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">2° Passo</h2>
+            <p class="text-black font-size-18">Leia o regulamento, preencha
+                corretamente o formulário de participação e
+                depois confirme seu cadastro no seu
+                e-mail.</p>
+        </div> <!-- Step 02 -->
+        <!-- Step 03 -->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 steps">
+            <img src="{{ asset('assets/images/step-3.png') }}" class="img-responsive">
+            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">3° Passo</h2>
+            <p class="text-black font-size-18">Por último, cadastre a foto do cupom fiscal
+            e responda à pergunta "Por que a melhor
+            forma de ficar relax é com o Teuto?".
+            Depois é só torcer.</p>
+        </div><!-- Step 03 -->
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs12 margin-top-50 margin-bottom-50">
+            <p class="text-black font-size-18">
+                Guarde bem o cupom fiscal até o fim do concurso. Você vai precisar dele para retirar o prêmio se for
+                um dos venedores. Todas as respostas cadastradas serão avaliadas conforme critérios do
+                regulamento. Cada usuário poderá se cadastrar uma única vez neste concurso.
+            </p>
+        </div>
+
+    </article>
+
 </section><!-- /PARA PARTICIPAR -->
 
 <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}" />

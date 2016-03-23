@@ -468,6 +468,7 @@ form {
 .margin-top-35{ margin-top: 35px !important; }
 .margin-top-40{ margin-top: 40px !important; }
 .margin-top-45{ margin-top: 45px !important; }
+.margin-top-50{ margin-top: 50px !important; }
 .margin-top-75{ margin-top: 75px !important; }
 .margin-right-0{ margin-right: 0 !important; }
 .margin-right-5{ margin-right: 5px !important; }
@@ -485,6 +486,7 @@ form {
 .margin-bottom-35{ margin-bottom: 35px !important; }
 .margin-bottom-40{ margin-bottom: 40px !important; }
 .margin-bottom-45{ margin-bottom: 45px !important; }
+.margin-bottom-50{ margin-bottom: 50px !important; }
 .margin-left-0{ margin-left: 0 !important; }
 .margin-left-5{ margin-left: 5px !important; }
 .margin-left-10{ margin-left: 10px !important; }
@@ -595,6 +597,9 @@ a.text-black:hover{
 .remove-margin-r{ margin-right: 0 !important; }
 .remove-margin-b{ margin-bottom: 0 !important; }
 .remove-margin-l{ margin-left: 0 !important; }
+
+.steps{ color: $orange; }
+
 
 .pc10{ width: 10%; }
 .pc20{ width: 20%; }
