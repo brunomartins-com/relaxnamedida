@@ -375,10 +375,15 @@ body{
 
 
 .title{
-  height: 161px;
+  height: auto;
+  max-height: 161px;
   text-align: center;
-  background: url(../images/bg-title-one-page.png) no-repeat;
+  background: url(../images/bg-title-one-page.png) no-repeat center;
   background-size: contain;
+  h3{
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   .title{
@@ -392,7 +397,7 @@ body{
   .title{
     h2{
       font-size: 27px !important;
-      margin-top: 5px !important;
+      margin-top: 15px !important;
     }
     h3{
       font-size: 27px !important;
@@ -405,7 +410,7 @@ body{
   .title{
     h2{
       font-size: 22px !important;
-      margin-top: -3px !important;
+      margin-top: 15px !important;
     }
     h3{
       font-size: 22px !important;
