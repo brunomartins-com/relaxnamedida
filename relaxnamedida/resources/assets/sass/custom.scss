@@ -659,8 +659,83 @@ a.text-black:hover{
 .pc70{ width: 70%; }
 .pc80{ width: 80%; }
 .pc90{ width: 90%; }
-.pc100{ width: 100%; }
+.pc100{ width: 100%;}
 
+.participation {
+
+  ul{
+    border-bottom: 3px solid $brown !important;
+    //border: none !important;
+    padding-left: 15px !important;
+  }
+
+  li{
+    a{
+      border: none !important;
+    }
+
+    &.active {
+      a{
+        border: 3px solid $brown !important;
+        border-bottom: none !important;
+        color: $orange !important;
+        border-radius: 8px 8px 0px 0px;
+      }
+    }
+  }
+
+  a {
+    color: $light-brown !important;
+    background: transparent !important;
+
+    &:hover {
+      color: $orange !important;
+      background: transparent !important;
+      border: none !important;
+    }
+
+    &:active {
+      color: $orange !important;
+      background: transparent !important;
+    }
+
+  }
+
+  label {
+    color: $light-brown !important;
+    font-weight: normal !important;
+  }
+
+  input {
+    background: transparent;
+    border: 2px solid $light-brown;
+    color: $light-brown !important;
+
+    &:focus {
+      border: 2px solid $light-brown !important;
+    }
+
+  }
+
+  button {
+    border-radius: 6px 6px 6px 6px;
+  }
+
+}
+
+.products{
+  min-height: 260px;
+
+  li{
+    border: 1px solid $light-brown !important;
+    background: $light-brown !important;
+
+    :active {
+      border: 1px solid $brown !important;
+      background: $brown !important;
+    }
+  }
+}
 .clear{ width: 100%; float: left; clear: both; }
 
 //.warning{
