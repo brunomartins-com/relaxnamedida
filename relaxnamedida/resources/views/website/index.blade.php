@@ -238,7 +238,7 @@ Contact: hello@brunomartins.com
 
     </article>
 </section><!-- /PARA PARTICIPAR -->
-<section class="for-regulament padding-top-150">
+<section class="i-want-participate padding-top-150">
     <article class="container">
         <div class="horizontal-bar margin-bottom-20"></div>
         <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
@@ -246,7 +246,7 @@ Contact: hello@brunomartins.com
             <h3 class="text-white font-size-36 lobster-two">e concorrer a viagem dos sonhos.</h3>
         </header>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-45 margin-bottom-35 font-size-18">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 margin-top-45 margin-bottom-35 font-size-18">
             Preencha corretamente o cadastro de participação. Tudo preenchido e enviado, vá até o seu e-mail e confirme sua
             inscrição. Faça seu login, envie uma foto do cupom fiscal dos produtos Teuto participantes e responda à pergunta
             "Por que a melhor forma de ficar relax é com o Teuto?". Os autores das 3 melhores respostas serão premiados com
@@ -254,77 +254,77 @@ Contact: hello@brunomartins.com
         </div>
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35 margin-bottom-35">
-            <div class="tabbable participation"> <!-- Only required for left/right tabs -->
-                <ul class="nav nav-tabs lobster-two font-size-36">
+            <div class="tabs"> <!-- Only required for left/right tabs -->
+                <ul class="nav nav-tabs lobster-two font-size-30">
                     <li class="active"><a href="#tab1" data-toggle="tab">Dados Pessoais</a></li>
                     <li><a href="#tab2" data-toggle="tab">Endereço</a></li>
                     <li><a href="#tab3" data-toggle="tab">Conclusão</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
-                    <form>
+                    <form name="form-register" action="" method="post" enctype="multipart/form-data">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35 font-size-18">
                             <div class="col-lg-5 col-md-5 col-xs-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nome">
+                                    <input name="name" type="text" class="form-control input-main" placeholder="Nome">
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-5 col-xs-12">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input name="email" type="email" class="form-control input-main" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-xs-12">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Telefone">
+                                    <input name="telephone" type="tel" class="form-control input-main" placeholder="Telefone">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-xs-12">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Telefone Celular">
+                                    <input name="mobile" type="tel" class="form-control input-main" placeholder="Telefone Celular">
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-xs-12">
-                                <label>Sexo:</label>
-                                <label for="male" class="radio-inline">
-                                    <input type="radio" name="male" id="male" value="masculino"> Masculino
+                            <div class="col-lg-5 col-md-5 col-xs-12 padding-top-5">
+                                <label class="pull-left">Sexo:</label>
+                                <label class="pull-left radio-main">
+                                    <input type="radio" name="gender" value="Masculino"> Masculino
                                 </label>
-                                <label for="female" class="radio-inline">
-                                    <input type="radio" name="female" id="female" value="feminino"> Feminino
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 font-size-18">
-                            <div class="col-lg-3 col-md-3 col-xs-12">
-                                <div class="form-group">
-                                    <input type="date" class="form-control" placeholder="Data de Nascimento">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-xs-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="CPF">
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-xs-12">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="authority"> Você é autoridade governamental?
+                                <label class="pull-left radio-main">
+                                    <input type="radio" name="gender" value="Feminino"> Feminino
                                 </label>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 font-size-18">
                             <div class="col-lg-3 col-md-3 col-xs-12">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Senha">
+                                    <input name="birthDate" type="date" class="form-control input-main" placeholder="Data de Nascimento">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-xs-12">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirmar Senha">
+                                    <input name="cpf" type="text" class="form-control input-main" placeholder="CPF">
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-xs-12">
+                                <label class="checkbox-main padding-top-5">
+                                    <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 font-size-18">
+                            <div class="col-lg-3 col-md-3 col-xs-12">
+                                <div class="form-group">
+                                    <input name="password" type="password" class="form-control input-main" placeholder="Senha">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-xs-12">
+                                <div class="form-group">
+                                    <input name="passwordConfirm" type="password" class="form-control input-main" placeholder="Confirmar Senha">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-lg-offset-2 col-md-4 col-xs-12">
                                 <div class="form-group">
-                                    <button class="btn-main" title="Avançar">Próximo Passo</button>
+                                    <button type="button" id="nextStep" class="btn btn-main" title="Próximo passo">Próximo passo</button>
                                 </div>
                             </div>
                         </div>

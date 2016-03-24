@@ -367,8 +367,69 @@ body{
   }
 }
 
-.for-regulament{
-  background: url(../images/bg-I-want-participante.jpg) no-repeat center top $light-orange;
+.i-want-participate{
+  background: url(../images/bg-I-want-participante.jpg) no-repeat center top $bg-yellow;
+  .tabs {
+    ul {
+      border-bottom: 3px solid $brown !important;
+      //border: none !important;
+      padding-left: 15px !important;
+      li {
+        margin-right: 60px;
+        a {
+          border: 3px solid transparent;
+          border-bottom: 0 !important;
+          @include border-radius(8px 8px 0 0);
+          color: $light-brown;
+          background: transparent;
+          padding: 10px 20px;
+          &:hover {
+            color: $orange;
+          }
+        }
+        &.active {
+          a {
+            border-color: $brown;
+            color: $orange;
+            background: $bg-yellow;
+            &::after{
+              content: '';
+              width: 100%;
+              height: 3px;
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              background-color: $bg-yellow;
+            }
+            &:hover{
+              color: lighten($orange, 5%);
+              border: 3px solid transparent;
+              border-bottom: 0 !important;
+              border-color: $brown;
+            }
+          }
+        }
+      }
+    }
+    .tab-content {
+      form {
+        label {
+          font-size: 18px;
+          color: $light-brown !important;
+          font-weight: normal !important;
+          padding-top: 5px;
+        }
+        input[type=radio]{
+          width: 23px;
+          height: 23px;
+          @include border-radius(23px);
+          border: 1px solid $light-brown;
+          background-color: $bg-gray;
+
+        }
+      }
+    }
+  }
 }
 
 
@@ -456,10 +517,10 @@ body{
 }
 /* INPUT MAIN */
 .input-main{
+  height: 40px;
   font-weight: bold;
-  height: 36px;
-  padding: 5px 10px;
-  color: $brown;
+  padding: 5px 10px 5px 20px;
+  color: $brown !important;
   background-color: transparent;
   border: 2px solid $light-brown;
   @include border-radius(5px);
@@ -467,33 +528,60 @@ body{
   &:focus {
     @include box-shadow(none);
     background-color: transparent;
+    border-color: darken($light-brown, 10%);
   }
 }
 
 form {
-  label.radio-check {
+  label.radio-main {
     display: inline-block;
     vertical-align: middle;
     input[type=radio] {
-      width: 23px;
-      height: 23px;
+      width: 22px;
+      height: 22px;
       float: left;
-      margin-right: 11px;
+      margin: 0 10px;
       background-color: $bg-gray;
       border: 1px solid $light-brown;
-      @include border-radius(23px);
+      @include border-radius(22px);
       appearance: none;
       -moz-appearance: none;
       -webkit-appearance: none;
       &:checked{
         &::before {
           content: '';
-          width: 10px;
-          height: 10px;
+          width: 9px;
+          height: 9px;
           position: absolute;
           margin: 6px 0 0 6px;
           @include border-radius(10px);
           background-color: $light-brown;
+        }
+      }
+    }
+  }
+  label.checkbox-main{
+    display: inline-block;
+    vertical-align: middle;
+    input[type=checkbox] {
+      width: 22px;
+      height: 22px;
+      float: left;
+      margin: 0 10px;
+      background-color: $bg-gray;
+      border: 1px solid $light-brown;
+      @include border-radius(5px);
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      &:checked{
+        &::before {
+          content: '';
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          margin: 3px 0 0 3px;
+          background: url(../images/sprite.png) no-repeat -124px -56px;
         }
       }
     }
@@ -661,67 +749,7 @@ a.text-black:hover{
 .pc90{ width: 90%; }
 .pc100{ width: 100%;}
 
-.participation {
 
-  ul{
-    border-bottom: 3px solid $brown !important;
-    //border: none !important;
-    padding-left: 15px !important;
-  }
-
-  li{
-    a{
-      border: none !important;
-    }
-
-    &.active {
-      a{
-        border: 3px solid $brown !important;
-        border-bottom: none !important;
-        color: $orange !important;
-        border-radius: 8px 8px 0px 0px;
-      }
-    }
-  }
-
-  a {
-    color: $light-brown !important;
-    background: transparent !important;
-
-    &:hover {
-      color: $orange !important;
-      background: transparent !important;
-      border: none !important;
-    }
-
-    &:active {
-      color: $orange !important;
-      background: transparent !important;
-    }
-
-  }
-
-  label {
-    color: $light-brown !important;
-    font-weight: normal !important;
-  }
-
-  input {
-    background: transparent;
-    border: 2px solid $light-brown;
-    color: $light-brown !important;
-
-    &:focus {
-      border: 2px solid $light-brown !important;
-    }
-
-  }
-
-  button {
-    border-radius: 6px 6px 6px 6px;
-  }
-
-}
 
 .products{
   min-height: 260px;
