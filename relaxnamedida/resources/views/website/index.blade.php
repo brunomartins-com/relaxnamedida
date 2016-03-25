@@ -251,83 +251,83 @@ Contact: hello@brunomartins.com
             um vale-viagem cada um.
         </div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35 margin-bottom-115">
+        <div class="margin-top-35 margin-bottom-115">
             <div class="tabs"> <!-- Only required for left/right tabs -->
-                <ul class="nav nav-tabs lobster-two">
-                    <li class="active"><a id="personal-data">Dados Pessoais</a></li>
-                    <li><a id="address">Endereço</a></li>
-                    <li><a id="conclusion">Conclusão</a></li>
-                </ul>
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                    <ul class="nav nav-tabs lobster-two">
+                        <li class="active"><a id="personal-data">Dados Pessoais</a></li>
+                        <li><a id="address">Endereço</a></li>
+                        <li><a id="conclusion">Conclusão</a></li>
+                    </ul>
+                </div>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
-                    <form name="form-register" action="" method="post" enctype="multipart/form-data">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35">
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <input name="name" type="text" class="form-control input-main" placeholder="Nome">
+                        <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                            <div class="clear margin-top-35">
+                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="name" type="text" class="form-control input-main" placeholder="Nome">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="telephone" type="tel" class="form-control input-main" placeholder="Telefone">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="mobile" type="tel" class="form-control input-main" placeholder="Telefone Celular">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-top-5">
+                                    <label class="pull-left">Sexo:</label>
+                                    <label class="pull-left radio-main">
+                                        <input type="radio" name="gender" value="Masculino"> Masculino
+                                    </label>
+                                    <label class="pull-left radio-main">
+                                        <input type="radio" name="gender" value="Feminino"> Feminino
+                                    </label>
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                            <div class="clear font-size-18">
+                                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="birthDate" type="date" class="form-control input-main text-light-brown" placeholder="Data de Nascimento">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="cpf" type="text" class="form-control input-main" placeholder="CPF">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-top-5">
+                                    <label class="checkbox-main pull-left padding-top-5 padding-right-5">
+                                        <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
+                                    </label>
+                                    <a href="javascript:void();" class="question-tooltip padding-top-5 pull-left" onmouseover="Tip('Autoridade Governamental &eacute; (i) Qualquer autoridade governamental eleita ou indicada; (ii) Qualquer empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, &oacute;rg&atilde;o p&uacute;blico ou empreendimento que exer&ccedil;a fun&ccedil;&otilde;es governamentais; (iii) Qualquer funcion&aacute;rio de partido pol&iacute;tico, seus empregados ou outras pessoas atuando em nome ou favor de partido pol&iacute;tico ou candidato a cargos p&uacute;blicos; (iv) Qualquer empregado ou pessoa que atue em nome ou favor de organiza&ccedil;&atilde;o p&uacute;blica internacional; (v) Qualquer outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legisla&ccedil;&atilde;o local; e (vi) Quaisquer m&eacute;dicos empregados por hospitais, cl&iacute;nicas ou outros institutos p&uacute;blicos ou sob controle governamental.')" onmouseout="UnTip()">( ? )</a>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <input name="telephone" type="tel" class="form-control input-main" placeholder="Telefone">
+                            <div class="clear font-size-18">
+                                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="password" type="password" class="form-control input-main" placeholder="Senha">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <input name="mobile" type="tel" class="form-control input-main" placeholder="Telefone Celular">
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="passwordConfirm" type="password" class="form-control input-main" placeholder="Confirmar Senha">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 padding-top-5">
-                                <label class="pull-left">Sexo:</label>
-                                <label class="pull-left radio-main">
-                                    <input type="radio" name="gender" value="Masculino"> Masculino
-                                </label>
-                                <label class="pull-left radio-main">
-                                    <input type="radio" name="gender" value="Feminino"> Feminino
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 font-size-18">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <input name="birthDate" type="date" class="form-control input-main text-light-brown" placeholder="Data de Nascimento">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <input name="cpf" type="text" class="form-control input-main" placeholder="CPF">
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <label class="checkbox-main padding-top-5">
-                                    <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 font-size-18">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <input name="password" type="password" class="form-control input-main" placeholder="Senha">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <input name="passwordConfirm" type="password" class="form-control input-main" placeholder="Confirmar Senha">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-xs-12">
-                                <div class="form-group">
-                                    {{--<a href="#tab2" id="nextStep" class="btn btn-main" data-toggle="tab" title="Próximo Passo">Próximo passo</a>--}}
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
                                     <button type="button" id="nextStep" class="btn btn-main" title="Próximo passo">Próximo passo</button>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
                     </div>
                     <div class="tab-pane" id="tab2">
                         <form name="form-register" action="" method="post" enctype="multipart/form-data">

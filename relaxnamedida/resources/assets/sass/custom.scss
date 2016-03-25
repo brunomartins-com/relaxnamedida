@@ -416,6 +416,10 @@ body{
       }
     }
     .tab-content {
+      width: 100%;
+      float: left;
+      clear: both;
+      padding-bottom: 80px;
       form {
         label {
           font-size: 18px;
@@ -619,6 +623,7 @@ form {
   label.checkbox-main{
     display: inline-block;
     vertical-align: middle;
+    font-size: 17px !important;
     input[type=checkbox] {
       width: 22px;
       height: 22px;
@@ -640,6 +645,13 @@ form {
           background: url(../images/sprite.png) no-repeat -124px -56px;
         }
       }
+    }
+  }
+  a.question-tooltip{
+    font-size: 14px;
+    color: $brown;
+    &:hover{
+      text-decoration: none;
     }
   }
 }
