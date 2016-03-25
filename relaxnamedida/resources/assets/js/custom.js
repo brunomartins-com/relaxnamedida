@@ -8,15 +8,15 @@ $(function() {
         window.location.hash = $(this).attr('href');
     });
 
-    var elem = $('a[href=' + window.location.hash + ']');
-    if(elem) {
-        console.log(elem);
-        $('html, body').stop().animate({
-            scrollTop: $(elem.attr('href')).offset().top
-        }, 500, 'easeInOutExpo');
-        event.preventDefault();
-
-        //$.scrollTo(elem.left, elem.top);
+    if(window.location.hash) {
+        var elem = $('a[href=' + window.location.hash + ']');
+        if (elem) {
+            console.log(elem);
+            $('html, body').stop().animate({
+                scrollTop: $(elem.attr('href')).offset().top
+            }, 500, 'easeInOutExpo');
+            event.preventDefault();
+        }
     }
 });
 $(document).ready(function(){
