@@ -48,16 +48,22 @@ Contact: hello@brunomartins.com
 
     @yield('head')
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 <header class="header">
     <nav class="navigation">
         <ul class="pull-left hidden-xs">
-            <li><a href="">Quero Participar</a></li>
-            <li><a href="">Regulamento</a></li>
-            <li><a href="">Produtos</a></li>
+            <li><a class="page-scroll" href="#quero-participar" title="Quero Participar">Quero Participar</a></li>
+            <li><a class="page-scroll" href="#regulamento" title="Regulamento">Regulamento</a></li>
+            <li><a href="#produtos">Produtos</a></li>
             <br class="visible-sm">
-            <li><a href="">Prêmios</a></li>
+            <li><a href="#premios">Prêmios</a></li>
             <li><a href="">Ganhadores 2014/15</a></li>
             <li><a href="">Fale Conosco</a></li>
         </ul>
@@ -140,7 +146,7 @@ Contact: hello@brunomartins.com
 </header><!-- /HEADER -->
 
 <!-- PARA PARTICIPAR -->
-<section class="for-participate">
+<section id="para-participar" class="for-participate">
     <article class="container">
         <div class="horizontal-bar margin-top-75 margin-bottom-20"></div>
         <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
@@ -236,7 +242,7 @@ Contact: hello@brunomartins.com
 
     </article>
 </section><!-- /PARA PARTICIPAR -->
-<section class="i-want-participate padding-top-150">
+<section id="quero-participar" class="i-want-participate padding-top-150">
     <article class="container">
         <div class="horizontal-bar margin-bottom-20"></div>
         <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
@@ -421,7 +427,7 @@ Contact: hello@brunomartins.com
         </div>
     </article>
 </section>
-<section class="regulament">
+<section id="regulamento" class="regulament">
     <article class="container">
         <div class="horizontal-bar margin-bottom-20"></div>
         <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
@@ -511,26 +517,6 @@ Contact: hello@brunomartins.com
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic" />
 <script type="text/javascript" src="{!! asset('assets/js/jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/main.min.js') !!}"></script>
-
-<script>
-    $("#nextStep").click(function(){
-            $("#tab1").hide();
-            $("#tab3").hide();
-            $("#tab2").show();
-            $(".tabs > ul > li").removeClass("active");
-            $(".tabs > ul > li:odd").addClass("active");
-    });
-
-    $("#nextStep2").click(function(){
-        $("#tab1").hide();
-        $("#tab2").hide();
-        $("#tab3").show();
-        $(".tabs > ul > li").removeClass("active");
-        $(".tabs > ul > li:last").addClass("active");
-    });
-</script>
-
-
 @if(Session::has('message'))
 <script>
 alert('{!! Session::get('message') !!}');
