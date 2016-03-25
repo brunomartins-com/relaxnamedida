@@ -200,16 +200,14 @@ Contact: hello@brunomartins.com
                     <li data-target="#carousel-example-generic" data-slide-to="8"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="9"></li>
                 </ol>
-            </div>
-            <div class="margin-top-40 margin-bottom-30">
 
-
-            </div>
-
+            <div class="margin-top-40 margin-bottom-30"></div>
+        </div>
             <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">1° Passo</h2>
             <p class="font-size-16">É fácil. Basta comprar um dos produtos:
                 Max Air, Biosoak (480ml), Cicatriderm, A-Z polivitamínico e ou Linha Segurdent.</p>
-        </div> <!-- Step 01 -->
+        </div><!-- Step 01 -->
+
         <!-- Step 02 -->
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/step-2.png') }}" class="img-responsive">
@@ -218,15 +216,15 @@ Contact: hello@brunomartins.com
                 corretamente o formulário de participação e
                 depois confirme seu cadastro no seu
                 e-mail.</p>
-        </div> <!-- Step 02 -->
+        </div> <!-- Step 02  -->
         <!-- Step 03 -->
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/step-3.png') }}" class="img-responsive">
             <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">3° Passo</h2>
             <p class="font-size-16">Por último, cadastre a foto do cupom fiscal
-            e responda à pergunta "Por que a melhor
-            forma de ficar relax é com o Teuto?".
-            Depois é só torcer.</p>
+                e responda à pergunta "Por que a melhor
+                forma de ficar relax é com o Teuto?".
+                Depois é só torcer.</p>
         </div><!-- Step 03 -->
 
         <!-- Image Warning  -->
@@ -253,38 +251,38 @@ Contact: hello@brunomartins.com
             um vale-viagem cada um.
         </div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35 margin-bottom-35">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35 margin-bottom-115">
             <div class="tabs"> <!-- Only required for left/right tabs -->
-                <ul class="nav nav-tabs lobster-two font-size-30">
-                    <li class="active"><a href="#tab1" data-toggle="tab">Dados Pessoais</a></li>
-                    <li><a href="#tab2" data-toggle="tab">Endereço</a></li>
-                    <li><a href="#tab3" data-toggle="tab">Conclusão</a></li>
+                <ul class="nav nav-tabs lobster-two">
+                    <li class="active"><a id="personal-data">Dados Pessoais</a></li>
+                    <li><a id="address">Endereço</a></li>
+                    <li><a id="conclusion">Conclusão</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
                     <form name="form-register" action="" method="post" enctype="multipart/form-data">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35 font-size-18">
-                            <div class="col-lg-5 col-md-5 col-xs-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <input name="name" type="text" class="form-control input-main" placeholder="Nome">
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-xs-12">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <input name="email" type="email" class="form-control input-main" placeholder="Email">
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <input name="telephone" type="tel" class="form-control input-main" placeholder="Telefone">
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <input name="mobile" type="tel" class="form-control input-main" placeholder="Telefone Celular">
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-xs-12 padding-top-5">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 padding-top-5">
                                 <label class="pull-left">Sexo:</label>
                                 <label class="pull-left radio-main">
                                     <input type="radio" name="gender" value="Masculino"> Masculino
@@ -295,35 +293,36 @@ Contact: hello@brunomartins.com
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 font-size-18">
-                            <div class="col-lg-3 col-md-3 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <input name="birthDate" type="date" class="form-control input-main" placeholder="Data de Nascimento">
+                                    <input name="birthDate" type="date" class="form-control input-main text-light-brown" placeholder="Data de Nascimento">
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <input name="cpf" type="text" class="form-control input-main" placeholder="CPF">
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-xs-12">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                 <label class="checkbox-main padding-top-5">
                                     <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
                                 </label>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 font-size-18">
-                            <div class="col-lg-3 col-md-3 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <input name="password" type="password" class="form-control input-main" placeholder="Senha">
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <input name="passwordConfirm" type="password" class="form-control input-main" placeholder="Confirmar Senha">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-xs-12">
+                            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-xs-12">
                                 <div class="form-group">
+                                    {{--<a href="#tab2" id="nextStep" class="btn btn-main" data-toggle="tab" title="Próximo Passo">Próximo passo</a>--}}
                                     <button type="button" id="nextStep" class="btn btn-main" title="Próximo passo">Próximo passo</button>
                                 </div>
                             </div>
@@ -331,21 +330,183 @@ Contact: hello@brunomartins.com
                     </form>
                     </div>
                     <div class="tab-pane" id="tab2">
-                        <p>Aguardando conteúdo na seção 02</p>
+                        <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
+                                    <div class="form-group">
+                                        <input name="zipcode" type="text" maxlength="5" class="form-control input-main" placeholder="Cep">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
+                                    <div class="form-group">
+                                        <input name="tdp" type="text" maxlength="3" class="form-control input-main">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="address" type="text" class="form-control input-main" placeholder="Endereço">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="form-group pull-left size-45">
+                                        <input name="number" type="text" class="form-control input-main" maxlength="5" placeholder="Número">
+                                    </div>
+                                    <div class="form-group pull-right size-45">
+                                        <input name="room" type="text" class="form-control input-main" maxlength="3" placeholder="Apto-Sala">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="district" type="text" class="form-control input-main" placeholder="Bairro">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="complement" type="text" class="form-control input-main" placeholder="Complemento">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="form-group">
+                                        <input name="reference" type="text" class="form-control input-main" placeholder="Referência">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="form-group">
+                                        <select class="form-control input-main text-light-brown">
+                                            <option selected>Estado</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="form-group">
+                                        <select class="form-control input-main text-light-brown">
+                                            <option selected>Cidade</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-lg-offset-8 col-md-2 col-md-offset-8 col-sm-2 col-sm-offset-8 col-xs-12">
+                                    <div class="form-group">
+                                        {{--<a href="#tab2" id="nextStep" class="btn btn-main" data-toggle="tab" title="Próximo Passo">Próximo passo</a>--}}
+                                        <button type="button" id="nextStep2" class="btn btn-main" title="Próximo passo">Próximo passo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-pane" id="tab3">
-                        <p>Aguardando conteúdo na seção 03</p>
+                        <div class="horizontal-bar margin-top-60 margin-bottom-30"></div>
+                        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 font-size-18 checked">
+                            Pronto. Seu cadastro foi realizado com sucesso. Agora basta acessar seu
+                            e-mail e efetuar a confirmação. Depois é só inscrever sua frase no concurso e
+                            torcer para ser um dos ganhadores. Esperamos que você, em breve, esteja
+                            fazendo as malas pra curtir um dos três destinos. Boa Sorte!
+
+                            <div class="horizontal-bar margin-top-40"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </article>
-
-
-
 </section>
+<section class="regulament">
+    <article class="container">
+        <div class="horizontal-bar margin-bottom-20"></div>
+        <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
+            <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Regulamento</h2>
+            <h3 class="text-white font-size-36 lobster-two">Leia e entenda como funciona.</h3>
+        </header>
+
+        {{--<div class="jumbotron margin-top-70">--}}
+            {{--<div class="container">--}}
+                {{--<p>texto simples</p>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+        {{--<div class="panel panel-default">--}}
+            {{--<div class="panel-body">--}}
+                {{--Basic panel example--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-70">
+            <div class="well" style="height: 650px; overflow: auto;">
+                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo
+                utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou
+                para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto
+                para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando
+                a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado
+                a softwares de editoração eletrônica como Aldus PageMaker.
+
+                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver
+                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao
+                contrário de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível.
+                Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
+                e uma rápida busca por 'lorem ipsum' mostra vários websites ainda em sua fase de construção. Várias versões novas
+                surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).
+
+
+                Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico. Com mais de 2000 anos,
+                suas raízes podem ser encontradas em uma obra de literatura latina clássica datada de 45 AC. Richard McClintock,
+                um professor de latim do Hampden-Sydney College na Virginia, pesquisou uma das mais obscuras palavras em latim,
+                consectetur, oriunda de uma passagem de Lorem Ipsum, e, procurando por entre citações da palavra na literatura
+                clássica, descobriu a sua indubitável origem. Lorem Ipsum vem das seções 1.10.32 e 1.10.33 do "de Finibus Bonorum
+                et Malorum" (Os Extremos do Bem e do Mal), de Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética
+                muito popular na época da Renascença. A primeira linha de Lorem Ipsum, "Lorem Ipsum dolor sit amet..." vem de
+                uma linha na seção 1.10.32.
+
+                O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido abaixo para os interessados.
+                Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cicero também foram reproduzidas abaixo em sua
+                forma exata original, acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.
+
+                Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sofreu algum tipo de alteração,
+                seja por inserção de passagens com humor, ou palavras aleatórias que não parecem nem um pouco convincentes.
+                Se você pretende usar uma passagem de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito
+                escondido no meio do texto. Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos
+                conforme necessário, fazendo deste o primeiro gerador de Lorem Ipsum autêntico da internet. Ele usa um dicionário
+                com mais de 200 palavras em Latim combinado com um punhado de modelos de estrutura de frases para gerar um
+                Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.
+
+                Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico. Com mais de 2000 anos,
+                suas raízes podem ser encontradas em uma obra de literatura latina clássica datada de 45 AC. Richard McClintock,
+                um professor de latim do Hampden-Sydney College na Virginia, pesquisou uma das mais obscuras palavras em latim,
+                consectetur, oriunda de uma passagem de Lorem Ipsum, e, procurando por entre citações da palavra na literatura
+                clássica, descobriu a sua indubitável origem. Lorem Ipsum vem das seções 1.10.32 e 1.10.33 do "de Finibus Bonorum
+                et Malorum" (Os Extremos do Bem e do Mal), de Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética
+                muito popular na época da Renascença. A primeira linha de Lorem Ipsum, "Lorem Ipsum dolor sit amet..." vem de
+                uma linha na seção 1.10.32.
+
+                O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido abaixo para os interessados.
+                Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cicero também foram reproduzidas abaixo em sua
+                forma exata original, acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.
+
+                Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sofreu algum tipo de alteração,
+                seja por inserção de passagens com humor, ou palavras aleatórias que não parecem nem um pouco convincentes.
+                Se você pretende usar uma passagem de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito
+                escondido no meio do texto. Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos
+                conforme necessário, fazendo deste o primeiro gerador de Lorem Ipsum autêntico da internet. Ele usa um dicionário
+                com mais de 200 palavras em Latim combinado com um punhado de modelos de estrutura de frases para gerar um
+                Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.
+
+
+            </div>
+        </div>
+    </article>
+</section>
+
+
+
 
 <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}" />
 <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}" />
@@ -353,11 +514,29 @@ Contact: hello@brunomartins.com
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic" />
 <script type="text/javascript" src="{!! asset('assets/js/jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/main.min.js') !!}"></script>
+
+<script>
+    $("#nextStep").click(function(){
+            $("#tab1").hide();
+            $("#tab3").hide();
+            $("#tab2").show();
+            $(".tabs > ul > li").removeClass("active");
+            $(".tabs > ul > li:odd").addClass("active");
+    });
+
+    $("#nextStep2").click(function(){
+        $("#tab1").hide();
+        $("#tab2").hide();
+        $("#tab3").show();
+        $(".tabs > ul > li").removeClass("active");
+        $(".tabs > ul > li:last").addClass("active");
+    });
+</script>
+
+
 @if(Session::has('message'))
 <script>
 alert('{!! Session::get('message') !!}');
-
-$('.carousel').carousel();
 </script>
 @endif
 @yield('javascript')
