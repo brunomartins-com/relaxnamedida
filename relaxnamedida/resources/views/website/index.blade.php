@@ -441,22 +441,38 @@ Contact: hello@brunomartins.com
             {{--</div>--}}
         {{--</div>--}}
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-70">
-            <div class="well" style="height: 650px; overflow: auto;">
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo
-                utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou
-                para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto
-                para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando
-                a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado
-                a softwares de editoração eletrônica como Aldus PageMaker.
+            <div class="well">
+                <p>
+                <b>a) Razão social da pessoa jurídica requerente: </b>Laboratório Teuto Brasileiro S/A, localizada a Avenida VP 7 D,
+                Módulo 11, Quadra 13, DAIA, Anápolis/GO<br>
+                <b>b) Logomarca da pessoa jurídica requerente</b><br>
+                Uma imagem vai aqui <br>
+                <b>c) CNPJ/MF: 17.159.229/0001-76</b><br>
+                <b>d) Data de início e de término da promoção comercial:</b> 27/12/2013 A 27/03/2014<br>
+                <b>e) Período de participação:</b> 27/12/2013 A 07/03/2014<br>
+                <b>f) Descrição das condições de participação:<br><br>
 
-                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver
-                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao
-                contrário de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível.
-                Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
-                e uma rápida busca por 'lorem ipsum' mostra vários websites ainda em sua fase de construção. Várias versões novas
-                surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).
+                    - Descrição detalhada da operação</b><br><br><br>
 
 
+                    1.1 Este concurso é válido para pessoas fisicas, residentes e domiciliadas no território nacional, maiores de 18
+                anos, desde que não se enquadre no conceito de autoridade governamental<br><br>
+
+
+                Autoridade Governamental significa: (i) qualquer autoridade governamental eleita ou indicada, (ii) qualquer
+                empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, órgão público ou
+                empreendimento que exerça funções governamentais; (iii) qualquer funcionário de partido político, seus
+                empregados ou outras pessoas atuando em nome ou favor de partido político ou candidato a cargos públicos; (iv)
+                qualquer empregado ou pessoa que atue em nome ou favor de organização pública internacional; (v) qualquer
+                outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legislação
+                local; e (vi) quaisquer médicos empregados por hospitais, clínicas ou outros institutos públicos ou sob controle
+                governamental. A expressão "governamental" abrangerá todos os níveis e instâncias de governos no Brasil (ou
+                seja, órgãos executivos, legistativos ou judiciários em instância local, regional ou nacional). É preciso ter em mente
+                    <br><br><br>
+
+                continua...
+
+                    <br><br><br>
                 Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico. Com mais de 2000 anos,
                 suas raízes podem ser encontradas em uma obra de literatura latina clássica datada de 45 AC. Richard McClintock,
                 um professor de latim do Hampden-Sydney College na Virginia, pesquisou uma das mais obscuras palavras em latim,
@@ -478,26 +494,7 @@ Contact: hello@brunomartins.com
                 com mais de 200 palavras em Latim combinado com um punhado de modelos de estrutura de frases para gerar um
                 Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.
 
-                Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico. Com mais de 2000 anos,
-                suas raízes podem ser encontradas em uma obra de literatura latina clássica datada de 45 AC. Richard McClintock,
-                um professor de latim do Hampden-Sydney College na Virginia, pesquisou uma das mais obscuras palavras em latim,
-                consectetur, oriunda de uma passagem de Lorem Ipsum, e, procurando por entre citações da palavra na literatura
-                clássica, descobriu a sua indubitável origem. Lorem Ipsum vem das seções 1.10.32 e 1.10.33 do "de Finibus Bonorum
-                et Malorum" (Os Extremos do Bem e do Mal), de Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética
-                muito popular na época da Renascença. A primeira linha de Lorem Ipsum, "Lorem Ipsum dolor sit amet..." vem de
-                uma linha na seção 1.10.32.
-
-                O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido abaixo para os interessados.
-                Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cicero também foram reproduzidas abaixo em sua
-                forma exata original, acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.
-
-                Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sofreu algum tipo de alteração,
-                seja por inserção de passagens com humor, ou palavras aleatórias que não parecem nem um pouco convincentes.
-                Se você pretende usar uma passagem de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito
-                escondido no meio do texto. Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos
-                conforme necessário, fazendo deste o primeiro gerador de Lorem Ipsum autêntico da internet. Ele usa um dicionário
-                com mais de 200 palavras em Latim combinado com um punhado de modelos de estrutura de frases para gerar um
-                Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.
+                </p>
 
 
             </div>

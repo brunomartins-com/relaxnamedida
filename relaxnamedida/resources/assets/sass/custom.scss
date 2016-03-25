@@ -481,6 +481,13 @@ body{
 
 .regulament {
   background: url(../images/bg-regulation.jpg) no-repeat center top;
+
+  .well {
+    height: 650px;
+    overflow: auto;
+    background: no-repeat center top $bg-yellow;
+  }
+
 }
 
 
