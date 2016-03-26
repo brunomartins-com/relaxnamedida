@@ -125,7 +125,7 @@ Contact: hello@brunomartins.com
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
-                <a href="" class="btn btn-block btn-main" title="Quero Participar!">Quero Participar!</a>
+                <a href="#quero-participar" class="btn btn-block btn-main" title="Quero Participar!">Quero Participar!</a>
             </div>
         </section>
 
@@ -329,7 +329,7 @@ Contact: hello@brunomartins.com
                                         <input name="passwordConfirm" type="password" class="form-control input-main" placeholder="Confirmar Senha">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-right">
                                     <button type="button" id="nextStep" class="btn btn-main" title="Próximo passo">Próximo passo</button>
                                 </div>
                             </div>
@@ -337,7 +337,7 @@ Contact: hello@brunomartins.com
                     </div>
                     <div class="tab-pane" id="tab2">
                         <form name="form-register" action="" method="post" enctype="multipart/form-data">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-35">
+                            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-12 margin-top-35">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
                                     <div class="form-group">
                                         <input name="zipcode" type="text" maxlength="5" class="form-control input-main" placeholder="Cep">
@@ -354,7 +354,7 @@ Contact: hello@brunomartins.com
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-12">
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="form-group pull-left size-45">
                                         <input name="number" type="text" class="form-control input-main" maxlength="5" placeholder="Número">
@@ -374,7 +374,7 @@ Contact: hello@brunomartins.com
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-12">
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <div class="form-group">
                                         <input name="reference" type="text" class="form-control input-main" placeholder="Referência">
@@ -403,7 +403,7 @@ Contact: hello@brunomartins.com
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-lg-offset-8 col-md-2 col-md-offset-8 col-sm-2 col-sm-offset-8 col-xs-12">
-                                    <div class="form-group">
+                                    <div class="form-group pull-right">
                                         {{--<a href="#tab2" id="nextStep" class="btn btn-main" data-toggle="tab" title="Próximo Passo">Próximo passo</a>--}}
                                         <button type="button" id="nextStep2" class="btn btn-main" title="Próximo passo">Próximo passo</button>
                                     </div>
@@ -427,7 +427,7 @@ Contact: hello@brunomartins.com
         </div>
     </article>
 </section>
-<section id="regulamento" class="regulament">
+<section id="regulamento" class="regulament margin-bottom-30">
     <article class="container">
         <div class="horizontal-bar margin-bottom-20"></div>
         <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
@@ -447,7 +447,7 @@ Contact: hello@brunomartins.com
             {{--</div>--}}
         {{--</div>--}}
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-70">
-            <div class="well">
+            <div class="well margin-bottom-120">
                 <p>
                 <b>a) Razão social da pessoa jurídica requerente: </b>Laboratório Teuto Brasileiro S/A, localizada a Avenida VP 7 D,
                 Módulo 11, Quadra 13, DAIA, Anápolis/GO<br>
@@ -501,13 +501,23 @@ Contact: hello@brunomartins.com
                 Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.
 
                 </p>
-
-
             </div>
         </div>
     </article>
 </section>
+<section class="products-partners">
+    <article class="container">
+        <div class="horizontal-bar margin-top-30 margin-bottom-20"></div>
+        <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
+            <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Produtos participantes</h2>
+            <h3 class="text-white font-size-36 lobster-two">Pra você participar.</h3>
+        </header>
 
+
+
+
+    </article>
+</section>
 
 
 

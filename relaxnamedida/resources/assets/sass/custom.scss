@@ -419,7 +419,7 @@ body{
       width: 100%;
       float: left;
       clear: both;
-      padding-bottom: 80px;
+//      padding-bottom: 80px;
       form {
         label {
           font-size: 18px;
@@ -440,6 +440,28 @@ body{
   }
 }
 
+
+@media (max-width: $screen-lg-min) {
+  .i-want-participate{
+    .tabs{
+      font-size: 16px !important;
+      ul{
+        li{
+          margin-right: 45px !important;
+        }
+      }
+      .tab-content{
+        form {
+          label {
+            font-size: 14px !important;
+            margin-left: -8px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: $screen-md-min) {
   .i-want-participate{
     .tabs{
@@ -449,6 +471,15 @@ body{
           margin-right: 45px !important;
         }
       }
+
+      .tab-content{
+        form {
+          label {
+            margin-left: 0 !important;
+          }
+        }
+      }
+
     }
   }
 }
@@ -485,13 +516,17 @@ body{
 
 .regulament {
   background: url(../images/bg-regulation.jpg) no-repeat center 150px $bg-yellow;
-  padding-top: 150px;
+  padding-top: 115px;
   .well {
     height: 650px;
     overflow: auto;
     background: no-repeat center top $bg-yellow;
   }
 
+}
+
+.products-partners {
+  background: url(../images/bg-products.jpg) repeat-x $bg-yellow;
 }
 
 
@@ -530,11 +565,11 @@ body{
 @media (max-width: $screen-xs-min) {
   .title{
     h2{
-      font-size: 22px !important;
+      font-size: 20px !important;
       margin-top: 15px !important;
     }
     h3{
-      font-size: 22px !important;
+      font-size: 20px !important;
       margin-top: -10px !important;
     }
   }
@@ -623,7 +658,7 @@ form {
   label.checkbox-main{
     display: inline-block;
     vertical-align: middle;
-    font-size: 17px !important;
+    font-size: 17px;
     input[type=checkbox] {
       width: 22px;
       height: 22px;
@@ -669,7 +704,7 @@ form {
   &::before {
     content: '';
     width: 178px;
-    height: 127px;
+    height: 130px;
     float: left;
     margin: -20px 60px 20px 20px;
     background: url(../images/icon-registration-successfull.png) no-repeat center;
@@ -735,6 +770,7 @@ form {
 .margin-bottom-45{ margin-bottom: 45px !important; }
 .margin-bottom-50{ margin-bottom: 50px !important; }
 .margin-bottom-115{ margin-bottom: 115px !important; }
+.margin-bottom-120{ margin-bottom: 120px !important; }
 .margin-left-0{ margin-left: 0 !important; }
 .margin-left-5{ margin-left: 5px !important; }
 .margin-left-10{ margin-left: 10px !important; }
