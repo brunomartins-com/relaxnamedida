@@ -166,28 +166,13 @@ Contact: hello@brunomartins.com
                         <img src="{{ asset('assets/images/_upload/products/A-Z-Small.png') }}" alt="A-Z-Small">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/A-Z-Big.png') }}" alt="A-Z-Big">
-                    </div>
-                    <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/BioSoak-Big.png') }}" alt="BioSoakBig">
-                    </div>
-                    <div class="item">
                         <img src="{{ asset('assets/images/_upload/products/BioSoak-Small.png') }}" alt="BioSoakBig">
-                    </div>
-                    <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/Cicatriderm-Big.png') }}" alt="Cicatriderm-Big">
                     </div>
                     <div class="item">
                         <img src="{{ asset('assets/images/_upload/products/Cicatriderm-Small.png') }}" alt="Cicatriderm-Small">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/MaxAir-Big.png') }}" alt="MaxAir-Big">
-                    </div>
-                    <div class="item">
                         <img src="{{ asset('assets/images/_upload/products/MaxAir-Small.png') }}" alt="MaxAir-Small">
-                    </div>
-                    <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/Segurdent-Big.png') }}" alt="Segurdent-Big">
                     </div>
                     <div class="item">
                         <img src="{{ asset('assets/images/_upload/products/Segurdent-Small.png') }}" alt="Segurdent-Small">
@@ -200,11 +185,6 @@ Contact: hello@brunomartins.com
                     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="9"></li>
                 </ol>
 
             <div class="margin-top-40 margin-bottom-30"></div>
@@ -236,7 +216,7 @@ Contact: hello@brunomartins.com
         <!-- Image Warning  -->
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-50 margin-bottom-50 warning">
             Guarde bem o cupom fiscal até o fim do concurso. Você vai precisar dele para retirar o prêmio se for
-            um dos venedores. Todas as respostas cadastradas serão avaliadas conforme critérios do
+            um dos vencedores. Todas as respostas cadastradas serão avaliadas conforme critérios do
             regulamento. Cada usuário poderá se cadastrar uma única vez neste concurso.
         </div><!-- Image Warning -->
 
@@ -508,17 +488,179 @@ Contact: hello@brunomartins.com
 <section class="products-partners">
     <article class="container">
         <div class="horizontal-bar margin-top-30 margin-bottom-20"></div>
-        <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
+        <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 margin-bottom-35 title">
             <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Produtos participantes</h2>
             <h3 class="text-white font-size-36 lobster-two">Pra você participar.</h3>
         </header>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="carousel-2" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
+                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
+                            <p class="font-size-16">
+                                É ideal para o seu conforto, com duração de
+                                até 12 horas. O fixador impede a passagem
+                                de partículas e é de fácil aplicação, basta
+                                aplicar o produto sobre a dentadura limpa e
+                                úmida e em seguida introduzir a dentadura
+                                na boca, pressionando por alguns segundos.
+                                </p>
+                        </div>
+                        <img src="{{ asset('assets/images/_upload/products/Segurdent-Big.png') }}" alt="Segurdent-Big">
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
+                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
+                            <p class="font-size-16">
+                                É ideal para o seu conforto, com duração de
+                                até 12 horas. O fixador impede a passagem
+                                de partículas e é de fácil aplicação, basta
+                                aplicar o produto sobre a dentadura limpa e
+                                úmida e em seguida introduzir a dentadura
+                                na boca, pressionando por alguns segundos.
+                            </p>
+                        </div>
+                        <img src="{{ asset('assets/images/_upload/products/BioSoak-Big.png') }}" alt="BioSoakBig">
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
+                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
+                            <p class="font-size-16">
+                                É ideal para o seu conforto, com duração de
+                                até 12 horas. O fixador impede a passagem
+                                de partículas e é de fácil aplicação, basta
+                                aplicar o produto sobre a dentadura limpa e
+                                úmida e em seguida introduzir a dentadura
+                                na boca, pressionando por alguns segundos.
+                            </p>
+                        </div>
+                        <img src="{{ asset('assets/images/_upload/products/Cicatriderm-Big.png') }}" alt="Cicatriderm-Big">
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
+                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
+                            <p class="font-size-16">
+                                É ideal para o seu conforto, com duração de
+                                até 12 horas. O fixador impede a passagem
+                                de partículas e é de fácil aplicação, basta
+                                aplicar o produto sobre a dentadura limpa e
+                                úmida e em seguida introduzir a dentadura
+                                na boca, pressionando por alguns segundos.
+                            </p>
+                        </div>
+                        <img src="{{ asset('assets/images/_upload/products/MaxAir-Big.png') }}" alt="MaxAir-Big">
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
+                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
+                            <p class="font-size-16">
+                                É ideal para o seu conforto, com duração de
+                                até 12 horas. O fixador impede a passagem
+                                de partículas e é de fácil aplicação, basta
+                                aplicar o produto sobre a dentadura limpa e
+                                úmida e em seguida introduzir a dentadura
+                                na boca, pressionando por alguns segundos.
+                            </p>
+                        </div>
+                        <img src="{{ asset('assets/images/_upload/products/A-Z-Big.png') }}" alt="A-Z-Big">
+                    </div>
+                </div>
 
-
-
-
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-2" role="button" data-slide="prev">
+                    <div class="arrow-left"><div class="arrow-left-icon"></div></div>
+                </a>
+                <a class="right carousel-control" href="#carousel-2" role="button" data-slide="next">
+                    <div class="arrow-right"><div class="arrow-right-icon"></div></div>
+                </a>
+            </div>
+        </div>
     </article>
 </section>
+<section class="awards for-participate">
+    <article class="container">
+        <div class="horizontal-bar margin-top-75 margin-bottom-20"></div>
+        <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
+            <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Prêmios na medida para você.</h2>
+            <h3 class="text-white font-size-36 lobster-two">E você escolhe o destino.</h3>
+        </header>
 
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <h2 class="text-uppercase font-size-24 strong padding-top-10 padding-bottom-65">Sua chance de viajar acompanhado para onde quiser.</h2>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <img src="{{ asset('assets/images/awards-1.png') }}" class="img-responsive">
+            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">R$ 7.000,00*</h2>
+            <p class="font-size-15">
+                OS vouchers não são cumulativos, além disso os
+                ganhadores não poderão transferir o prêmio em
+                hipótese alguma. Esse prêmio será negociado com a
+                agência de turismo conveniada.
+            </p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <img src="{{ asset('assets/images/awards-2.png') }}" class="img-responsive">
+            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">R$ 5.000,00*</h2>
+            <p class="font-size-15">
+                OS vouchers não são cumulativos, além disso os
+                ganhadores não poderão transferir o prêmio em
+                hipótese alguma. Esse prêmio será negociado com a
+                agência de turismo conveniada.
+            </p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <img src="{{ asset('assets/images/awards-3.png') }}" class="img-responsive">
+            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">R$ 3.000,00*</h2>
+            <p class="font-size-15">
+                OS vouchers não são cumulativos, além disso os
+                ganhadores não poderão transferir o prêmio em
+                hipótese alguma. Esse prêmio será negociado com a
+                agência de turismo conveniada.
+            </p>
+        </div>
+        <!-- Image Warning  -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-50 margin-bottom-85 warning">
+            Este concurso é válido para pessoas físicas, residentes e domiciliadas no território nacional, maiores de 18 anos desde que não se enquadre no conceito de
+            autoridade governamental. O participantes terá quantas chances quiser para participar da promoção, estando cada participação condicionada ao envio do cupom
+            fiscal de forma legível comprovando a compra dos produtos participantes, onde cada produto equivale a 1 (um) direto de resposta. Só será permitido 01 (um)
+            único cadastro de participante por CPF, as atividades do participante deverá ser efetuada sob o regime de senha e login, havendo a possibilidade de ilimitadas
+            participações no concurso. Veja todo o regulamento no menu "Regulamento".
+        </div><!-- Image Warning -->
+    </article>
+</section>
+<section class="footer">
+    <article class="container">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 font-size-12 margin-top-90 margin-bottom-35 box">
+            Certificado de Autorização CAIXA n° xxx-xxxx/2016.
+            Participação válida de 00h do dia 29.06.2016 às 23h59 do dia
+            29.09.2016. Cupom fiscal sujeito a verificação. Para mais
+            informações, consulte o regulamento.
+        </div>
+        <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-12 margin-top-50 padding-top-25 padding-bottom-35 realization">
+            <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 follow">
+                <p class="text-white font-size-12 strong">Acompanhe essa e outras novidades pelas nossas redes:</p>
+                <ul class="social-network">
+                    @if($websiteSettings['facebook'] != "")
+                        <li><a href="{{ $websiteSettings['facebook'] }}" target="_blank" class="facebook" title="Facebook">facebook</a></li>
+                    @endif
+                    @if($websiteSettings['twitter'] != "")
+                        <li><a href="{{ $websiteSettings['twitter'] }}" target="_blank" class="twitter" title="Twitter">twitter</a></li>
+                    @endif
+                </ul>
+            </div>
+            <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4 col-xs-4">
+                <p class="text-white font-size-12 strong">Parceria</p>
+                <div class="partners"></div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+                <p class="text-white font-size-12 strong">Realização</p>
+                <div class="logo"></div>
+            </div>
+        </div>
+    </article>
+</section>
 
 
 <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}" />
