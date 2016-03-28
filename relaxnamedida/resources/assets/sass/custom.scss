@@ -33,7 +33,7 @@ body{
     padding: 25px 35px;
     background: url(../images/bg-nav.png) no-repeat center top;
     background-size: 100% 100%;
-    z-index: 9999;
+    z-index: 1;
     ul{
       list-style: none;
       padding: 0;
@@ -45,12 +45,21 @@ body{
           font-size: 18px;
           font-weight: bold;
           color: $white;
+
+          &:hover{
+            text-decoration: none !important;
+          }
         }
       }
     }
     .btn{
       padding: 7px 20px;
       margin-top: -7px;
+
+      &:focus {
+        color:$white;
+      }
+
     }
     select{
       width: 100%;
@@ -676,17 +685,17 @@ body{
 
 .login, .contact-us, .my-data, .my-moods, .winners{
   .modal-dialog{
-    margin: 215px auto;
+//    margin: 215px auto;
     .modal-content {
       .modal-header {
         text-align: center;
         border-bottom: none !important;
         .close{
-          background: $brown;
+          background: url(../images/sprite.png) no-repeat -59px -87px $brown;
           @include border-radius(100px);
           width: 40px;
           height: 40px;
-          opacity: 1;
+//          opacity: 1;
           vertical-align: middle;
         }
       }

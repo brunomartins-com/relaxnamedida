@@ -151,7 +151,7 @@ Contact: hello@brunomartins.com
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
                 <h4 class="modal-title margin-bottom-25 strong">Faça seu login</h4>
                 <div class="horizontal-bar"></div>
             </div>
@@ -182,7 +182,7 @@ Contact: hello@brunomartins.com
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
@@ -241,7 +241,7 @@ Contact: hello@brunomartins.com
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
@@ -292,7 +292,7 @@ Contact: hello@brunomartins.com
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
@@ -305,14 +305,14 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-12 col-xs-12">
                         <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab1" class="strong" data-toggle="tab">Nova Frase</a></li>
-                                <li><a href="#tab2" class="strong" data-toggle="tab">Minhas Frases</a></li>
+                                <li class="active"><a href="#tab4" class="strong" data-toggle="tab">Nova Frase</a></li>
+                                <li><a href="#tab5" class="strong" data-toggle="tab">Minhas Frases</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tab1">
+                            <div class="tab-pane active" id="tab4">
                                 <form name="form-register" action="" method="post" enctype="multipart/form-data">
                                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                                     <p class="font-size-18">Cadastre quantas frases quiser e aumente suas chances. Só não se esqueça que, pra cada
@@ -340,7 +340,7 @@ Contact: hello@brunomartins.com
                                     frase, os mesmos não poderão ser alterados.</p>
                                 </div><!-- Image Warning -->
                             </div>
-                            <div class="tab-pane" id="tab2">
+                            <div class="tab-pane" id="tab5">
                                 <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
                                     <p>Podemos enganar alguns por todo tempo, todos por
                                         algum tempo, mas não podemos enganar todos por
@@ -384,7 +384,7 @@ Contact: hello@brunomartins.com
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
@@ -394,7 +394,7 @@ Contact: hello@brunomartins.com
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-11 col-lg-offset-1 col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                         <p class="font-size-22 strong vacation">
                             O Laboratório Teuto acompanhou as viagens inesqueciveis dos
                             vencedores pra você conferir de perto.
@@ -404,14 +404,14 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-12 col-xs-12">
                         <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab3" class="font-size-18 strong" data-toggle="tab">2015</a></li>
-                                <li><a href="#tab4" class="font-size-18 strong" data-toggle="tab">2014</a></li>
+                                <li class="active"><a href="#tab6" class="font-size-18 strong" data-toggle="tab">2015</a></li>
+                                <li><a href="#tab7" class="font-size-18 strong" data-toggle="tab">2014</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="tab3">
+                        <div class="tab-pane active" id="tab6">
                             <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
@@ -454,7 +454,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                         </div>
-                        <div class="tab-pane" id="tab4">
+                        <div class="tab-pane" id="tab7">
                             <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
