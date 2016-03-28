@@ -64,10 +64,12 @@ Contact: hello@brunomartins.com
             <li><a href="#produtos">Produtos</a></li>
             <br class="visible-sm">
             <li><a href="#premios">Prêmios</a></li>
-            <li><a href="">Ganhadores 2014/15</a></li>
-            <li><a href="">Fale Conosco</a></li>
+            <li><a href="" data-toggle="modal" data-target=".winners">Ganhadores 2014/15</a></li>
+            <li><a href="" data-toggle="modal" data-target=".contact-us">Fale Conosco</a></li>
         </ul>
-        <button class="btn btn-transparent hidden-xs pull-right">Fazer login</button>
+        <button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>
+        {{--<button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".my-data">Meus Dados</button>--}}
+        {{--<button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".my-moods">Minhas Frases</button>--}}
         <select class="input-transparent visible-xs">
             <option value="">Menu...</option>
             <option value="">Quero Participar</option>
@@ -144,6 +146,365 @@ Contact: hello@brunomartins.com
         </section>
     </div>
 </header><!-- /HEADER -->
+<!-- Login -->
+<div class="modal fade login" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title margin-bottom-25 strong">Faça seu login</h4>
+                <div class="horizontal-bar"></div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-12 col-xs-12">
+                        <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="password" class="form-control input-main" placeholder="Senha">
+                            </div>
+                            <a href="" class="text-brown">Esqueci minha senha</a>
+                            <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="horizontal-bar margin-top-25 margin-bottom-25"></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- Login -->
+
+<!-- Contact-us -->
+<div class="modal fade contact-us" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
+                <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Fale com a gente.</h2>
+                    <h3 class="text-white font-size-36 lobster-two">Estamos prontos para ajudar você.</h3>
+                </header>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                        <p class="font-size-18 strong">Deixe sua mensagem.</p>
+                        <p class="font-size-18 strong">Respondemos rapidinho e você continua relax.</p>
+                        <div class="horizontal-bar margin-top-25 margin-bottom-35"></div>
+                    </div>
+                    <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                        <div class="clear">
+                            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <input name="name" type="text" class="form-control input-main" placeholder="Nome">
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <input name="phone" type="text" class="form-control input-main" placeholder="Telefone">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <input name="Subject" type="text" class="form-control input-main" placeholder="Assunto">
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <textarea name="message" rows="5" class="form-control input-main" placeholder="Mensagem"></textarea>
+                                </div>
+                                <span class="text-brown">Todos os campos são de preenchimento obrigatório</span>
+                                <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Us -->
+
+<!-- My Data -->
+<div class="modal fade my-data" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
+                <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Meus Dados.</h2>
+                    <h3 class="text-white font-size-36 lobster-two">para concorrer a uma super viagem.</h3>
+                </header>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                        <div class="horizontal-bar margin-bottom-35"></div>
+                    </div>
+                    <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                        <span class="font-size-18 strong">Pessoal</span>
+                        <div class="margin-top-30"></div>
+                        <p><b>Nome: </b>Jose Luis da Silva Fonseca</p>
+                        <p><b>Email: </b>joseluisfonseca@hotmail.com</p>
+                        <p><b>Telefone: </b>62 3456-7895</p>
+                        <p><b>Celular: </b>62 8734-9087</p>
+                        <p><b>Sexo: </b>Masculino</p>
+                        <p><b>Data de Nascimento: </b>08/12/1987</p>
+                        <p><b>CPF: </b>888.888.999-77</p>
+                        <p><b>Autoridade governamental: </b>Não</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <span class="font-size-18 strong">Endereço</span>
+                        <div class="margin-top-30"></div>
+                        <p><b>CEP: </b>74425-830</p>
+                        <p><b>Endereço: </b>Rua 32, Quadra 3, Lote 12-A</p>
+                        <p><b>Número: </b>123</p>
+                        <p><b>Apto/Sala: </b></p>
+                        <p><b>Bairro: </b>Buriti Sereno</p>
+                        <p><b>Complemento: </b></p>
+                        <p><b>Referência: </b>Abaixo da avenida 34</p>
+                        <p><b>Cidade: </b>Aparecida de Goiânia</p>
+                        <p><b>Estado: </b>Goiás</p>
+                    </div>
+                </div>
+                <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- My Data -->
+
+<!-- My Moods -->
+<div class="modal fade my-moods" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
+                <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Minhas Frases.</h2>
+                    <h3 class="text-white font-size-36 lobster-two">que estão concorrendo à viagem dos meus sonhos.</h3>
+                </header>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-12 col-xs-12">
+                        <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1" class="strong" data-toggle="tab">Nova Frase</a></li>
+                                <li><a href="#tab2" class="strong" data-toggle="tab">Minhas Frases</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <p class="font-size-18">Cadastre quantas frases quiser e aumente suas chances. Só não se esqueça que, pra cada
+                                        frase, você necessita de um novo cupom fiscal comprovando a compra de um dos
+                                        produtos participantes da promoção.</p>
+                                        <div class="form-group">
+                                            <textarea name="message" rows="5" class="form-control input-main" placeholder="Mensagem"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="file" class="form-control input-main" placeholder="Imagem cupom fiscal" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <button type="button" class="btn btn-main" title="Enviar">Cadastrar</button>
+                                        <label class="pull-right">* campos de preenchimento obrigatório.</label>
+                                    </div>
+                                </form>
+                                <!-- Image Warning  -->
+                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12 margin-top-45 warning">
+                                    <b>Observações quanto a imagem:</b>
+                                    <p>- Tem que estar nítida. / - Não pode estar borrada, suja ou sem legibilidade. / - Data do cupom tem
+                                    que estar de acordo com o período da promoção. / -Após o cadastro de imagem do cupom fiscal e
+                                    frase, os mesmos não poderão ser alterados.</p>
+                                </div><!-- Image Warning -->
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <p>Podemos enganar alguns por todo tempo, todos por
+                                        algum tempo, mas não podemos enganar todos por
+                                        todo tempo.</p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="strong">Imagem cupom fiscal:</label>
+                                    <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 approval">
+                                    <label class="strong">Status de aprovação:</label>
+                                    <p>Aprovada</p>
+                                </div>
+                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
+                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <p>Renda-se, como eu me rendi. Mergulhe no que você não
+                                        conhece como eu mergulhei. Não se preocupe em
+                                        entender, viver ultrapassa qualquer entendimento.</p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="strong">Imagem cupom fiscal:</label>
+                                    <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 approval">
+                                    <label class="strong">Status de aprovação:</label>
+                                    <p>Aprovada</p>
+                                </div>
+                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="horizontal-bar margin-top-40 margin-bottom-50"></div>
+            </div>
+        </div>
+    </div>
+<!-- My Moods -->
+
+<!-- My Winners -->
+<div class="modal fade winners" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+                <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
+                <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Ganhadores</h2>
+                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedoresdas edições anteriores..</h3>
+                </header>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-11 col-lg-offset-1 col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+                        <p class="font-size-22 strong vacation">
+                            O Laboratório Teuto acompanhou as viagens inesqueciveis dos
+                            vencedores pra você conferir de perto.
+                        </p>
+
+                    </div>
+                    <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-12 col-xs-12">
+                        <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab3" class="font-size-18 strong" data-toggle="tab">2015</a></li>
+                                <li><a href="#tab4" class="font-size-18 strong" data-toggle="tab">2014</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab3">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                                <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
+                                <p class="strong font-size-12">Mais que um "Relax na Medida",
+                                    uma das maiores experiências
+                                    da minha vida! Muito obrigado
+                                    Laboratório Teuto!</p>
+                                <p class="strong font-size-12">Fabrício Antunes</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                                <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
+                                <p class="strong font-size-12">Mais que um "Relax na Medida",
+                                    uma das maiores experiências
+                                    da minha vida! Muito obrigado
+                                    Laboratório Teuto!</p>
+                                <p class="strong font-size-12">Fabrício Antunes</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                                <h2 class="text-orange text-uppercase font-size-36 strong">3° Lugar</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
+                                <p class="strong font-size-12">Mais que um "Relax na Medida",
+                                    uma das maiores experiências
+                                    da minha vida! Muito obrigado
+                                    Laboratório Teuto!</p>
+                                <p class="strong font-size-12">Fabrício Antunes</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                        </div>
+                        <div class="tab-pane" id="tab4">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                                <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
+                                <p class="strong font-size-12">Mais que um "Relax na Medida",
+                                    uma das maiores experiências
+                                    da minha vida! Muito obrigado
+                                    Laboratório Teuto!</p>
+                                <p class="strong font-size-12">Fabrício Antunes</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                                <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
+                                <p class="strong font-size-12">Mais que um "Relax na Medida",
+                                    uma das maiores experiências
+                                    da minha vida! Muito obrigado
+                                    Laboratório Teuto!</p>
+                                <p class="strong font-size-12">Fabrício Antunes</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                                <h2 class="text-orange text-uppercase font-size-36 strong">3° Lugar</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
+                                <p class="strong font-size-12">Mais que um "Relax na Medida",
+                                    uma das maiores experiências
+                                    da minha vida! Muito obrigado
+                                    Laboratório Teuto!</p>
+                                <p class="strong font-size-12">Fabrício Antunes</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Winners -->
+
 
 <!-- PARA PARTICIPAR -->
 <section id="para-participar" class="for-participate">
@@ -414,18 +775,6 @@ Contact: hello@brunomartins.com
             <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Regulamento</h2>
             <h3 class="text-white font-size-36 lobster-two">Leia e entenda como funciona.</h3>
         </header>
-
-        {{--<div class="jumbotron margin-top-70">--}}
-            {{--<div class="container">--}}
-                {{--<p>texto simples</p>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<div class="panel panel-default">--}}
-            {{--<div class="panel-body">--}}
-                {{--Basic panel example--}}
-            {{--</div>--}}
-        {{--</div>--}}
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-70">
             <div class="well margin-bottom-120">
                 <p>
@@ -588,11 +937,12 @@ Contact: hello@brunomartins.com
         </header>
 
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <h2 class="text-uppercase font-size-24 strong padding-top-10 padding-bottom-65">Sua chance de viajar acompanhado para onde quiser.</h2>
+            <h2 class="text-uppercase font-size-24 strong padding-top-10 margin-bottom-50">Sua chance de viajar acompanhado para onde quiser.</h2>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/awards-1.png') }}" class="img-responsive">
-            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">R$ 7.000,00*</h2>
+            <p class="margin-top-50">VALE-VIAGEM NO VALOR DE:</p>
+            <h2 class="text-orange text-uppercase font-size-36 strong margin-top-0">R$ 7.000,00*</h2>
             <p class="font-size-15">
                 OS vouchers não são cumulativos, além disso os
                 ganhadores não poderão transferir o prêmio em
@@ -602,7 +952,8 @@ Contact: hello@brunomartins.com
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/awards-2.png') }}" class="img-responsive">
-            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">R$ 5.000,00*</h2>
+            <p class="margin-top-50">VALE-VIAGEM NO VALOR DE:</p>
+            <h2 class="text-orange text-uppercase font-size-36 strong margin-top-0">R$ 5.000,00*</h2>
             <p class="font-size-15">
                 OS vouchers não são cumulativos, além disso os
                 ganhadores não poderão transferir o prêmio em
@@ -612,7 +963,8 @@ Contact: hello@brunomartins.com
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <img src="{{ asset('assets/images/awards-3.png') }}" class="img-responsive">
-            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">R$ 3.000,00*</h2>
+            <p class="margin-top-50">VALE-VIAGEM NO VALOR DE:</p>
+            <h2 class="text-orange text-uppercase font-size-36 strong margin-top-0">R$ 3.000,00*</h2>
             <p class="font-size-15">
                 OS vouchers não são cumulativos, além disso os
                 ganhadores não poderão transferir o prêmio em
