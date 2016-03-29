@@ -61,15 +61,20 @@ Contact: hello@brunomartins.com
         <ul class="pull-left hidden-xs">
             <li><a class="page-scroll" href="#quero-participar" title="Quero Participar">Quero Participar</a></li>
             <li><a class="page-scroll" href="#regulamento" title="Regulamento">Regulamento</a></li>
-            <li><a href="#produtos">Produtos</a></li>
+            <li><a class="page-scroll" href="#produtos">Produtos</a></li>
             <br class="visible-sm">
-            <li><a href="#premios">Prêmios</a></li>
+            <li><a class="page-scroll" href="#premios">Prêmios</a></li>
             <li><a href="" data-toggle="modal" data-target=".winners">Ganhadores 2014/15</a></li>
             <li><a href="" data-toggle="modal" data-target=".contact-us">Fale Conosco</a></li>
         </ul>
         <button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>
-        {{--<button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".my-data">Meus Dados</button>--}}
-        {{--<button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".my-moods">Minhas Frases</button>--}}
+        {{--<div class="btn hidden-xs pull-right intranet">--}}
+            {{--<ul class="intranet">--}}
+                {{--<li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">meus dados</a></li>--}}
+                {{--<li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">frases</a></li>--}}
+                {{--<li><a href="#" class="sair" title="Sair">sair</a></li>--}}
+            {{--</ul>--}}
+        {{--</div>--}}
         <select class="input-transparent visible-xs">
             <option value="">Menu...</option>
             <option value="">Quero Participar</option>
@@ -96,7 +101,6 @@ Contact: hello@brunomartins.com
                 @endif
             </ul>
         </section>
-
         <section class="col-lg-6 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
             <h1 class="logo">Concurso Relax na Medida - 4ª Edição</h1>
         </section>
@@ -158,16 +162,27 @@ Contact: hello@brunomartins.com
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-12 col-xs-12">
-                        <form name="form-register" action="" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input name="email" type="email" class="form-control input-main" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <input name="password" type="password" class="form-control input-main" placeholder="Senha">
-                            </div>
-                            <a href="" class="text-brown">Esqueci minha senha</a>
-                            <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
-                        </form>
+                        <div class="form-login">
+                            <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input name="password" type="password" class="form-control input-main" placeholder="Senha">
+                                </div>
+                                <span class="text-brown forgot">Esqueci minha senha</span>
+                                <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
+                            </form>
+                        </div>
+                        <div class="recover-password" style="display: none">
+                            <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                                </div>
+                                <span class="text-brown back">Voltar</span>
+                                <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="horizontal-bar margin-top-25 margin-bottom-25"></div>
@@ -350,9 +365,9 @@ Contact: hello@brunomartins.com
                                     <label class="strong">Imagem cupom fiscal:</label>
                                     <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 approval">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 stats">
                                     <label class="strong">Status de aprovação:</label>
-                                    <p>Aprovada</p>
+                                    <div class="approval"><p>Aprovada</p></div>
                                 </div>
                                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
                                 <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
@@ -364,9 +379,9 @@ Contact: hello@brunomartins.com
                                     <label class="strong">Imagem cupom fiscal:</label>
                                     <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 approval">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 stats">
                                     <label class="strong">Status de aprovação:</label>
-                                    <p>Aprovada</p>
+                                    <div class="analysis"><p>Em análise</p></div>
                                 </div>
                                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
                             </div>
@@ -404,8 +419,8 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-12 col-xs-12">
                         <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab6" class="font-size-18 strong" data-toggle="tab">2015</a></li>
-                                <li><a href="#tab7" class="font-size-18 strong" data-toggle="tab">2014</a></li>
+                                <li class="active"><a href="#tab6" class="font-size-27 strong" data-toggle="tab">2015</a></li>
+                                <li><a href="#tab7" class="font-size-27 strong" data-toggle="tab">2014</a></li>
                             </ul>
                         </div>
                     </div>
@@ -834,7 +849,7 @@ Contact: hello@brunomartins.com
         </div>
     </article>
 </section>
-<section class="products-partners">
+<section id="produtos" class="products-partners">
     <article class="container">
         <div class="horizontal-bar margin-top-30 margin-bottom-20"></div>
         <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 margin-bottom-35 title">
@@ -928,7 +943,7 @@ Contact: hello@brunomartins.com
         </div>
     </article>
 </section>
-<section class="awards for-participate">
+<section id="premios" class="awards">
     <article class="container">
         <div class="horizontal-bar margin-top-75 margin-bottom-20"></div>
         <header class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 title">
@@ -997,8 +1012,8 @@ Contact: hello@brunomartins.com
                     @if($websiteSettings['facebook'] != "")
                         <li><a href="{{ $websiteSettings['facebook'] }}" target="_blank" class="facebook" title="Facebook">facebook</a></li>
                     @endif
-                    @if($websiteSettings['twitter'] != "")
-                        <li><a href="{{ $websiteSettings['twitter'] }}" target="_blank" class="twitter" title="Twitter">twitter</a></li>
+                    @if($websiteSettings['instagram'] != "")
+                        <li><a href="{{ $websiteSettings['instagram'] }}" target="_blank" class="instagram" title="Instagram">instagram</a></li>
                     @endif
                 </ul>
             </div>
@@ -1021,6 +1036,7 @@ Contact: hello@brunomartins.com
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic" />
 <script type="text/javascript" src="{!! asset('assets/js/jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/main.min.js') !!}"></script>
+
 @if(Session::has('message'))
 <script>
 alert('{!! Session::get('message') !!}');

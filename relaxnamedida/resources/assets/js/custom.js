@@ -37,6 +37,39 @@ $(document).ready(function(){
         $(".tabs > ul > li:last").addClass("active");
     });
 
+    $(".forgot").click(function(){
+        $(".form-login").hide();
+        $(".recover-password").show();
+    });
+    $(".back").click(function(){
+        $(".recover-password").hide();
+        $(".form-login").show();
+    });
+
+    var originalLeave = $.fn.popover.Constructor.prototype.leave;
+    $.fn.popover.Constructor.prototype.leave = function(obj){
+        var self = obj instanceof this.constructor ?
+            obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
+        var container, timeout;
+
+        originalLeave.call(this, obj);
+
+        if(obj.currentTarget) {
+            container = $(obj.currentTarget).siblings('.popover')
+            timeout = self.timeout;
+            container.one('mouseenter', function(){
+                //We entered the actual popover – call off the dogs
+                clearTimeout(timeout);
+                //Let's monitor popover content instead
+                container.one('mouseleave', function(){
+                    $.fn.popover.Constructor.prototype.leave.call(self, self);
+                });
+            })
+        }
+    };
+
+    $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
+
     //VALIDATE LOGIN FORM
     $('#form-login').validate({
         ignore: [],

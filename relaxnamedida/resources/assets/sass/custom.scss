@@ -65,7 +65,37 @@ body{
       width: 100%;
       display: block;
     }
-  }
+
+    .intranet {
+        margin: 0;
+        padding: 0;
+        li{
+          width: 38px;
+          height: 38px;
+          display: inline-block;
+          a{
+            width: 38px;
+            height: 38px;
+            display: block;
+            text-align: left;
+            text-indent: -9999px;
+            background: url(../images/sprite.png) no-repeat;
+            &.meus-dados {
+              background-position: 0 -38px;
+            }
+            &.frases {
+              background-position: -38px -38px;
+            }
+            &.sair {
+              background-position: -76px -38px;
+            }
+            &:hover{
+              @include opacity(0.9);
+            }
+          }
+        }
+      }
+    }
 
   .social-network-header{
     margin: 0;
@@ -363,10 +393,11 @@ body{
 
 .awards {
   background: $light-yellow !important;
+  padding-top: 40px;
 }
 
 .footer{
-  background: url(../images/bg-footer.jpg) no-repeat center top $light-yellow;
+  background: url(../images/bg-footer.jpg) no-repeat center 1px $light-yellow;
 
     .box {
       &::before{
@@ -437,9 +468,17 @@ body{
 
 
 .realization{
-  background: url(../images/bg-title-one-page.png) no-repeat;
-  background-size: 98% 108%;
-  background-position: 0 -10px;
+  background: url(../images/bg-footer-wood.png) no-repeat;
+
+  .social-network {
+    li{
+      a{
+        &.instagram{
+        background-position: -76px 0;
+      }
+      }
+    }
+  }
 }
 
 .for-participate, .for-regulament{
@@ -723,8 +762,9 @@ body{
         }
       }
       .modal-body {
-        a{
+        span{
           text-decoration: underline !important;
+          cursor: pointer;
         }
       }
     }
@@ -813,8 +853,26 @@ body{
           label{
             color: #ff0000;
           }
-        .approval {
+
+        .stats{
           margin-left: -40px;
+
+          p{
+            padding-left: 35px;
+            padding-top: 5px;
+            white-space: nowrap;
+          }
+        }
+
+        .approval {
+            background: url(../images/sprite.png) no-repeat 0px -85px !important;
+            width: 30px;
+            height: 30px;
+        }
+        .analysis {
+            background: url(../images/sprite.png) no-repeat -28px -87px;
+            width: 30px;
+            height: 30px;
         }
       }
     }
@@ -863,6 +921,10 @@ body{
     height: 650px;
     overflow: auto;
     background: no-repeat center top $bg-yellow;
+    padding: 0 40px !important;
+    border-bottom: 25px solid $bg-yellow;
+    border-top: 25px solid $bg-yellow;
+    box-shadow: none !important;
   }
 
 }
@@ -876,14 +938,19 @@ body{
 .products{
   min-height: 260px;
 
-  li{
-    border: 1px solid $light-brown !important;
-    background: $light-brown !important;
-
-    :active {
+  .carousel-indicators {
+    li {
+      border: 1px solid $light-brown !important;
+      background: $light-brown !important;
+      width: 14px;
+      height: 14px;
+      margin: 0 12px 0 12px;
+    }
+    .active {
       border: 1px solid $brown !important;
       background: $brown !important;
     }
+
   }
 }
 
@@ -918,9 +985,17 @@ body{
 
 .products-partners {
   background: url(../images/bg-products.jpg) repeat-x $bg-yellow;
+  margin-top: 100px;
+  padding-top: 100px;
 
   .carousel-control {
     background: none !important;
+    opacity: 100;
+
+    &:hover{
+      opacity: 0.8;
+    }
+
   }
 
   .arrow-left {
@@ -937,8 +1012,6 @@ body{
       height: 30px;
       margin-left: 20px;
       margin-top: 16px;
-
-
     }
   }
 
@@ -1361,6 +1434,7 @@ a.text-black:hover{
 .font-size-22{ font-size: 22px; }
 .font-size-24{ font-size: 24px; }
 .font-size-26{ font-size: 26px; }
+.font-size-27{ font-size: 27px; }
 .font-size-28{ font-size: 28px; }
 .font-size-30{ font-size: 30px; }
 .font-size-36{ font-size: 36px; }
