@@ -33,7 +33,7 @@ body{
     padding: 25px 35px;
     background: url(../images/bg-nav.png) no-repeat center top;
     background-size: 100% 100%;
-    z-index: 1;
+    z-index: 99;
     ul{
       list-style: none;
       padding: 0;
@@ -41,14 +41,14 @@ body{
       li{
         display: inline-block;
         margin: 0 28px 0 0;
-        a{
+        a, a:focus{
           font-size: 18px;
           font-weight: bold;
           color: $white;
-
+          text-decoration: none;
           &:hover{
             text-decoration: none !important;
-            opacity: 0.9;
+            opacity: 0.95;
           }
         }
       }
@@ -71,12 +71,16 @@ body{
     }
 
     .intranet {
-        margin: 0;
+        float: right;
+        margin: -4px 0 0 0;
         padding: 0;
         li{
           width: 38px;
           height: 38px;
           display: inline-block;
+          &:last-child{
+            margin: 0;
+          }
           a{
             width: 38px;
             height: 38px;
@@ -98,6 +102,11 @@ body{
             }
           }
         }
+      }
+    }
+    @media (max-width: $screen-lg-min) {
+      .intranet {
+        margin: -6px 0 0 0 !important;
       }
     }
 
@@ -369,12 +378,13 @@ body{
 }
 
 .social-network{
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   li{
     width: 38px;
     height: 38px;
     display: inline-block;
+    margin-bottom: 10px;
     a{
       width: 38px;
       height: 38px;
@@ -394,16 +404,33 @@ body{
     }
   }
 }
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .social-network{
+    margin-top: 20px;
+  }
+}
+@media (max-width: $screen-xs-max) {
+  .follow{
+    padding-left: 10px !important;
+  }
+}
 
 .awards {
   background: $light-yellow !important;
   padding-top: 40px;
 }
 
+.bg-wood{
+  width: 100%;
+  height: 49px;
+  display: block;
+  background: url(../images/bg-footer.jpg) repeat-x;
+}
 .footer{
-  background: url(../images/bg-footer.jpg) no-repeat center 1px $light-yellow;
-
+    background-color: $light-yellow;
     .box {
+      float: left;
+      margin-top: 40px;
       &::before{
         content: '';
         width: 70px;
@@ -425,8 +452,25 @@ body{
 
   }
 
+
+@media (max-width: $screen-sm-max) {
+  .box {
+    font-size: 10px !important;
+    &::before{
+      margin-right: 10px !important;
+    }
+  }
+}
 @media (max-width: $screen-sm-min) {
+  .box {
+    float: right;
+    font-size: 10px !important;
+    &::before{
+      margin-right: 10px !important;
+    }
+  }
   .realization{
+    float: left;
     margin-top: 0 !important;
     padding-bottom: 0 !important;
   }
@@ -434,11 +478,14 @@ body{
 
 
 .realization{
-  background: url(../images/bg-footer-wood.png) no-repeat left bottom;
-
+  float: right;
+  background: url(../images/bg-footer-wood.png) no-repeat left top;
+  .follow{
+    padding-left: 30px;
+  }
   .social-network {
     li{
-      margin-left: 7px;
+      margin-right: 10px;
       a{
         &.instagram{
         background-position: -76px 0;
@@ -552,7 +599,7 @@ body{
     font-size: 30px;
 
     ul {
-      border-bottom: 3px solid $brown !important;
+      border-bottom: 3px solid $brown;
       //border: none !important;
       padding-left: 15px !important;
       li {
@@ -623,7 +670,7 @@ body{
 @media (max-width: $screen-lg-min) {
   .i-want-participate{
     .tabs{
-      font-size: 16px !important;
+      font-size: 25px !important;
       ul{
         li{
           margin-right: 45px !important;
@@ -644,10 +691,13 @@ body{
 @media (max-width: $screen-md-min) {
   .i-want-participate{
     .tabs{
-//      font-size: 16px !important;
+      font-size: 20px !important;
       ul{
         li{
           margin-right: 45px !important;
+          a{
+            padding: 10px 15px !important;
+          }
         }
       }
 
@@ -665,12 +715,22 @@ body{
 }
 
 @media (max-width: $screen-sm-min) {
+  .font-size-18{
+    font-size: 14px !important;
+  }
   .i-want-participate{
     .tabs{
-//      font-size: 16px !important;
+      font-size: 16px !important;
       ul{
+        border-width: 2px !important;
         li{
-          margin-right: 12px !important;
+          width: 33% !important;
+          margin-right: 0 !important;
+          text-align: center;
+          a{
+            border-width: 2px !important;
+            padding: 10px !important;
+          }
         }
       }
 
@@ -691,9 +751,14 @@ body{
     .tabs{
       font-size: 12px !important;
       ul{
-        padding-left: 5px !important;
+        padding-left: 0 !important;
         li{
-          margin-right: -22px !important;
+          width: 33% !important;
+          margin-right: 0 !important;
+          text-align: center;
+          a{
+            padding: 5px !important;
+          }
         }
       }
       .tab-content{
@@ -937,11 +1002,12 @@ body{
     height: 650px;
     overflow: auto;
     background: no-repeat center top $bg-yellow;
-    padding: 0 40px !important;
+    padding: 0 40px;
     border: 25px solid $bg-yellow;
+    border-left: 0;
+    border-right: 0;
     box-shadow: none !important;
   }
-
 }
 
 .partners{
@@ -955,17 +1021,33 @@ body{
 
   .carousel-indicators {
     li {
-      border: 1px solid $light-brown !important;
+      border: 0;
       background: $light-brown !important;
       width: 14px;
       height: 14px;
-      margin: 0 12px 0 12px;
+      margin: 0 8px;
     }
     .active {
-      border: 1px solid $brown !important;
+      border: 0;
       background: $brown !important;
     }
 
+  }
+}
+@media (max-width: $screen-xs-max) {
+  .well{
+    padding: 0 15px !important;
+    border-top-width: 10px !important;
+    border-bottom-width: 10px !important;
+    font-size: 13px;
+    p{
+      font-size: 12px;
+    }
+  }
+  .products-partners{
+    .font-size-16{
+      font-size: 12px !important;
+    }
   }
 }
 
@@ -988,6 +1070,11 @@ body{
 
     .carousel-indicators{
       bottom: -30px !important;
+      li{
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+      }
     }
   }
 }
@@ -1152,7 +1239,16 @@ body{
   }
 }
 
+.popover{
+  font-size: 18px;
+  font-weight: bold;
+  color: $orange;
+  border: 0;
+  @include box-shadow(none);
+}
+
 .btn-transparent{
+  font-family: 'Roboto Slab', serif;
   font-size: 18px;
   font-weight: bold;
   font-family: 'Roboto Slab', serif;
@@ -1201,6 +1297,11 @@ body{
     @include box-shadow(none);
     background-color: transparent;
     border-color: darken($light-brown, 10%);
+  }
+}
+@media (max-width: $screen-lg-min) {
+  .input-main{
+    padding-left: 10px;
   }
 }
 
@@ -1267,6 +1368,37 @@ form {
     }
   }
 }
+
+/* START .form-profile */
+.form-profile{
+  input[type=text], input[type=email], select{
+    height: 30px;
+    padding-left: 10px;
+    display: none;
+  }
+  label{
+    display: block;
+    cursor: default;
+    margin-bottom: 10px;
+    em{
+      font-style: normal;
+      font-weight: normal;
+      cursor: pointer;
+    }
+  }
+  label.error{
+    display:block;
+    margin: -8px 0 10px 0;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  a{
+    font-size: 11px;
+    color: $orange;
+    float: right;
+    line-height: 44px;
+  }
+}/* END .form-profile */
 
 .horizontal-bar{
   width: 100%;

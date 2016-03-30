@@ -8,6 +8,22 @@ $(function() {
         window.location.hash = $(this).attr('href');
     });
 
+    $('select#menu').change(function(event) {
+        var $anchor = $(this).find(':selected');
+
+        if($anchor.data('type') == 1) {
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.val()).offset().top
+            }, 500, 'easeInOutExpo');
+            event.preventDefault();
+            window.location.hash = $anchor.val();
+        }else if($anchor.data('type') == 2){
+            $($anchor.val()).modal('show');
+        }else if($anchor.data('type') == 0){
+            window.location = $anchor.val();
+        }
+    });
+
     if(window.location.hash) {
         var elem = $('a[href=' + window.location.hash + ']');
         if (elem) {
@@ -25,16 +41,16 @@ $(document).ready(function(){
         $("#tab1").hide();
         $("#tab3").hide();
         $("#tab2").show();
-        $(".tabs > ul > li").removeClass("active");
-        $(".tabs > ul > li:odd").addClass("active");
+        $(".tabs ul li").removeClass("active");
+        $(".tabs ul li:odd").addClass("active");
     });
 
     $("#nextStep2").click(function(){
         $("#tab1").hide();
         $("#tab2").hide();
         $("#tab3").show();
-        $(".tabs > ul > li").removeClass("active");
-        $(".tabs > ul > li:last").addClass("active");
+        $(".tabs ul li").removeClass("active");
+        $(".tabs ul li:last").addClass("active");
     });
 
     $(".forgot").click(function(){
@@ -68,7 +84,99 @@ $(document).ready(function(){
         }
     };
 
-    $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'bottom', delay: {show: 50, hide: 400}});
+    $('body').popover({ selector: '[data-popover]', trigger: 'hover', placement: 'bottom', delay: {show: 50, hide: 400}});
+
+    //PROFILE - EDIT MY DATA
+    $(".form-profile label em").click(function(e){
+        var element = $(this).attr('id');
+        $('.form-profile em#'+element).hide();
+        if(element != 'city' && element != 'gender' && element != 'state'){
+            $('.form-profile input[name='+element+']').show();
+            $('.form-profile input[name='+element+']').focus();
+        }else{
+            $('.form-profile select[name='+element+']').show();
+            $('.form-profile select[name='+element+']').focus();
+        }
+    });
+    $('.form-profile label input').keypress(function(e){
+        var id = $(this).attr('id');
+        var inputName = $(this).attr('name');
+        var inputRequired = $(this).attr('required');
+        var inputValue = $(this).val();
+        /* * making sure if the event is Keycode (for IE and other browsers) * if not take Which event (Firefox) */
+        var key = (e.keyCode?e.keyCode:e.which);
+        /* making sure if the key press has been pressed the "ENTER" */
+        if(key == 13){
+            if(inputRequired == 'required' && inputValue == '') {
+                alert('Preenchimento Obrigatório!');
+                $(this).focus();
+            }else if($('label.error[for='+id+']').length > 0 && (!$('label.error[for='+id+']').attr('style') || $('label.error[for='+id+']').attr('style') == "display: block;")){
+                alert('Existem erros pendentes!');
+                $(this).focus();
+            }else{
+                var data = {
+                    '_token' : $('input[type=hidden][name=_token]').val(),
+                    'id' : $('input[type=hidden][name=userId]').val(),
+                    'inputName' : inputName,
+                    'inputValue' : inputValue
+                };
+                $.ajax({
+                    type : "PUT",
+                    url: "/profile",
+                    data: data,
+                    dataType: "json",
+                    success: function(d){
+                        if(d['success'] == 0){
+                            alert(d['message']);
+                        }else {
+                            $('input[name='+inputName+']').hide();
+                            r = d['newInputValue'];
+                            if (r == '') {
+                                r = '- - -';
+                            }
+                            $('.form-profile em#' + inputName).html(r);
+                            $('.form-profile em#' + inputName).show();
+                        }
+                    }
+                });
+            }
+        }else{
+            return true;
+        }
+    });
+    $('.form-profile label select').change(function(e){
+        var id = $(this).attr('id');
+        var inputName = $(this).attr('name');
+        var inputRequired = $(this).attr('required');
+        var inputValue = $(this).val();
+        if(inputRequired == 'required' && inputValue == ''){
+            alert('Preenchimento Obrigatório!');
+            $(this).focus();
+        }else {
+            var data = {
+                '_token' : $('input[type=hidden][name=_token]').val(),
+                'id': $('input[type=hidden][name=userId]').val(),
+                'inputName': inputName,
+                'inputValue': inputValue
+            };
+            $.ajax({
+                type: "PUT",
+                url: "/profile",
+                data: data,
+                dataType: "json",
+                success: function (d) {
+                    if(d['success'] == 0){
+                        alert(d['message']);
+                    }else {
+                        $('select[name='+inputName+']').hide();
+                        r = d['newInputValue'];
+                        $('.form-profile em#' + inputName).html(r);
+                        $('.form-profile em#' + inputName).show();
+                    }
+                }
+            });
+        }
+    });
 
     //VALIDATE LOGIN FORM
     $('#form-login').validate({
