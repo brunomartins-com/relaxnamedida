@@ -67,14 +67,14 @@ Contact: hello@brunomartins.com
             <li><a href="" data-toggle="modal" data-target=".winners">Ganhadores 2014/15</a></li>
             <li><a href="" data-toggle="modal" data-target=".contact-us">Fale Conosco</a></li>
         </ul>
-        <button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>
-        {{--<div class="btn hidden-xs pull-right intranet">--}}
-            {{--<ul class="intranet">--}}
-                {{--<li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">meus dados</a></li>--}}
-                {{--<li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">frases</a></li>--}}
-                {{--<li><a href="#" class="sair" title="Sair">sair</a></li>--}}
-            {{--</ul>--}}
-        {{--</div>--}}
+        {{--<button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>--}}
+        <div class="btn hidden-xs pull-right intranet">
+            <ul class="intranet">
+                <li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">meus dados</a></li>
+                <li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">frases</a></li>
+                <li><a href="#" class="sair" title="Sair">sair</a></li>
+            </ul>
+        </div>
         <select class="input-transparent visible-xs">
             <option value="">Menu...</option>
             <option value="">Quero Participar</option>
@@ -161,7 +161,7 @@ Contact: hello@brunomartins.com
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-12 col-xs-12">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
                         <div class="form-login">
                             <form name="form-register" action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
@@ -269,7 +269,7 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
                         <div class="horizontal-bar margin-bottom-35"></div>
                     </div>
-                    <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                    <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                         <span class="font-size-18 strong">Pessoal</span>
                         <div class="margin-top-30"></div>
                         <p><b>Nome: </b>Jose Luis da Silva Fonseca</p>
@@ -281,7 +281,7 @@ Contact: hello@brunomartins.com
                         <p><b>CPF: </b>888.888.999-77</p>
                         <p><b>Autoridade governamental: </b>Não</p>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <span class="font-size-18 strong">Endereço</span>
                         <div class="margin-top-30"></div>
                         <p><b>CEP: </b>74425-830</p>
@@ -317,7 +317,7 @@ Contact: hello@brunomartins.com
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-3 col-xs-12">
                         <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab4" class="strong" data-toggle="tab">Nova Frase</a></li>
@@ -329,7 +329,7 @@ Contact: hello@brunomartins.com
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab4">
                                 <form name="form-register" action="" method="post" enctype="multipart/form-data">
-                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                                     <p class="font-size-18">Cadastre quantas frases quiser e aumente suas chances. Só não se esqueça que, pra cada
                                         frase, você necessita de um novo cupom fiscal comprovando a compra de um dos
                                         produtos participantes da promoção.</p>
@@ -337,18 +337,20 @@ Contact: hello@brunomartins.com
                                             <textarea name="message" rows="5" class="form-control input-main" placeholder="Mensagem"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
                                         <div class="form-group">
                                             <input type="file" class="form-control input-main" placeholder="Imagem cupom fiscal" />
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         <button type="button" class="btn btn-main" title="Enviar">Cadastrar</button>
-                                        <label class="pull-right">* campos de preenchimento obrigatório.</label>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-11 col-sm-offset-1 col-xs-12">
+                                        <label>* campos de preenchimento obrigatório.</label>
                                     </div>
                                 </form>
                                 <!-- Image Warning  -->
-                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12 margin-top-45 warning">
+                                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-45 warning">
                                     <b>Observações quanto a imagem:</b>
                                     <p>- Tem que estar nítida. / - Não pode estar borrada, suja ou sem legibilidade. / - Data do cupom tem
                                     que estar de acordo com o período da promoção. / -Após o cadastro de imagem do cupom fiscal e
@@ -356,34 +358,34 @@ Contact: hello@brunomartins.com
                                 </div><!-- Image Warning -->
                             </div>
                             <div class="tab-pane" id="tab5">
-                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                                     <p>Podemos enganar alguns por todo tempo, todos por
                                         algum tempo, mas não podemos enganar todos por
                                         todo tempo.</p>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <label class="strong">Imagem cupom fiscal:</label>
                                     <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 stats">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 stats">
                                     <label class="strong">Status de aprovação:</label>
                                     <div class="approval"><p>Aprovada</p></div>
                                 </div>
-                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
-                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"><hr></div>
+                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                                     <p>Renda-se, como eu me rendi. Mergulhe no que você não
                                         conhece como eu mergulhei. Não se preocupe em
                                         entender, viver ultrapassa qualquer entendimento.</p>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <label class="strong">Imagem cupom fiscal:</label>
                                     <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 stats">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 stats">
                                     <label class="strong">Status de aprovação:</label>
                                     <div class="analysis"><p>Em análise</p></div>
                                 </div>
-                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
+                                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"><hr></div>
                             </div>
                         </div>
                     </div>
@@ -404,7 +406,7 @@ Contact: hello@brunomartins.com
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
                     <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Ganhadores</h2>
-                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedoresdas edições anteriores..</h3>
+                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedores das edições anteriores..</h3>
                 </header>
             </div>
             <div class="modal-body">
@@ -416,7 +418,7 @@ Contact: hello@brunomartins.com
                         </p>
 
                     </div>
-                    <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-12 col-xs-12">
+                    <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-7 col-sm-offset-4 col-xs-12">
                         <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab6" class="font-size-27 strong" data-toggle="tab">2015</a></li>
@@ -427,7 +429,7 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab6">
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -441,7 +443,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
 
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -455,7 +457,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
 
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">3° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -470,7 +472,7 @@ Contact: hello@brunomartins.com
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                         </div>
                         <div class="tab-pane" id="tab7">
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -484,7 +486,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
 
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -1006,7 +1008,7 @@ Contact: hello@brunomartins.com
             informações, consulte o regulamento.
         </div>
         <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-12 margin-top-50 padding-top-25 padding-bottom-35 realization">
-            <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 follow">
+            <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 follow padding-left-30">
                 <p class="text-white font-size-12 strong">Acompanhe essa e outras novidades pelas nossas redes:</p>
                 <ul class="social-network">
                     @if($websiteSettings['facebook'] != "")

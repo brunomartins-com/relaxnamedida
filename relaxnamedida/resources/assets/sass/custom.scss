@@ -48,6 +48,7 @@ body{
 
           &:hover{
             text-decoration: none !important;
+            opacity: 0.9;
           }
         }
       }
@@ -57,7 +58,10 @@ body{
       margin-top: -7px;
 
       &:focus {
-        color:$white;
+        color: $white;
+        &:hover{
+          color:$orange;
+        }
       }
 
     }
@@ -421,57 +425,20 @@ body{
 
   }
 
-@media (max-width: $screen-xs-min) {
-  .footer{
-    .partners {
-      margin-left: -18px !important;
-    }
-
-    .follow{
-      p {
-        display: none !important;
-      }
-
-      ul{
-        li{
-          margin-bottom: 10px !important;
-        }
-      }
-    }
-
-    .box {
-      margin-bottom: 0 !important;
-    }
-
-    .realization {
-      margin-top: 0 !important;
-      background-size: 97% 85% !important;
-      background-position: 0 !important;
-    }
-  }
-}
-
 @media (max-width: $screen-sm-min) {
-  .footer{
-
-    .box {
-      margin-bottom: 0 !important;
-    }
-
-    .realization {
-      margin-top: 0 !important;
-      background-size: 100% 85% !important;
-      background-position: 0 !important;
-    }
+  .realization{
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
 
 
 .realization{
-  background: url(../images/bg-footer-wood.png) no-repeat;
+  background: url(../images/bg-footer-wood.png) no-repeat left bottom;
 
   .social-network {
     li{
+      margin-left: 7px;
       a{
         &.instagram{
         background-position: -76px 0;
@@ -480,6 +447,24 @@ body{
     }
   }
 }
+
+@media (max-width: $screen-lg-min) {
+  .realization{
+    background-position: 0px 0px !important;
+    background-size: 100% 100% !important;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .realization {
+    .follow{
+      p{
+        display: none;
+      }
+    }
+  }
+}
+
 
 .for-participate, .for-regulament{
   width: 100%;
@@ -734,8 +719,11 @@ body{
           @include border-radius(100px);
           width: 40px;
           height: 40px;
-//          opacity: 1;
+          opacity: 100;
           vertical-align: middle;
+          &:hover{
+            opacity: 0.8;
+          }
         }
       }
     }
@@ -879,6 +867,20 @@ body{
   }
 }
 
+@media (max-width: $screen-md-min) {
+  .my-moods{
+    .modal-content {
+      .modal-header {
+        header{
+          h3 {
+            font-size: 28px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
 .winners {
   .modal-dialog{
     .modal-content{
@@ -914,6 +916,20 @@ body{
   }
 }
 
+@media (max-width: $screen-md-min) {
+  .winners{
+    .modal-content {
+      .modal-header {
+        header{
+          h3 {
+            font-size: 30px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
 .regulament {
   background: url(../images/bg-regulation.jpg) no-repeat center 150px $bg-yellow;
   padding-top: 115px;
@@ -922,8 +938,7 @@ body{
     overflow: auto;
     background: no-repeat center top $bg-yellow;
     padding: 0 40px !important;
-    border-bottom: 25px solid $bg-yellow;
-    border-top: 25px solid $bg-yellow;
+    border: 25px solid $bg-yellow;
     box-shadow: none !important;
   }
 
@@ -1367,6 +1382,7 @@ form {
 .padding-left-10{ padding-left: 10px !important; }
 .padding-left-15{ padding-left: 15px !important; }
 .padding-left-20{ padding-left: 20px !important; }
+.padding-left-30{ padding-left: 30px !important; }
 /* FONT */
 .lobster-two{
   font-family: 'Lobster Two', cursive !important;

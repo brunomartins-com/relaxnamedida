@@ -68,7 +68,7 @@ $(document).ready(function(){
         }
     };
 
-    $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
+    $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'bottom', delay: {show: 50, hide: 400}});
 
     //VALIDATE LOGIN FORM
     $('#form-login').validate({
