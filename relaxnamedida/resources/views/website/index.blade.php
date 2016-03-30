@@ -61,31 +61,34 @@ Contact: hello@brunomartins.com
         <ul class="pull-left hidden-xs">
             <li><a class="page-scroll" href="#quero-participar" title="Quero Participar">Quero Participar</a></li>
             <li><a class="page-scroll" href="#regulamento" title="Regulamento">Regulamento</a></li>
-            <li><a class="page-scroll" href="#produtos">Produtos</a></li>
+            <li><a class="page-scroll" href="#produtos" title="Produtos">Produtos</a></li>
             <br class="visible-sm">
-            <li><a class="page-scroll" href="#premios">Prêmios</a></li>
-            <li><a href="" data-toggle="modal" data-target=".winners">Ganhadores 2014/15</a></li>
-            <li><a href="" data-toggle="modal" data-target=".contact-us">Fale Conosco</a></li>
+            <li><a class="page-scroll" href="#premios" title="Prêmios">Prêmios</a></li>
+            <li><a href="" data-toggle="modal" data-target=".winners" title="Ganhadores 2014/15">Ganhadores 2014/15</a></li>
+            <li><a href="" data-toggle="modal" data-target=".contact-us" title="Fale Conosco">Fale Conosco</a></li>
         </ul>
-        <button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>
-        {{--<div class="btn hidden-xs pull-right intranet">--}}
-            {{--<ul class="intranet">--}}
-                {{--<li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">meus dados</a></li>--}}
-                {{--<li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">frases</a></li>--}}
-                {{--<li><a href="#" class="sair" title="Sair">sair</a></li>--}}
-            {{--</ul>--}}
-        {{--</div>--}}
-        <select class="input-transparent visible-xs">
-            <option value="">Menu...</option>
-            <option value="">Quero Participar</option>
-            <option value="">Regulamento</option>
-            <option value="">Produtos</option>
-            <option value="">Prêmios</option>
-            <option value="">Ganhadores 2014/15</option>
-            <option value="">Fale Conosco</option>
+        {{--<button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>--}}
+        <div class="btn hidden-xs pull-right intranet">
+            <ul class="intranet">
+                <li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">Meus Dados</a></li>
+                <li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">Minhas Frases</a></li>
+                <li><a href="#" data-popover="true" data-content="Sair" class="sair">Sair</a></li>
+            </ul>
+        </div>
+        <select id="menu" class="input-transparent visible-xs">
+            <option value="#">Menu...</option>
+            <option data-type="1" value="#quero-participar">Quero Participar</option>
+            <option data-type="1" value="#regulamento">Regulamento</option>
+            <option data-type="1" value="#produtos">Produtos</option>
+            <option data-type="1" value="#premios">Prêmios</option>
+            <option data-type="2" value=".winners">Ganhadores 2014/15</option>
+            <option data-type="2" value=".contact-us">Fale Conosco</option>
 
             <optgroup label="Área Restrita">
-                <option value="">Fazer Login</option>
+                <option data-type="2" value=".login">Fazer Login</option>
+                {{--<option data-type="2" value=".my-data">Meus Dados</option>--}}
+                {{--<option data-type="2" value=".my-moods">Minhas Frases</option>--}}
+                {{--<option data-type="0" value="/sair">Sair</option>--}}
             </optgroup>
         </select>
     </nav>
@@ -161,7 +164,7 @@ Contact: hello@brunomartins.com
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-12 col-xs-12">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
                         <div class="form-login">
                             <form name="form-register" action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
@@ -260,7 +263,7 @@ Contact: hello@brunomartins.com
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Meus Dados.</h2>
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Meus Dados</h2>
                     <h3 class="text-white font-size-36 lobster-two">para concorrer a uma super viagem.</h3>
                 </header>
             </div>
@@ -269,30 +272,107 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
                         <div class="horizontal-bar margin-bottom-35"></div>
                     </div>
-                    <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                    <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 form-profile">
                         <span class="font-size-18 strong">Pessoal</span>
                         <div class="margin-top-30"></div>
-                        <p><b>Nome: </b>Jose Luis da Silva Fonseca</p>
-                        <p><b>Email: </b>joseluisfonseca@hotmail.com</p>
-                        <p><b>Telefone: </b>62 3456-7895</p>
-                        <p><b>Celular: </b>62 8734-9087</p>
-                        <p><b>Sexo: </b>Masculino</p>
-                        <p><b>Data de Nascimento: </b>08/12/1987</p>
-                        <p><b>CPF: </b>888.888.999-77</p>
-                        <p><b>Autoridade governamental: </b>Não</p>
+                        <label for="name">
+                            <strong>Nome:</strong>
+                            <em id="name">{{ "Jose Luis da Silva Fonseca" }} <!--//Auth::getUser()->name--></em>
+                            {!! Form::text('name', "Jose Luis da Silva Fonseca", ['id' => 'name', 'class' => 'input-main', 'placeholder' => 'Nome', 'maxlength' => '100', 'required' => 'required']) !!}
+                        </label>
+                        <label for="email">
+                            <strong>Email:</strong>
+                            <em id="email">{{ "joseluisfonseca@hotmail.com" }}</em>
+                            {!! Form::text('email', "joseluisfonseca@hotmail.com", ['id' => 'email', 'class' => 'input-main', 'placeholder' => 'E-mail', 'maxlength' => '100', 'required' => 'required']) !!}
+                        </label>
+                        <label for="phone">
+                            <strong>Telefone:</strong>
+                            <em id="phone">{{ "62 3456-7895" }}</em>
+                            {!! Form::text('phone', "(62) 3456-7895", ['id' => 'phone', 'class' => 'input-main', 'placeholder' => 'Telefone', 'maxlength' => '14', 'data-mask' => '(00) 0000-0000', 'required' => 'required']) !!}
+                        </label>
+                        <label for="mobile">
+                            <strong>Celular:</strong>
+                            <em id="mobile">{{ "62 8734-9087" }}</em>
+                            {!! Form::text('mobile', "(62) 8734-9087", ['id' => 'mobile', 'class' => 'input-main', 'placeholder' => 'Celular', 'maxlength' => '15', 'data-mask' => '(00) 0000-00009', 'required' => 'required']) !!}
+                        </label>
+                        <label for="gender">
+                            <strong>Sexo:</strong>
+                            <em id="gender">{{ "Masculino" }}</em>
+                            <select name="gender" id="gender" class="input-main" required="required">
+                                {{--<option value="Feminino" @if(Auth::user()->babyGender == 'Feminino'){{ 'selected' }}@endif>Feminino</option>--}}
+                                <option value="Feminino">Feminino</option>
+                                <option value="Masculino" selected>Masculino</option>
+                            </select>
+                        </label>
+                        <label for="birthdate">
+                            <strong>Data de Nascimento:</strong>
+                            <em id="birthdate">08/12/1987</em>
+                            {{--{!! Form::text('birthdate', \Carbon\Carbon::createFromFormat('Y-m-d', Auth::getUser()->babyBirthdate)->format('d/m/Y'), ['id' => 'babyBirthdate', 'placeholder' => 'dd/mm/aaaa', 'maxlength' => '10', 'data-mask' => '00/00/0000', 'required' => 'required']) !!}--}}
+                            {!! Form::text('birthdate', '08/12/1987', ['id' => 'birthdate', 'class' => 'input-main', 'placeholder' => 'dd/mm/aaaa', 'maxlength' => '10', 'data-mask' => '00/00/0000', 'required' => 'required']) !!}
+                        </label>
+                        <label for="cpf">
+                            <strong>CPF:</strong>
+                            <em id="cpf">888.888.999-77</em>
+                            {!! Form::text('cpf', '888.888.999-77', ['id' => 'cpf', 'class' => 'input-main', 'placeholder' => 'XXX.XXX.XXX-XX', 'maxlength' => '14', 'data-mask' => '000.000.000-00', 'required' => 'required']) !!}
+                        </label>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-profile">
                         <span class="font-size-18 strong">Endereço</span>
                         <div class="margin-top-30"></div>
-                        <p><b>CEP: </b>74425-830</p>
-                        <p><b>Endereço: </b>Rua 32, Quadra 3, Lote 12-A</p>
-                        <p><b>Número: </b>123</p>
-                        <p><b>Apto/Sala: </b></p>
-                        <p><b>Bairro: </b>Buriti Sereno</p>
-                        <p><b>Complemento: </b></p>
-                        <p><b>Referência: </b>Abaixo da avenida 34</p>
-                        <p><b>Cidade: </b>Aparecida de Goiânia</p>
-                        <p><b>Estado: </b>Goiás</p>
+                        <label for="cep">
+                            <strong>CPF:</strong>
+                            <em id="cep">74425-830</em>
+                            {!! Form::text('cep', '74425-830', ['id' => 'cep', 'class' => 'input-main', 'placeholder' => 'XXXXX-XXX', 'maxlength' => '9', 'data-mask' => '00000-000', 'required' => 'required']) !!}
+                        </label>
+                        <label for="address">
+                            <strong>Endereço:</strong>
+                            <em id="address">{{ "Rua 32, Quadra 3, Lote 12-A" }}</em>
+                            {!! Form::text('address', "Rua 32, Quadra 3, Lote 12-A", ['id' => 'address', 'class' => 'input-main', 'placeholder' => 'Endereço', 'maxlength' => '200', 'required' => 'required']) !!}
+                        </label>
+                        <label for="number">
+                            <strong>Número:</strong>
+                            <em id="number">{{ "123" }}</em>
+                            {!! Form::text('number', "123", ['id' => 'number', 'class' => 'input-main', 'placeholder' => 'nº', 'maxlength' => '20', 'required' => 'required']) !!}
+                        </label>
+                        <label for="apto">
+                            <strong>Número:</strong>
+                            <em id="apto">{{ "- - -" }}</em>
+                            {!! Form::text('apto', "", ['id' => 'apto', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
+                        </label>
+                        <label for="district">
+                            <strong>Bairro:</strong>
+                            <em id="district">{{ "Buriti Sereno" }}</em>
+                            {!! Form::text('district', "Buriti Sereno", ['id' => 'district', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100', 'required' => 'required']) !!}
+                        </label>
+                        <label for="complement">
+                            <strong>Complemento:</strong>
+                            <em id="complement">{{ "- - -" }}</em>
+                            {!! Form::text('complement', "", ['id' => 'complement', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
+                        </label>
+                        <label for="reference">
+                            <strong>Referência:</strong>
+                            <em id="reference">{{ "Abaixo da avenida 34" }}</em>
+                            {!! Form::text('reference', "Abaixo da avenida 34", ['id' => 'reference', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
+                        </label>
+                        <label for="state">
+                            <strong>Estado:</strong>
+                            {{--<em id="state">{{ Auth::user()->state }}</em>--}}
+                            <em id="state">{{ "GO" }}</em>
+                            <?php
+                                //STATES
+                                $statesConsult = \App\Exceptions\Handler::readFile("states.json");
+                                foreach($statesConsult as $state):
+                                    $states[$state['uf']] = $state['uf'];
+                                endforeach;
+                            ?>
+                            {!! Form::select('state', $states, 'GO', ['id' => 'state', 'class' => 'input-main', 'required' => 'required']) !!}
+                            {{--{!! Form::select('state', $states, Auth::user()->state) !!}--}}
+                        </label>
+                        <label for="cityProfile">
+                            <strong>Cidade:</strong>
+                            <em id="cityProfile">{{ "Aparecida de Goiânia" }}</em>
+                            {!! Form::text('cityProfile', "Aparecida de Goiânia", ['id' => 'cityProfile', 'class' => 'input-main', 'maxlength' => '100', 'required' => 'required']) !!}
+                        </label>
                     </div>
                 </div>
                 <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
@@ -311,13 +391,13 @@ Contact: hello@brunomartins.com
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
-                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Minhas Frases.</h2>
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Minhas Frases</h2>
                     <h3 class="text-white font-size-36 lobster-two">que estão concorrendo à viagem dos meus sonhos.</h3>
                 </header>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-3 col-xs-12">
                         <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab4" class="strong" data-toggle="tab">Nova Frase</a></li>
@@ -329,7 +409,7 @@ Contact: hello@brunomartins.com
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab4">
                                 <form name="form-register" action="" method="post" enctype="multipart/form-data">
-                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                                     <p class="font-size-18">Cadastre quantas frases quiser e aumente suas chances. Só não se esqueça que, pra cada
                                         frase, você necessita de um novo cupom fiscal comprovando a compra de um dos
                                         produtos participantes da promoção.</p>
@@ -337,18 +417,20 @@ Contact: hello@brunomartins.com
                                             <textarea name="message" rows="5" class="form-control input-main" placeholder="Mensagem"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
                                         <div class="form-group">
                                             <input type="file" class="form-control input-main" placeholder="Imagem cupom fiscal" />
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         <button type="button" class="btn btn-main" title="Enviar">Cadastrar</button>
-                                        <label class="pull-right">* campos de preenchimento obrigatório.</label>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-11 col-xs-12">
+                                        <label>* campos de preenchimento obrigatório.</label>
                                     </div>
                                 </form>
                                 <!-- Image Warning  -->
-                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12 margin-top-45 warning">
+                                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-45 warning">
                                     <b>Observações quanto a imagem:</b>
                                     <p>- Tem que estar nítida. / - Não pode estar borrada, suja ou sem legibilidade. / - Data do cupom tem
                                     que estar de acordo com o período da promoção. / -Após o cadastro de imagem do cupom fiscal e
@@ -356,34 +438,34 @@ Contact: hello@brunomartins.com
                                 </div><!-- Image Warning -->
                             </div>
                             <div class="tab-pane" id="tab5">
-                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                                     <p>Podemos enganar alguns por todo tempo, todos por
                                         algum tempo, mas não podemos enganar todos por
                                         todo tempo.</p>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <label class="strong">Imagem cupom fiscal:</label>
                                     <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 stats">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 stats">
                                     <label class="strong">Status de aprovação:</label>
                                     <div class="approval"><p>Aprovada</p></div>
                                 </div>
-                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
-                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"><hr></div>
+                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                                     <p>Renda-se, como eu me rendi. Mergulhe no que você não
                                         conhece como eu mergulhei. Não se preocupe em
                                         entender, viver ultrapassa qualquer entendimento.</p>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <label class="strong">Imagem cupom fiscal:</label>
                                     <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 stats">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 stats">
                                     <label class="strong">Status de aprovação:</label>
                                     <div class="analysis"><p>Em análise</p></div>
                                 </div>
-                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
+                                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"><hr></div>
                             </div>
                         </div>
                     </div>
@@ -404,7 +486,7 @@ Contact: hello@brunomartins.com
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
                     <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Ganhadores</h2>
-                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedoresdas edições anteriores..</h3>
+                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedores das edições anteriores..</h3>
                 </header>
             </div>
             <div class="modal-body">
@@ -416,7 +498,7 @@ Contact: hello@brunomartins.com
                         </p>
 
                     </div>
-                    <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-12 col-xs-12">
+                    <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-7 col-sm-offset-4 col-xs-12">
                         <div class="tabbable font-size-18"> <!-- Only required for left/right tabs -->
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab6" class="font-size-27 strong" data-toggle="tab">2015</a></li>
@@ -427,9 +509,9 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab6">
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
-                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">Feira de Santana - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
                                     uma das maiores experiências
                                     da minha vida! Muito obrigado
@@ -441,7 +523,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
 
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -455,7 +537,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
 
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">3° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -470,7 +552,7 @@ Contact: hello@brunomartins.com
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                         </div>
                         <div class="tab-pane" id="tab7">
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -484,7 +566,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
 
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
                                 <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
                                 <p class="strong font-size-12">Mais que um "Relax na Medida",
@@ -638,43 +720,47 @@ Contact: hello@brunomartins.com
                                 </div>
                                 <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input name="telephone" type="tel" class="form-control input-main" placeholder="Telefone">
+                                        <input name="telephone" type="tel" class="form-control input-main" data-mask="(00) 0000-0000" placeholder="Telefone">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input name="mobile" type="tel" class="form-control input-main" placeholder="Telefone Celular">
+                                        <input name="mobile" type="tel" class="form-control input-main" data-mask="(00) 0000-00000" placeholder="Telefone Celular">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-top-5">
-                                    <label class="pull-left">Sexo:</label>
-                                    <label class="pull-left radio-main">
-                                        <input type="radio" name="gender" value="Masculino"> Masculino
-                                    </label>
-                                    <label class="pull-left radio-main">
-                                        <input type="radio" name="gender" value="Feminino"> Feminino
-                                    </label>
+                                    <div class="clear margin-bottom-15">
+                                        <label class="pull-left">Sexo:</label>
+                                        <label class="pull-left radio-main">
+                                            <input type="radio" name="gender" value="Masculino"> Masculino
+                                        </label>
+                                        <label class="pull-left radio-main">
+                                            <input type="radio" name="gender" value="Feminino"> Feminino
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="clear font-size-18">
+                            <div class="clear">
                                 <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input name="birthDate" type="date" class="form-control input-main text-light-brown" placeholder="Data de Nascimento">
+                                        <input name="birthDate" type="date" class="form-control input-main" data-mask="00/00/0000" placeholder="Data de Nascimento">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input name="cpf" type="text" class="form-control input-main" placeholder="CPF">
+                                        <input name="cpf" type="text" class="form-control input-main" data-mask="000.000.000-00" placeholder="CPF">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-top-5">
-                                    <label class="checkbox-main pull-left padding-top-5 padding-right-5">
-                                        <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
-                                    </label>
-                                    <a href="javascript:void();" class="question-tooltip padding-top-5 pull-left" onmouseover="Tip('Autoridade Governamental &eacute; (i) Qualquer autoridade governamental eleita ou indicada; (ii) Qualquer empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, &oacute;rg&atilde;o p&uacute;blico ou empreendimento que exer&ccedil;a fun&ccedil;&otilde;es governamentais; (iii) Qualquer funcion&aacute;rio de partido pol&iacute;tico, seus empregados ou outras pessoas atuando em nome ou favor de partido pol&iacute;tico ou candidato a cargos p&uacute;blicos; (iv) Qualquer empregado ou pessoa que atue em nome ou favor de organiza&ccedil;&atilde;o p&uacute;blica internacional; (v) Qualquer outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legisla&ccedil;&atilde;o local; e (vi) Quaisquer m&eacute;dicos empregados por hospitais, cl&iacute;nicas ou outros institutos p&uacute;blicos ou sob controle governamental.')" onmouseout="UnTip()">( ? )</a>
+                                    <div class="clear margin-bottom-15">
+                                        <label class="checkbox-main pull-left padding-top-5 padding-right-5">
+                                            <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
+                                        </label>
+                                        <a href="javascript:void();" class="question-tooltip padding-top-5 pull-left" onmouseover="Tip('Autoridade Governamental &eacute; (i) Qualquer autoridade governamental eleita ou indicada; (ii) Qualquer empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, &oacute;rg&atilde;o p&uacute;blico ou empreendimento que exer&ccedil;a fun&ccedil;&otilde;es governamentais; (iii) Qualquer funcion&aacute;rio de partido pol&iacute;tico, seus empregados ou outras pessoas atuando em nome ou favor de partido pol&iacute;tico ou candidato a cargos p&uacute;blicos; (iv) Qualquer empregado ou pessoa que atue em nome ou favor de organiza&ccedil;&atilde;o p&uacute;blica internacional; (v) Qualquer outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legisla&ccedil;&atilde;o local; e (vi) Quaisquer m&eacute;dicos empregados por hospitais, cl&iacute;nicas ou outros institutos p&uacute;blicos ou sob controle governamental.')" onmouseout="UnTip()">( ? )</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="clear font-size-18">
+                            <div class="clear">
                                 <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <input name="password" type="password" class="form-control input-main" placeholder="Senha">
@@ -693,25 +779,25 @@ Contact: hello@brunomartins.com
                     </div>
                     <div class="tab-pane" id="tab2">
                         <form name="form-register" action="" method="post" enctype="multipart/form-data">
-                            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-12 margin-top-35">
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
+                            <div class="clear margin-top-35">
+                                <div class="col-lg-2 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-xs-8">
                                     <div class="form-group">
-                                        <input name="zipcode" type="text" maxlength="5" class="form-control input-main" placeholder="Cep">
+                                        <input name="zipcode" type="text" maxlength="5" class="form-control input-main" data-mask="00000-000" placeholder="Cep">
                                     </div>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
+                                <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4">
                                     <div class="form-group">
                                         <input name="tdp" type="text" maxlength="3" class="form-control input-main">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
                                     <div class="form-group">
                                         <input name="address" type="text" class="form-control input-main" placeholder="Endereço">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-12">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="clear">
+                                <div class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
                                     <div class="form-group pull-left size-45">
                                         <input name="number" type="text" class="form-control input-main" maxlength="5" placeholder="Número">
                                     </div>
@@ -724,41 +810,38 @@ Contact: hello@brunomartins.com
                                         <input name="district" type="text" class="form-control input-main" placeholder="Bairro">
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                                     <div class="form-group">
                                         <input name="complement" type="text" class="form-control input-main" placeholder="Complemento">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-12">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="clear">
+                                <div class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-xs-12">
                                     <div class="form-group">
                                         <input name="reference" type="text" class="form-control input-main" placeholder="Referência">
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                    <div class="form-group">
+                                        <?php
+                                            //STATES
+                                            $statesConsult = \App\Exceptions\Handler::readFile("states.json");
+                                            foreach($statesConsult as $state):
+                                                $states[$state['uf']] = $state['uf'];
+                                            endforeach;
+                                        ?>
+                                        {!! Form::select('state', $states, '', ['class' => 'form-control input-main text-light-brown', 'required' => 'required']) !!}
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                                     <div class="form-group">
                                         <select class="form-control input-main text-light-brown">
-                                            <option selected>Estado</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option value="" selected>Cidade</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                    <div class="form-group">
-                                        <select class="form-control input-main text-light-brown">
-                                            <option selected>Cidade</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-lg-offset-8 col-md-2 col-md-offset-8 col-sm-2 col-sm-offset-8 col-xs-12">
+                                <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
                                     <div class="form-group pull-right">
                                         {{--<a href="#tab2" id="nextStep" class="btn btn-main" data-toggle="tab" title="Próximo Passo">Próximo passo</a>--}}
                                         <button type="button" id="nextStep2" class="btn btn-main" title="Próximo passo">Próximo passo</button>
@@ -933,10 +1016,10 @@ Contact: hello@brunomartins.com
                 </div>
 
                 <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-2" role="button" data-slide="prev">
+                <a class="left carousel-control hidden-xs" href="#carousel-2" role="button" data-slide="prev">
                     <div class="arrow-left"><div class="arrow-left-icon"></div></div>
                 </a>
-                <a class="right carousel-control" href="#carousel-2" role="button" data-slide="next">
+                <a class="right carousel-control hidden-xs" href="#carousel-2" role="button" data-slide="next">
                     <div class="arrow-right"><div class="arrow-right-icon"></div></div>
                 </a>
             </div>
@@ -997,17 +1080,12 @@ Contact: hello@brunomartins.com
         </div><!-- Image Warning -->
     </article>
 </section>
+<div class="bg-wood"></div>
 <section class="footer">
     <article class="container">
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 font-size-12 margin-top-90 margin-bottom-35 box">
-            Certificado de Autorização CAIXA n° xxx-xxxx/2016.
-            Participação válida de 00h do dia 29.06.2016 às 23h59 do dia
-            29.09.2016. Cupom fiscal sujeito a verificação. Para mais
-            informações, consulte o regulamento.
-        </div>
-        <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-12 margin-top-50 padding-top-25 padding-bottom-35 realization">
-            <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 follow">
-                <p class="text-white font-size-12 strong">Acompanhe essa e outras novidades pelas nossas redes:</p>
+        <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-12 padding-top-25 padding-bottom-35 realization">
+            <div class="col-lg-5 col-md-4 col-sm-4 col-xs-3 follow">
+                <p class="visible-lg text-white font-size-12 strong">Acompanhe essa e outras novidades pelas nossas redes:</p>
                 <ul class="social-network">
                     @if($websiteSettings['facebook'] != "")
                         <li><a href="{{ $websiteSettings['facebook'] }}" target="_blank" class="facebook" title="Facebook">facebook</a></li>
@@ -1017,7 +1095,7 @@ Contact: hello@brunomartins.com
                     @endif
                 </ul>
             </div>
-            <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4 col-xs-4">
+            <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4 col-xs-5">
                 <p class="text-white font-size-12 strong">Parceria</p>
                 <div class="partners"></div>
             </div>
@@ -1026,17 +1104,20 @@ Contact: hello@brunomartins.com
                 <div class="logo"></div>
             </div>
         </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 font-size-12 margin-bottom-35 box">
+            Certificado de Autorização CAIXA n° xxx-xxxx/2016.
+            Participação válida de 00h do dia 29.06.2016 às 23h59 do dia
+            29.09.2016. Cupom fiscal sujeito a verificação. Para mais
+            informações, consulte o regulamento.
+        </div>
     </article>
 </section>
-
-
 <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}" />
 <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic" />
 <script type="text/javascript" src="{!! asset('assets/js/jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/main.min.js') !!}"></script>
-
 @if(Session::has('message'))
 <script>
 alert('{!! Session::get('message') !!}');
