@@ -12,7 +12,8 @@
         "laravelcollective/html": "5.1.*",
         "intervention/image": "~2.3",
         "soapbox/laravel-formatter": "~2.0",
-        "barryvdh/laravel-ide-helper": "~2.1"
+        "barryvdh/laravel-ide-helper": "~2.1",
+        "sarav/laravel-multiauth": "^0.0.7"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

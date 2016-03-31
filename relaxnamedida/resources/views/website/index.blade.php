@@ -1,6 +1,8 @@
-@if($websiteSettings['websiteOk'] == 0 and !Auth::check())
+<?php \Auth::loginUsingId("users", 2); ?>
+
+@if($websiteSettings['siteAvailable'] == 0 && !Auth::check('admin'))
 {!! view('website.teaser')->with(compact('page', 'websiteSettings')) !!}
-{{ die }}
+{!! die() !!}
 @endif
 <!--
 Project: Concurso na Relax na Medida
@@ -67,14 +69,19 @@ Contact: hello@brunomartins.com
             <li><a href="" data-toggle="modal" data-target=".winners" title="Ganhadores 2014/15">Ganhadores 2014/15</a></li>
             <li><a href="" data-toggle="modal" data-target=".contact-us" title="Fale Conosco">Fale Conosco</a></li>
         </ul>
-        {{--<button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>--}}
-        <div class="btn hidden-xs pull-right intranet">
-            <ul class="intranet">
-                <li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">Meus Dados</a></li>
-                <li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">Minhas Frases</a></li>
-                <li><a href="#" data-popover="true" data-content="Sair" class="sair">Sair</a></li>
-            </ul>
-        </div>
+        @if (!Auth::check('users'))
+            <button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>
+        @else
+            <div class="btn hidden-xs pull-right intranet">
+                <ul class="intranet">
+                    <li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">Meus Dados</a></li>
+                    <li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">Minhas Frases</a></li>
+                    <li><a href="/auth/logout" data-popover="true" data-content="Sair" class="sair">Sair</a></li>
+                </ul>
+            </div>
+        @endif
+
+
         <select id="menu" class="input-transparent visible-xs">
             <option value="#">Menu...</option>
             <option data-type="1" value="#quero-participar">Quero Participar</option>
@@ -85,10 +92,13 @@ Contact: hello@brunomartins.com
             <option data-type="2" value=".contact-us">Fale Conosco</option>
 
             <optgroup label="Área Restrita">
+                @if (!Auth::check('users'))
                 <option data-type="2" value=".login">Fazer Login</option>
-                {{--<option data-type="2" value=".my-data">Meus Dados</option>--}}
-                {{--<option data-type="2" value=".my-moods">Minhas Frases</option>--}}
-                {{--<option data-type="0" value="/sair">Sair</option>--}}
+                @else
+                <option data-type="2" value=".my-data">Meus Dados</option>
+                <option data-type="2" value=".my-moods">Minhas Frases</option>
+                <option data-type="0" value="/sair">Sair</option>
+                @endif
             </optgroup>
         </select>
     </nav>
@@ -121,9 +131,9 @@ Contact: hello@brunomartins.com
                     é com o Teuto?
                 </h4>
                 <h5>
-                    Você concorre
+                    {{ 'Você concorre
                     a 3 vales-viagem pra ficar
-                    relax longe da rotina
+                    relax longe da rotina' }}
                 </h5>
             </div>
 
@@ -208,6 +218,7 @@ Contact: hello@brunomartins.com
                     <h3 class="text-white font-size-36 lobster-two">Estamos prontos para ajudar você.</h3>
                 </header>
             </div>
+
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
@@ -253,12 +264,12 @@ Contact: hello@brunomartins.com
     </div>
 </div>
 <!-- Contact Us -->
-
+@if (Auth::check('users'))
 <!-- My Data -->
 <div class="modal fade my-data" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header">x
                 <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
@@ -278,42 +289,40 @@ Contact: hello@brunomartins.com
                         <label for="name">
                             <strong>Nome:</strong>
                             <em id="name">{{ "Jose Luis da Silva Fonseca" }} <!--//Auth::getUser()->name--></em>
-                            {!! Form::text('name', "Jose Luis da Silva Fonseca", ['id' => 'name', 'class' => 'input-main', 'placeholder' => 'Nome', 'maxlength' => '100', 'required' => 'required']) !!}
+                            {!! Form::text('name', Auth::user('users')->name, ['id' => 'name', 'class' => 'input-main', 'placeholder' => 'Nome', 'maxlength' => '100', 'required' => 'required']) !!}
                         </label>
                         <label for="email">
                             <strong>Email:</strong>
                             <em id="email">{{ "joseluisfonseca@hotmail.com" }}</em>
-                            {!! Form::text('email', "joseluisfonseca@hotmail.com", ['id' => 'email', 'class' => 'input-main', 'placeholder' => 'E-mail', 'maxlength' => '100', 'required' => 'required']) !!}
+                            {!! Form::text('email', Auth::user('users')->email, ['id' => 'email', 'class' => 'input-main', 'placeholder' => 'E-mail', 'maxlength' => '100', 'required' => 'required']) !!}
                         </label>
                         <label for="phone">
                             <strong>Telefone:</strong>
                             <em id="phone">{{ "62 3456-7895" }}</em>
-                            {!! Form::text('phone', "(62) 3456-7895", ['id' => 'phone', 'class' => 'input-main', 'placeholder' => 'Telefone', 'maxlength' => '14', 'data-mask' => '(00) 0000-0000', 'required' => 'required']) !!}
+                            {!! Form::text('phone', Auth::user('users')->phone, ['id' => 'phone', 'class' => 'input-main', 'placeholder' => 'Telefone', 'maxlength' => '14', 'data-mask' => '(00) 0000-0000', 'required' => 'required']) !!}
                         </label>
                         <label for="mobile">
                             <strong>Celular:</strong>
                             <em id="mobile">{{ "62 8734-9087" }}</em>
-                            {!! Form::text('mobile', "(62) 8734-9087", ['id' => 'mobile', 'class' => 'input-main', 'placeholder' => 'Celular', 'maxlength' => '15', 'data-mask' => '(00) 0000-00009', 'required' => 'required']) !!}
+                            {!! Form::text('mobile', Auth::user('users')->mobile, ['id' => 'mobile', 'class' => 'input-main', 'placeholder' => 'Celular', 'maxlength' => '15', 'data-mask' => '(00) 0000-00009', 'required' => 'required']) !!}
                         </label>
                         <label for="gender">
                             <strong>Sexo:</strong>
-                            <em id="gender">{{ "Masculino" }}</em>
+                            <em id="gender">{{ Auth::getUser('users')->gender }}</em>
                             <select name="gender" id="gender" class="input-main" required="required">
-                                {{--<option value="Feminino" @if(Auth::user()->babyGender == 'Feminino'){{ 'selected' }}@endif>Feminino</option>--}}
-                                <option value="Feminino">Feminino</option>
-                                <option value="Masculino" selected>Masculino</option>
+                                <option value="Feminino" @if(Auth::getUser('users')->gender === 'Feminino'){{ 'selected' }}@endif>Feminino</option>
+                                <option value="Masculino" @if(Auth::getUser('users')->gender === 'Masculino'){{ 'selected' }}@endif>Masculino</option>
                             </select>
                         </label>
                         <label for="birthdate">
                             <strong>Data de Nascimento:</strong>
-                            <em id="birthdate">08/12/1987</em>
-                            {{--{!! Form::text('birthdate', \Carbon\Carbon::createFromFormat('Y-m-d', Auth::getUser()->babyBirthdate)->format('d/m/Y'), ['id' => 'babyBirthdate', 'placeholder' => 'dd/mm/aaaa', 'maxlength' => '10', 'data-mask' => '00/00/0000', 'required' => 'required']) !!}--}}
-                            {!! Form::text('birthdate', '08/12/1987', ['id' => 'birthdate', 'class' => 'input-main', 'placeholder' => 'dd/mm/aaaa', 'maxlength' => '10', 'data-mask' => '00/00/0000', 'required' => 'required']) !!}
+                            <em id="birthDate">{{ Auth::getUser('users')->birthDate->format('d/m/Y') }}</em>
+                            {!! Form::text('birthDate', Auth::getUser('users')->birthDate->format('d/m/Y'), ['id' => 'birthDate', 'placeholder' => 'dd/mm/aaaa', 'maxlength' => '10', 'data-mask' => '00/00/0000', 'required' => 'required']) !!}
                         </label>
                         <label for="cpf">
                             <strong>CPF:</strong>
-                            <em id="cpf">888.888.999-77</em>
-                            {!! Form::text('cpf', '888.888.999-77', ['id' => 'cpf', 'class' => 'input-main', 'placeholder' => 'XXX.XXX.XXX-XX', 'maxlength' => '14', 'data-mask' => '000.000.000-00', 'required' => 'required']) !!}
+                            <em id="cpf">{{ Auth::user('users')->cpf | '999999999-99'}}</em>
+                            {!! Form::text('cpf', Auth::user('users')->cpf, ['id' => 'cpf', 'class' => 'input-main', 'placeholder' => 'XXX.XXX.XXX-XX', 'maxlength' => '14', 'data-mask' => '000.000.000-00', 'required' => 'required']) !!}
                         </label>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-profile">
@@ -356,8 +365,7 @@ Contact: hello@brunomartins.com
                         </label>
                         <label for="state">
                             <strong>Estado:</strong>
-                            {{--<em id="state">{{ Auth::user()->state }}</em>--}}
-                            <em id="state">{{ "GO" }}</em>
+                            <em id="state">{{ Auth::user('users')->state }}</em>
                             <?php
                                 //STATES
                                 $statesConsult = \App\Exceptions\Handler::readFile("states.json");
@@ -365,13 +373,12 @@ Contact: hello@brunomartins.com
                                     $states[$state['uf']] = $state['uf'];
                                 endforeach;
                             ?>
-                            {!! Form::select('state', $states, 'GO', ['id' => 'state', 'class' => 'input-main', 'required' => 'required']) !!}
-                            {{--{!! Form::select('state', $states, Auth::user()->state) !!}--}}
+                            {!! Form::select('state', $states, Auth::user('users')->state, ['id' => 'state', 'class' => 'input-main', 'required' => 'required']) !!}
                         </label>
                         <label for="cityProfile">
                             <strong>Cidade:</strong>
-                            <em id="cityProfile">{{ "Aparecida de Goiânia" }}</em>
-                            {!! Form::text('cityProfile', "Aparecida de Goiânia", ['id' => 'cityProfile', 'class' => 'input-main', 'maxlength' => '100', 'required' => 'required']) !!}
+                            <em id="cityProfile">{{ Auth::user('users')->city }}</em>
+                            {!! Form::text('cityProfile', Auth::user('users')->city, ['id' => 'cityProfile', 'class' => 'input-main', 'maxlength' => '100', 'required' => 'required']) !!}
                         </label>
                     </div>
                 </div>
@@ -437,7 +444,9 @@ Contact: hello@brunomartins.com
                                     frase, os mesmos não poderão ser alterados.</p>
                                 </div><!-- Image Warning -->
                             </div>
+
                             <div class="tab-pane" id="tab5">
+                                @foerach(\Auth::get)
                                 <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                                     <p>Podemos enganar alguns por todo tempo, todos por
                                         algum tempo, mas não podemos enganar todos por
@@ -475,6 +484,7 @@ Contact: hello@brunomartins.com
         </div>
     </div>
 <!-- My Moods -->
+@endif
 
 <!-- My Winners -->
 <div class="modal fade winners" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -756,7 +766,7 @@ Contact: hello@brunomartins.com
                                         <label class="checkbox-main pull-left padding-top-5 padding-right-5">
                                             <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
                                         </label>
-                                        <a href="javascript:void();" class="question-tooltip padding-top-5 pull-left" onmouseover="Tip('Autoridade Governamental &eacute; (i) Qualquer autoridade governamental eleita ou indicada; (ii) Qualquer empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, &oacute;rg&atilde;o p&uacute;blico ou empreendimento que exer&ccedil;a fun&ccedil;&otilde;es governamentais; (iii) Qualquer funcion&aacute;rio de partido pol&iacute;tico, seus empregados ou outras pessoas atuando em nome ou favor de partido pol&iacute;tico ou candidato a cargos p&uacute;blicos; (iv) Qualquer empregado ou pessoa que atue em nome ou favor de organiza&ccedil;&atilde;o p&uacute;blica internacional; (v) Qualquer outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legisla&ccedil;&atilde;o local; e (vi) Quaisquer m&eacute;dicos empregados por hospitais, cl&iacute;nicas ou outros institutos p&uacute;blicos ou sob controle governamental.')" onmouseout="UnTip()">( ? )</a>
+                                        <a href="javascript:void('');" class="question-tooltip padding-top-5 pull-left" onmouseover="Tip('Autoridade Governamental &eacute; (i) Qualquer autoridade governamental eleita ou indicada; (ii) Qualquer empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, &oacute;rg&atilde;o p&uacute;blico ou empreendimento que exer&ccedil;a fun&ccedil;&otilde;es governamentais; (iii) Qualquer funcion&aacute;rio de partido pol&iacute;tico, seus empregados ou outras pessoas atuando em nome ou favor de partido pol&iacute;tico ou candidato a cargos p&uacute;blicos; (iv) Qualquer empregado ou pessoa que atue em nome ou favor de organiza&ccedil;&atilde;o p&uacute;blica internacional; (v) Qualquer outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legisla&ccedil;&atilde;o local; e (vi) Quaisquer m&eacute;dicos empregados por hospitais, cl&iacute;nicas ou outros institutos p&uacute;blicos ou sob controle governamental.')" onmouseout="UnTip()">( ? )</a>
                                     </div>
                                 </div>
                             </div>
@@ -1097,18 +1107,19 @@ Contact: hello@brunomartins.com
             </div>
             <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4 col-xs-5">
                 <p class="text-white font-size-12 strong">Parceria</p>
-                <div class="partners"></div>
+                <a target="_blank" href="{{ $websiteSettings['partner'] }}">
+                    <div class="partners"></div>
+                </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
                 <p class="text-white font-size-12 strong">Realização</p>
-                <div class="logo"></div>
+                <a  target="_blank" href="{{ $websiteSettings['teuto'] }}">
+                    <div class="logo"></div>
+                </a>
             </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 font-size-12 margin-bottom-35 box">
-            Certificado de Autorização CAIXA n° xxx-xxxx/2016.
-            Participação válida de 00h do dia 29.06.2016 às 23h59 do dia
-            29.09.2016. Cupom fiscal sujeito a verificação. Para mais
-            informações, consulte o regulamento.
+            {{ $websiteSettings['certificate'] }}
         </div>
     </article>
 </section>

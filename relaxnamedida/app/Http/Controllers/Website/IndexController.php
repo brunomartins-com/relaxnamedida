@@ -1,13 +1,14 @@
-<?php namespace App\Http\Controllers\Website;
+<?php
+namespace App\Http\Controllers\Website;
 
-use App\Http\Requests;
+use App\Helpers\JsonResources;
 use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        $websiteSettings = \App\Exceptions\Handler::readFile("websiteSettings.json");
+        $websiteSettings = JsonResources::readFile("websiteSettings");
 
         return view('website.index')->with(compact('websiteSettings'));
     }

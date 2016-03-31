@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Participantes",
+    "url": "participantes",
+    "icon": "fa-users"
+  },
+  {
+    "name": "Frases",
+    "url": "frases",
+    "icon": "fa-paragraph"
+  },
+  {
+    "name": "Regulamento",
+    "url": "regulamento",
+    "icon": "fa-paragraph"
+  },
+  {
+    "name": "Inscrições Encerradas",
+    "url": "inscricoes-encerradas",
+    "icon": "fa-paragraph"
+  },
+  {
+    "name": "Produtos",
+    "url": "produtos",
+    "icon": "fa-paragraph"
+  },
+  {
+    "name": "Ganhadores",
+    "url": "ganhadores",
+    "icon": "fa-rocket"
+  },
+  {
+    "name": "Ganhadores Anterior",
+    "url": "ganhadores-anterior",
+    "icon": "fa-rocket"
+  },
+
+  {
+    "name": "Dados do Site",
+    "url": "dados-site",
+    "icon": "fa-gears"
+  },
+  {
+    "name": "Usuários",
+    "url": "usuarios",
+    "icon": "fa-users"
+  }
+]

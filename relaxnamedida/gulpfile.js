@@ -13,6 +13,7 @@ elixir(function(mix) {
     // ADMIN
     mix.styles([
             '../../../resources/assets/admin/css/bootstrap.min.css',
+            '../../../resources/assets/admin/css/font-awesome.css',
             '../../../resources/assets/admin/css/slick.min.css',
             '../../../resources/assets/admin/css/slick-theme.min.css',
             '../../../resources/assets/admin/js/plugins/jquery-tags-input/jquery.tagsinput.min.css',
@@ -57,5 +58,7 @@ elixir(function(mix) {
 
     mix.scripts(['../../../resources/assets/admin/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js'], '../public_html/concursonamedida/assets/admin/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js');
     mix.scripts(['../../../resources/assets/admin/js/plugins/masked-inputs/jquery.maskedinput.min.js'], '../public_html/concursonamedida/assets/admin/js/plugins/masked-inputs/jquery.maskedinput.min.js');
+
+    mix.copy(['resources/assets/admin/js/plugins/ckeditor/**'], '../public_html/concursonamedida/assets/admin/editor/ckeditor/');
 
 });
