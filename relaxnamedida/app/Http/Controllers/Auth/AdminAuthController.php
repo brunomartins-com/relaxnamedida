@@ -11,7 +11,7 @@ class AdminAuthController extends Controller
 {
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $redirectAfterLogout = '/admin/login';
+    protected $redirectAfterLogout = '/admin/auth/login';
 
     protected $redirectTo = '/admin/';
 

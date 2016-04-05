@@ -9,7 +9,7 @@
                 <div class="block-header bg-orange">
                     <ul class="block-options">
                         <li>
-                            <a href="{!! '' !!}" title="Esqueceu sua senha?"><i class="si si-wrench"></i> Esqueceu sua senha?</a>
+                            <a href="{!! action('Auth\AdminPasswordController@getEmail') !!}" title="Esqueceu sua senha?"><i class="si si-wrench"></i> Esqueceu sua senha?</a>
                         </li>
                     </ul>
                     <h3 class="block-title">Entrar</h3>

@@ -1,4 +1,4 @@
-@extends('template.admin')
+@extends('admin.template')
 
 @section('content')
 <div class="content overflow-hidden">
@@ -8,7 +8,7 @@
                 <div class="block-header bg-orange">
                     <ul class="block-options">
                         <li>
-                            <a href="{!! route('login') !!}"  title="Entrar"><i class="si si-login"></i> Entrar</a>
+                            <a href="{!! action('Auth\AdminAuthController@getLogin') !!}"  title="Entrar"><i class="si si-login"></i> Entrar</a>
                         </li>
                     </ul>
                     <h3 class="block-title">Recuperar Senha</h3>
@@ -33,7 +33,7 @@
                         </div>
                     @endif
 
-                    <form class="js-validation-reminder form-horizontal push-50-t push-50" action="{{ route('passwordEmail') }}" method="post">
+                    <form class="js-validation-reminder form-horizontal push-50-t push-50" action="{{ action('Auth\AdminPasswordController@postEmail') }}" method="post">
                         {!! csrf_field() !!}
                         <div class="form-group">
                             <div class="col-xs-12">

@@ -1,4 +1,4 @@
-@extends('template.admin')
+@extends('admin.template')
 
 @section('content')
 	<div class="content overflow-hidden">
@@ -27,7 +27,7 @@
 						</div>
 						@endif
 
-						<form class="js-validation-recovery form-horizontal push-50-t push-50" action="{!! route('passwordReset') !!}" method="post">
+						<form class="js-validation-recovery form-horizontal push-50-t push-50" action="{!! action('Auth\AdminPasswordController@postReset') !!}" method="post">
 							{!! csrf_field() !!}
 							<input type="hidden" name="token" value="{{ $token }}" >
 

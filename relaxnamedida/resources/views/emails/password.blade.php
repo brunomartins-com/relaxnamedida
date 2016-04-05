@@ -9,7 +9,7 @@
             </div>
             <h4 style="font-size: 18px; font-weight: normal;">Olá <strong>{{ $user->name  }}</strong></h4>
             <p>Este e-mail é para a recuperação de senha, para completar sua solicitação
-                <a href="{{ url(action('Auth\PasswordController@getReset') . '/' . $token) }}" target="_blank">clique aqui</a>
+                <a href="{{ action($action, $token) }}" target="_blank">clique aqui</a>
             </p>
             <br />
             <br />

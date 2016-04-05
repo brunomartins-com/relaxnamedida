@@ -47,7 +47,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="/admin/logout" title="Sair">
+                            <a href="{{ action('Auth\AdminAuthController@getLogout') }}" title="Sair">
                                 <i class="si si-logout"></i>
                                 <span>&nbsp;Sair</span>
                             </a>
