@@ -112,7 +112,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-input">
                                 {!! Form::label('', 'Data de Nascimento: ') !!}
-                                {{ $user->birthDate }}
+                                {{ $user->birthDate->format('d/m/Y') }}
                             </div>
                         </div>
                     </div>
@@ -127,6 +127,14 @@
                     <div class="form-group">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-input">
+                                {!! Form::label('', 'Cidade/UF: ') !!}
+                                {{ $user->city."/".$user->state }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-input">
                                 {!! Form::label('', 'Endereço: ') !!}
                                 {{ $user->address }}
                             </div>
@@ -135,8 +143,8 @@
                     <div class="form-group">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-input">
-                                {!! Form::label('', 'Cidade/UF: ') !!}
-                                {{ $user->city."/".$user->state }}
+                                {!! Form::label('', 'Complemento: ') !!}
+                                {{ $user->complement }}
                             </div>
                         </div>
                     </div>

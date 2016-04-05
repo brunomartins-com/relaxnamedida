@@ -76,7 +76,7 @@ Contact: hello@brunomartins.com
                 <ul class="intranet">
                     <li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">Meus Dados</a></li>
                     <li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">Minhas Frases</a></li>
-                    <li><a href="/auth/logout" data-popover="true" data-content="Sair" class="sair">Sair</a></li>
+                    <li><a href="{{ action('Auth\AuthController@getLogout') }}" data-popover="true" data-content="Sair" class="sair">Sair</a></li>
                 </ul>
             </div>
         @endif
@@ -286,24 +286,25 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 form-profile">
                         <span class="font-size-18 strong">Pessoal</span>
                         <div class="margin-top-30"></div>
+                        {{ csrf_field() }}
                         <label for="name">
                             <strong>Nome:</strong>
-                            <em id="name">{{ "Jose Luis da Silva Fonseca" }} <!--//Auth::getUser()->name--></em>
+                            <em id="name">{{ Auth::getUser('users')->name }} </em>
                             {!! Form::text('name', Auth::user('users')->name, ['id' => 'name', 'class' => 'input-main', 'placeholder' => 'Nome', 'maxlength' => '100', 'required' => 'required']) !!}
                         </label>
                         <label for="email">
                             <strong>Email:</strong>
-                            <em id="email">{{ "joseluisfonseca@hotmail.com" }}</em>
+                            <em id="email">{{ Auth::user('users')->email }}</em>
                             {!! Form::text('email', Auth::user('users')->email, ['id' => 'email', 'class' => 'input-main', 'placeholder' => 'E-mail', 'maxlength' => '100', 'required' => 'required']) !!}
                         </label>
                         <label for="phone">
                             <strong>Telefone:</strong>
-                            <em id="phone">{{ "62 3456-7895" }}</em>
+                            <em id="phone">{{ Auth::user('users')->phone }}</em>
                             {!! Form::text('phone', Auth::user('users')->phone, ['id' => 'phone', 'class' => 'input-main', 'placeholder' => 'Telefone', 'maxlength' => '14', 'data-mask' => '(00) 0000-0000', 'required' => 'required']) !!}
                         </label>
                         <label for="mobile">
                             <strong>Celular:</strong>
-                            <em id="mobile">{{ "62 8734-9087" }}</em>
+                            <em id="mobile">{{ Auth::user('users')->mobile }}</em>
                             {!! Form::text('mobile', Auth::user('users')->mobile, ['id' => 'mobile', 'class' => 'input-main', 'placeholder' => 'Celular', 'maxlength' => '15', 'data-mask' => '(00) 0000-00009', 'required' => 'required']) !!}
                         </label>
                         <label for="gender">
@@ -314,49 +315,49 @@ Contact: hello@brunomartins.com
                                 <option value="Masculino" @if(Auth::getUser('users')->gender === 'Masculino'){{ 'selected' }}@endif>Masculino</option>
                             </select>
                         </label>
-                        <label for="birthdate">
+                        <label for="birthDate">
                             <strong>Data de Nascimento:</strong>
                             <em id="birthDate">{{ Auth::getUser('users')->birthDate->format('d/m/Y') }}</em>
                             {!! Form::text('birthDate', Auth::getUser('users')->birthDate->format('d/m/Y'), ['id' => 'birthDate', 'placeholder' => 'dd/mm/aaaa', 'maxlength' => '10', 'data-mask' => '00/00/0000', 'required' => 'required']) !!}
                         </label>
                         <label for="cpf">
                             <strong>CPF:</strong>
-                            <em id="cpf">{{ Auth::user('users')->cpf | '999999999-99'}}</em>
+                            <em id="cpf">{{ Auth::user('users')->cpf}}</em>
                             {!! Form::text('cpf', Auth::user('users')->cpf, ['id' => 'cpf', 'class' => 'input-main', 'placeholder' => 'XXX.XXX.XXX-XX', 'maxlength' => '14', 'data-mask' => '000.000.000-00', 'required' => 'required']) !!}
                         </label>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-profile">
                         <span class="font-size-18 strong">Endereço</span>
                         <div class="margin-top-30"></div>
-                        <label for="cep">
-                            <strong>CPF:</strong>
-                            <em id="cep">74425-830</em>
-                            {!! Form::text('cep', '74425-830', ['id' => 'cep', 'class' => 'input-main', 'placeholder' => 'XXXXX-XXX', 'maxlength' => '9', 'data-mask' => '00000-000', 'required' => 'required']) !!}
+                        <label for="zipCode">
+                            <strong>CEP:</strong>
+                            <em id="zipCode">{{ Auth::user('users')->zipCode }}</em>
+                            {!! Form::text('zipCode', Auth::user('users')->zipCode, ['id' => 'zipCode', 'class' => 'input-main', 'placeholder' => 'XXXXX-XXX', 'maxlength' => '9', 'data-mask' => '00000-000', 'required' => 'required']) !!}
                         </label>
                         <label for="address">
                             <strong>Endereço:</strong>
-                            <em id="address">{{ "Rua 32, Quadra 3, Lote 12-A" }}</em>
-                            {!! Form::text('address', "Rua 32, Quadra 3, Lote 12-A", ['id' => 'address', 'class' => 'input-main', 'placeholder' => 'Endereço', 'maxlength' => '200', 'required' => 'required']) !!}
+                            <em id="address">{{ Auth::user('users')->address }}</em>
+                            {!! Form::text('address', Auth::user('users')->address, ['id' => 'address', 'class' => 'input-main', 'placeholder' => 'Endereço', 'maxlength' => '200', 'required' => 'required']) !!}
                         </label>
                         <label for="number">
                             <strong>Número:</strong>
-                            <em id="number">{{ "123" }}</em>
-                            {!! Form::text('number', "123", ['id' => 'number', 'class' => 'input-main', 'placeholder' => 'nº', 'maxlength' => '20', 'required' => 'required']) !!}
+                            <em id="number">{{ Auth::user('users')->number }}</em>
+                            {!! Form::text('number', Auth::user('users')->number, ['id' => 'number', 'class' => 'input-main', 'placeholder' => 'nº', 'maxlength' => '20', 'required' => 'required']) !!}
                         </label>
-                        <label for="apto">
-                            <strong>Número:</strong>
-                            <em id="apto">{{ "- - -" }}</em>
-                            {!! Form::text('apto', "", ['id' => 'apto', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
+                        <label for="unit">
+                            <strong>Apto/Sala:</strong>
+                            <em id="unit">{{ Auth::user('users')->unit }}</em>
+                            {!! Form::text('unit', Auth::user('users')->unit, ['id' => 'unit', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
                         </label>
                         <label for="district">
                             <strong>Bairro:</strong>
-                            <em id="district">{{ "Buriti Sereno" }}</em>
-                            {!! Form::text('district', "Buriti Sereno", ['id' => 'district', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100', 'required' => 'required']) !!}
+                            <em id="district">{{ Auth::user('users')->district }}</em>
+                            {!! Form::text('district', Auth::user('users')->district, ['id' => 'district', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100', 'required' => 'required']) !!}
                         </label>
                         <label for="complement">
                             <strong>Complemento:</strong>
-                            <em id="complement">{{ "- - -" }}</em>
-                            {!! Form::text('complement', "", ['id' => 'complement', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
+                            <em id="complement">{{ Auth::user('users')->complement }}</em>
+                            {!! Form::text('complement', Auth::user('users')->complement, ['id' => 'complement', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
                         </label>
                         <label for="reference">
                             <strong>Referência:</strong>
@@ -426,7 +427,7 @@ Contact: hello@brunomartins.com
                                     </div>
                                     <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
                                         <div class="form-group">
-                                            <input type="file" class="form-control input-main" placeholder="Imagem cupom fiscal" />
+                                            <input type="file" class="form-control input-main"  accept="image/*" placeholder="Imagem cupom fiscal" />
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -446,35 +447,28 @@ Contact: hello@brunomartins.com
                             </div>
 
                             <div class="tab-pane" id="tab5">
-                                @foerach(\Auth::get)
+                                @foreach(\Auth::user('users')->phrases as $phrase)
                                 <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
-                                    <p>Podemos enganar alguns por todo tempo, todos por
-                                        algum tempo, mas não podemos enganar todos por
-                                        todo tempo.</p>
+                                    <p>{{ $phrase->message }}</p>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <label class="strong">Imagem cupom fiscal:</label>
-                                    <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
+                                    <a href="/assets/_upload/cupons/{{ $phrase->receipt }}" target="_blank">
+                                        <img src="{{ asset('/assets/images/coupon.png') }}" alt="Cupom Fiscal">
+                                    </a>
                                 </div>
+
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 stats">
+                                    @if($phrase->active)
                                     <label class="strong">Status de aprovação:</label>
                                     <div class="approval"><p>Aprovada</p></div>
-                                </div>
-                                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"><hr></div>
-                                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
-                                    <p>Renda-se, como eu me rendi. Mergulhe no que você não
-                                        conhece como eu mergulhei. Não se preocupe em
-                                        entender, viver ultrapassa qualquer entendimento.</p>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                    <label class="strong">Imagem cupom fiscal:</label>
-                                    <img src="{{ asset('assets/images/coupon.png') }}" alt="Cupom Fiscal">
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 stats">
+                                    @else
                                     <label class="strong">Status de aprovação:</label>
                                     <div class="analysis"><p>Em análise</p></div>
+                                    @endif
                                 </div>
                                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"><hr></div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -716,7 +710,7 @@ Contact: hello@brunomartins.com
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
-                        <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                        <form id="form-register" name="form-register" action="" method="post" enctype="multipart/form-data">
                             <div class="clear margin-top-35">
                                 <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
                                     <div class="form-group">

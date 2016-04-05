@@ -11,6 +11,8 @@ use Validator;
 class AuthController extends Controller
 {
 
+    protected $redirectPath = '/';
+
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
@@ -20,7 +22,8 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->user = "user";
+        $this->user = "users";
+
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 

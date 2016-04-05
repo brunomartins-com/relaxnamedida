@@ -6,6 +6,11 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
+    public function redirectIndex()
+    {
+        return redirect('/');
+    }
+
     public function index()
     {
         $websiteSettings = JsonResources::readFile("websiteSettings");

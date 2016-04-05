@@ -51,6 +51,6 @@ CanResetPasswordContract
 
     public function phrases()
     {
-        return $this->hasMany(Phrase::class, 'id', 'participantId');
+        return $this->hasMany(Phrase::class, 'participantId', 'id');
     }
 }

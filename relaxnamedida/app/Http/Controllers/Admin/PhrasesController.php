@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class PhrasesController extends Controller
 {
+
+    private $uploadPath = '/assets/_upload/cupons/';
+
     public function index()
     {
         $phrases = Phrase::orderBy('id', 'DESC')->get();
@@ -36,9 +39,13 @@ class PhrasesController extends Controller
 
     public function delete(Request $request)
     {
-        Phrase::find($request->get('userId'))->delete();
+        $phrase = Phrase::find($request->get('userId'));
 
-        //TODO: Implements the user phrases delete
+        if (is_file($this->uploadPath . $phrase->receipt)) {
+            unlink($this->uploadPath . $phrase->receipt);
+        }
+
+        $phrase->delete();
 
         $success = "Frase excluído com sucesso.";
 

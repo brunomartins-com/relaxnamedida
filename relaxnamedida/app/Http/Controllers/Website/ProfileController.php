@@ -1,41 +1,46 @@
-<?php namespace App\Http\Controllers\Website;
+<?php
+namespace App\Http\Controllers\Website;
 
-use App\Http\Requests;
+use App\Domains\Participant as User;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
-
-use App\User;
+use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
     public function putUpdate(Request $request)
     {
+
+        $authUser   = \Auth::user('users');
+        $authUserId = $authUser->id;
+
+        $request->inputName = ('cityProfile' !== $request->inputName) ? $request->inputName : 'city';
+
+        if ($authUser->{$request->inputName} == $request->inputValue) {
+            return ['success' => 1, 'newInputValue' => $request->inputValue];
+        }
+
         $userVerify = 0;
-        if($request->inputName == 'email' or $request->inputName == 'cpf'){
-            $userVerify = User::where('type', '=', 1)
-                ->where('id', '!=', $request->id)
+
+        if ('email' == $request->inputName or 'cpf' == $request->inputName) {
+            $userVerify = User::where('id', '!=', $authUserId)
                 ->where($request->inputName, '=', $request->inputValue)
                 ->count();
         }
 
-        if($userVerify > 0){
-            $var = ['success' => 0, 'message' => 'O '.$request->inputName.' que você inseriu já está sendo usado por outro usuário!'];
-        }else {
-            if($request->inputName == 'babyBirthdate'){
-                $babyBirthdate = Carbon::createFromFormat('d/m/Y', $request->inputValue)->format('Y-m-d');
-                $user = User::where('id', $request->id)->update([$request->inputName => $babyBirthdate]);
-            }else {
-                $user = User::where('id', $request->id)->update([$request->inputName => $request->inputValue]);
+        if ($userVerify < 1) {
+            if ('birthDate' === $request->inputName) {
+                $birthDate = Carbon::createFromFormat('d/m/Y', $request->inputValue);
+                $user      = $authUser->update([$request->inputName => $birthDate]);
+            } else {
+                $user = $authUser->update([$request->inputName => $request->inputValue]);
             }
 
             if ($user) {
-                $var = ['success' => 1, 'newInputValue' => $request->inputValue];
-            } else {
-                $var = ['success' => 0, 'newInputValue' => $request->inputValue];
+                return ['success' => 1, 'newInputValue' => $request->inputValue];
             }
         }
 
-        return json_encode($var);
+        return ['success' => 0, 'newInputValue' => $request->inputValue];
     }
 }

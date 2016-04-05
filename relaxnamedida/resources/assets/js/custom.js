@@ -220,8 +220,9 @@ $(document).ready(function(){
             }
         }
     });
+    
     //FILTER CITIES PER STATE
-    $("select[name=state]").change(function(){
+    $("form#form-register select[name=state]").change(function(){
         var val = $(this).val();
         $.ajax({
             url: '/cities',

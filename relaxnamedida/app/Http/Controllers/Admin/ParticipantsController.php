@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Domains\Participant as User;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ParticipantsController extends Controller
@@ -27,7 +26,6 @@ class ParticipantsController extends Controller
     {
 
         $user = User::find($usersId);
-        array_set($user, 'birthDate', Carbon::createFromFormat('Y-m-d', $user->birthDate)->format('d/m/Y'));
 
         return view('admin.registered.view')->with(compact('user'));
     }
@@ -46,9 +44,15 @@ class ParticipantsController extends Controller
 
     public function delete(Request $request)
     {
-        User::find($request->get('userId'))->delete();
+        $user = User::find($request->get('userId'));
+        foreach ($user->phrases as $phrase) {
+            if (is_file($this->uploadPath . $phrase->receipt)) {
+                unlink($this->uploadPath . $phrase->receipt);
+            }
+            $phrase->delete();
+        }
 
-        //TODO: Implements the user phrases delete
+        $user->delete();
 
         $success = "Cadastrado excluído com sucesso.";
 
