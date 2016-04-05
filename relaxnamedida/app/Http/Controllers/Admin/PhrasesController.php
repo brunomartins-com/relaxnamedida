@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PhrasesController extends Controller
 {
 
-    private $uploadPath = '/assets/_upload/cupons/';
+    private $uploadPath = '/assets/images/_upload/cupons/';
 
     public function index()
     {

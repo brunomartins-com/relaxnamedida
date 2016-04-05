@@ -10,7 +10,7 @@
 						<h3 class="block-title">Recuperação de Senha</h3>
 					</div>
 					<div class="block-content block-content-full block-content-narrow">
-						<img src="{{ asset('assets/admin/img/logoLogin.png') }}" alt="Espaço Farmacêutico - Teuto/Pfizer" class="center-block" width="80%" />
+						<img src="{{ asset('assets/images/logo-concurso-relax-na-medida.png') }}" alt="Concurso Relax Na Medida- Teuto/Pfizer" class="center-block" width="80%" />
 
 						@if (Session::has('status'))
 						<div class="alert alert-warning alert-dismissable">

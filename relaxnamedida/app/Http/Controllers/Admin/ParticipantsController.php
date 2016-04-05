@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ParticipantsController extends Controller
 {
+    private $uploadPath = '/assets/images/_upload/cupons/';
+
     public function index()
     {
         $users = User::orderBy('id', 'DESC')

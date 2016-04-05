@@ -2,7 +2,7 @@
 
 Route::group(
     [
-        'prefix' => 'admin',
+        'prefix' => '/admin',
     ],
     function () {
 
@@ -27,7 +27,13 @@ Route::group(
             Route::get('/inscricoes-encerradas', 'Admin\SignUpEndedController@index');
             Route::put('/inscricoes-encerradas', 'Admin\SignUpEndedController@update');
 
-            Route::get('/produtos', 'Admin\IndexController@index');
+            Route::get('/produtos', 'Admin\ProductsController@getIndex');
+            Route::delete('/produtos', 'Admin\ProductsController@delete');
+            Route::get('/produtos/editar/{productsId}', 'Admin\ProductsController@getEdit');
+            Route::put('/produtos/editar', 'Admin\ProductsController@putEdit');
+            Route::get('/produtos/novo', 'Admin\ProductsController@getAdd');
+            Route::post('/produtos/novo', 'Admin\ProductsController@postAdd');
+            Route::get('/produtos/ordem', 'Admin\ProductsController@getOrder');
 
             Route::get('/ganhadores', 'Admin\IndexController@index');
 
@@ -49,15 +55,18 @@ Route::group(
             Route::put('/usuarios/editar', 'Admin\UsersController@update');
         });
 
-        Route::controller('/', 'Auth\AdminAuthController');
+        #UPDATE ORDER
+        Route::post('/update-order', 'Admin\UpdateOrderController@postOrder');
+
+        Route::controller('/auth', 'Auth\AdminAuthController');
         Route::controller('/password', 'Auth\AdminPasswordController');
-    });
+    }
+);
 
 Route::get('/', 'Website\IndexController@index');
 Route::get('/home', 'Website\IndexController@redirectIndex');
 
 Route::put('/profile', 'Website\ProfileController@putUpdate');
 
-Route::controller('/', 'Auth\AuthController');
-
+Route::controller('/auth', 'Auth\AuthController');
 Route::controller('/password', 'Auth\PasswordController');

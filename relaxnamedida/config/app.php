@@ -26,7 +26,7 @@ return [
     |
      */
 
-    'url'             => 'http://localhost',
+    'url'             => 'http://concursonamedida.dev/',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
      */
 
-    'key'             => env('APP_KEY', 'random@josevieirame'),
+    'key'             => env('APP_KEY', md5('random@josevieirame')),
 
     'cipher'          => 'AES-256-CBC',
 

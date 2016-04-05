@@ -15,7 +15,7 @@
                     <h3 class="block-title">Entrar</h3>
                 </div>
                 <div class="block-content block-content-full block-content-narrow">
-                    <img src="{{ asset('assets/images/logo-concurso-relax-na-medida.png') }}" alt="Concurso Bebê Hipoderme - 12ª Edição" class="center-block" width="80%" />
+                    <img src="{{ asset('assets/images/logo-concurso-relax-na-medida.png') }}" alt="Concurso Relax Na Medida" class="center-block" width="80%" />
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

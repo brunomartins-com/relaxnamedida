@@ -1,5 +1,3 @@
-
-
 @if($websiteSettings['siteAvailable'] == 0 && !Auth::check('admin'))
 {!! view('website.teaser')->with(compact('page', 'websiteSettings')) !!}
 {!! die() !!}
@@ -189,12 +187,13 @@ Contact: hello@brunomartins.com
                             </form>
                         </div>
                         <div class="recover-password" style="display: none">
-                            <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                            <form name="form-recovery" action="{{ action('Auth\PasswordController@postEmail') }}" method="post" enctype="multipart/form-data">
+                                {!! csrf_field() !!}
                                 <div class="form-group">
-                                    <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                                    <input name="email" required type="email" class="form-control input-main" placeholder="Email">
                                 </div>
                                 <span class="text-brown back">Voltar</span>
-                                <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
+                                <button type="submit" class="btn btn-main pull-right" title="Enviar">Enviar</button>
                             </form>
                         </div>
                     </div>
@@ -1129,6 +1128,23 @@ Contact: hello@brunomartins.com
 alert('{!! Session::get('message') !!}');
 </script>
 @endif
+
+@if(Session::has('status'))
+    <script>
+        alert('{!! Session::get('status') !!}');
+    </script>
+@endif
+
+@if (count($errors) > 0)
+    <script>
+        var errors = '';
+        @foreach ($errors->all() as $error)
+        errors += '{!!   $error !!} \n';
+        @endforeach
+    alert(errors);
+    </script>
+@endif
+
 @yield('javascript')
 </body>
 </html>

@@ -4,9 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -42,15 +41,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if ($this->isHttpException($e))
-        {
-            return $this->renderHttpException($e);
+        if (config('app.debug')) {
+            return $this->renderExceptionWithWhoops($e);
         }
 
-
-        if (config('app.debug'))
-        {
-            return $this->renderExceptionWithWhoops($e);
+        if ($this->isHttpException($e)) {
+            return $this->renderHttpException($e);
         }
 
         return parent::render($request, $e);
@@ -82,7 +78,7 @@ class Handler extends ExceptionHandler
     public static function readFile($filename)
     {
         try {
-            $file = "assets/json/" . $filename;
+            $file    = "assets/json/" . $filename;
             $content = file_get_contents($file);
         } catch (Exception $e) {
             throw new Exception("Error open file: " . $e->getMessage());
