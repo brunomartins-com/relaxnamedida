@@ -59,4 +59,5 @@ Route::get('/home', 'Website\IndexController@redirectIndex');
 Route::put('/profile', 'Website\ProfileController@putUpdate');
 
 Route::controller('/', 'Auth\AuthController');
+
 Route::controller('/password', 'Auth\PasswordController');

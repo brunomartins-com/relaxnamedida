@@ -1,4 +1,4 @@
-<?php \Auth::loginUsingId("users", 2); ?>
+
 
 @if($websiteSettings['siteAvailable'] == 0 && !Auth::check('admin'))
 {!! view('website.teaser')->with(compact('page', 'websiteSettings')) !!}
@@ -176,15 +176,16 @@ Contact: hello@brunomartins.com
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
                         <div class="form-login">
-                            <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                            <form name="form-login" action="{{ action('Auth\AuthController@postLogin') }}" method="post" enctype="multipart/form-data">
+                                {!! csrf_field() !!}
                                 <div class="form-group">
-                                    <input name="email" type="email" class="form-control input-main" placeholder="Email">
+                                    <input name="email" type="email" required class="form-control input-main" placeholder="E-mail">
                                 </div>
                                 <div class="form-group">
-                                    <input name="password" type="password" class="form-control input-main" placeholder="Senha">
+                                    <input name="password" type="password" required class="form-control input-main" placeholder="Senha">
                                 </div>
                                 <span class="text-brown forgot">Esqueci minha senha</span>
-                                <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
+                                <button type="submit" class="btn btn-main pull-right" title="Enviar">Enviar</button>
                             </form>
                         </div>
                         <div class="recover-password" style="display: none">
@@ -341,12 +342,12 @@ Contact: hello@brunomartins.com
                         </label>
                         <label for="number">
                             <strong>Número:</strong>
-                            <em id="number">{{ Auth::user('users')->number }}</em>
+                            <em id="number">{{ Auth::user('users')->number ? : '---' }}</em>
                             {!! Form::text('number', Auth::user('users')->number, ['id' => 'number', 'class' => 'input-main', 'placeholder' => 'nº', 'maxlength' => '20', 'required' => 'required']) !!}
                         </label>
                         <label for="unit">
                             <strong>Apto/Sala:</strong>
-                            <em id="unit">{{ Auth::user('users')->unit }}</em>
+                            <em id="unit">{{ Auth::user('users')->unit ? : '---'  }}</em>
                             {!! Form::text('unit', Auth::user('users')->unit, ['id' => 'unit', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
                         </label>
                         <label for="district">
@@ -361,8 +362,8 @@ Contact: hello@brunomartins.com
                         </label>
                         <label for="reference">
                             <strong>Referência:</strong>
-                            <em id="reference">{{ "Abaixo da avenida 34" }}</em>
-                            {!! Form::text('reference', "Abaixo da avenida 34", ['id' => 'reference', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
+                            <em id="reference">{{ Auth::user('users')->reference ?: '---' }}</em>
+                            {!! Form::text('reference', Auth::user('users')->reference , ['id' => 'reference', 'class' => 'input-main', 'placeholder' => '', 'maxlength' => '100']) !!}
                         </label>
                         <label for="state">
                             <strong>Estado:</strong>
@@ -416,27 +417,27 @@ Contact: hello@brunomartins.com
                     <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab4">
-                                <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                                {!! Form::open(['name'=>'form-register', 'enctype'=> 'multipart/form-data']) !!}
                                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                                     <p class="font-size-18">Cadastre quantas frases quiser e aumente suas chances. Só não se esqueça que, pra cada
                                         frase, você necessita de um novo cupom fiscal comprovando a compra de um dos
                                         produtos participantes da promoção.</p>
                                         <div class="form-group">
-                                            <textarea name="message" rows="5" class="form-control input-main" placeholder="Mensagem"></textarea>
+                                            <textarea name="message" rows="5" class="form-control input-main" required placeholder="Mensagem"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
                                         <div class="form-group">
-                                            <input type="file" class="form-control input-main"  accept="image/*" placeholder="Imagem cupom fiscal" />
+                                            <input type="file" class="form-control input-main" required  accept="image/*" placeholder="Imagem cupom fiscal" />
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                        <button type="button" class="btn btn-main" title="Enviar">Cadastrar</button>
+                                        {!! Form::submit('Cadastrar', ['class' => 'btn btn-main', 'title'=>'Enviar']) !!}
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-11 col-xs-12">
                                         <label>* campos de preenchimento obrigatório.</label>
                                     </div>
-                                </form>
+                                    {!! Form::close() !!}
                                 <!-- Image Warning  -->
                                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-45 warning">
                                     <b>Observações quanto a imagem:</b>
