@@ -1,5 +1,5 @@
 $(function(){
-    $('#form-registration-1').validate({
+    $('#form-register-1').validate({
         rules: {
             'name': {
                 required: true
@@ -79,8 +79,19 @@ $(function(){
         }
     });
 
-    $('#form-registration-2').validate({
+    $('#form-register-2').validate({
         rules: {
+
+            'zipcode': {
+                required: true,
+                minlength: 5,
+                maxlength: 5
+            },
+            'tdp': {
+                required: true,
+                minlength: 3,
+                maxlength: 3
+            },
             'address': {
                 required: true
             }, 'number': {
@@ -97,6 +108,16 @@ $(function(){
             }
         },
         messages: {
+            'zipcode': {
+                required: 'Informe o CEP',
+                minlength: 'Deve conter 5 numeros',
+                maxlength: 'Deve conter 5 numeros'
+            },
+            'tdp': {
+                required: 'Informe o CEP',
+                minlength: 'Deve conter 3 numeros',
+                maxlength: 'Deve conter 3 numeros'
+            },
             'address': {
                 required: 'Informe o endereço'
             },

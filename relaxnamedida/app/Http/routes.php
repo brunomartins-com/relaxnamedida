@@ -74,6 +74,8 @@ Route::post('/frases', 'Website\PhrasesController@create');
 
 Route::post('/contact', 'Website\ContactController@post');
 
+Route::post('/register', 'Website\RegistrationController@postRegister');
+
 Route::post('/cities', 'Website\CitiesController@post');
 
 Route::put('/profile', 'Website\ProfileController@putUpdate');

@@ -27,7 +27,6 @@ $(function() {
     if(window.location.hash) {
         var elem = $('a[href=' + window.location.hash + ']');
         if (elem) {
-            console.log(elem);
             $('html, body').stop().animate({
                 scrollTop: $(elem.attr('href')).offset().top
             }, 500, 'easeInOutExpo');
@@ -38,8 +37,6 @@ $(function() {
 $(document).ready(function(){
     //ACTION FOR TABS
     $("#nextStep").click(function(){
-
-        $('#form-register-1').validate();
         
         if ($("#form-register-1").valid()){
             $("#tab1").hide();
@@ -53,11 +50,56 @@ $(document).ready(function(){
     });
 
     $("#nextStep2").click(function(){
-        $("#tab1").hide();
-        $("#tab2").hide();
-        $("#tab3").show();
-        $(".tabs ul li").removeClass("active");
-        $(".tabs ul li:last").addClass("active");
+
+        if ($("#form-register-2").valid()){
+
+            var data = new FormData();
+
+            data.append('form1',$("#form-register-1").serialize());
+            data.append('form2',$("#form-register-2").serialize());
+
+            $.ajax({
+                url: "/register",
+                method: "POST",
+                data: data,
+                processData: false,
+                contentType: false
+            }).done(function (data) {
+                if (data.success == 1) {
+                    
+                    $("#tab1").hide();
+                    $("#tab2").hide();
+                    $("#tab3").show();
+                    $(".tabs ul li").removeClass("active");
+                    $(".tabs ul li:odd").addClass("active");
+
+                    return false;
+                }
+
+                alert(data.message);
+
+                $("#tab1").show();
+                $("#tab2").hide();
+                $("#tab3").hide();
+                $(".tabs ul li").removeClass("active");
+                $(".tabs ul li:odd").addClass("active");
+
+
+            }).fail(function (jqXHR, textStatus) {
+                alert('Houve um problema na sua solicitação. Tente novamente mais tarde');
+            });
+
+            return false;
+
+            $("#tab1").hide();
+            $("#tab2").hide();
+            $("#tab3").show();
+            $(".tabs ul li").removeClass("active");
+            $(".tabs ul li:odd").addClass("active");
+
+        }
+
+        return false;
     });
 
     $(".forgot").click(function(){

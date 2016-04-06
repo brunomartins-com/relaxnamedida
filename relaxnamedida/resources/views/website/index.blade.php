@@ -642,6 +642,7 @@ Contact: hello@brunomartins.com
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
                         <form id="form-register-1" name="form-register-1" action="" method="post" enctype="multipart/form-data">
+                            {!! csrf_field() !!}
                             <div class="clear margin-top-35">
                                 <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
                                     <div class="form-group">
@@ -713,7 +714,7 @@ Contact: hello@brunomartins.com
                         </form>
                     </div>
                     <div class="tab-pane" id="tab2">
-                        <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                        <form id="form-register-2" name="form-register-2"  action="" method="post" enctype="multipart/form-data">
                             <div class="clear margin-top-35">
                                 <div class="col-lg-2 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-xs-8">
                                     <div class="form-group">
