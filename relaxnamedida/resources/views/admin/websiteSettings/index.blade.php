@@ -159,6 +159,78 @@
                             </div>
                         </div>
                     </div>
+                    <br />
+
+                    <div class="form-group">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                            {!! Form::label('currentFavicon', 'Ícone') !!}
+                            <div class="clearfix"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new" style="max-width:{{ $imageDetails['faviconWidth'] }}px; max-height:{{ $imageDetails['faviconHeight'] }};">
+                                    <img src="{!! url($imageDetails['folder'].$websiteSettings->favicon)."?".time() !!}" alt="{{ $websiteSettings->title }}" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width:{{ $imageDetails['faviconWidth'] }}px; max-height:{{ $imageDetails['faviconHeight'] }}; border: 0; padding: 0; border-radius: 0;"></div>
+                                <div class="font-size-10 push-10-t">Tamanho: {{ $imageDetails['faviconWidth']." x ".$imageDetails['faviconHeight'] }} pixels / Formatos: .png ou .gif</div>
+                                <div class="push-20-t">
+                                    <span class="btn btn-primary btn-xs btn-file">
+                                        <span class="fileupload-new">Trocar</span>
+                                        <span class="fileupload-exists">Trocar</span>
+                                        {!! Form::hidden('currentFavicon', $websiteSettings->favicon) !!}
+                                        {!! Form::file('favicon', ['class'=>'form-control', 'id'=>'favicon', 'accept'=>'image/png,image/gif']) !!}
+                                    </span>
+                                    <a href="#" class="btn btn-primary btn-xs fileupload-exists" data-dismiss="fileupload" style="margin-left: 30px;">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-group">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                            {!! Form::label('currentAvatar', 'Avatar') !!}
+                            <div class="clearfix"></div>
+                            <div class="img-container hidden">
+                                <img />
+                            </div>
+                            <div class="img-current">
+                                <img src="{!! url($imageDetails['folder'].$websiteSettings->avatar)."?".time() !!}" alt="{{ $websiteSettings->title }}" />
+                            </div>
+                            <div class="font-size-10 push-10-t">Tamanho: {{ $imageDetails['avatarWidth']." x ".$imageDetails['avatarHeight'] }} pixels</div>
+                            <br>
+                            <label class="btn btn-primary btn-xs btn-upload" for="avatar" title="Upload">
+                                {!! Form::hidden('currentAvatar', $websiteSettings->avatar) !!}
+                                {!! Form::hidden('avatarPositionX', '') !!}
+                                {!! Form::hidden('avatarPositionY', '') !!}
+                                {!! Form::hidden('avatarCropAreaW', '') !!}
+                                {!! Form::hidden('avatarCropAreaH', '') !!}
+                                {!! Form::file('avatar', ['class'=>'sr-only', 'id'=>'avatar', 'accept'=>'image/*', 'data-crop'=>true]) !!}
+                                <span class="docs-tooltip" title="Trocar">Trocar</span>
+                            </label>
+                            <label class="btn btn-primary btn-xs btn-cancel-upload hidden" title="Cancel">Cancelar</label>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-group">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                            {!! Form::label('currentAppleTouchIcon', 'Apple Touch Icon') !!}
+                            <div class="clearfix"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new" style="max-width:{{ $imageDetails['appleTouchIconWidth'] }}px; max-height:{{ $imageDetails['appleTouchIconHeight'] }}px;">
+                                    <img src="{!! url($imageDetails['folder'].$websiteSettings->appleTouchIcon)."?".time() !!}" alt="{{ $websiteSettings->title }}" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width:{{ $imageDetails['appleTouchIconWidth'] }}px; max-height:{{ $imageDetails['appleTouchIconHeight'] }}px; border-radius: 0; border:0; padding: 0;"></div>
+                                <div class="font-size-10 push-10-t">Tamanho: {{ $imageDetails['appleTouchIconWidth']." x ".$imageDetails['appleTouchIconHeight'] }} pixels / Somente .png</div>
+                                <div class="push-20-t">
+                                    <span class="btn btn-primary btn-xs btn-file">
+                                        <span class="fileupload-new">Trocar</span>
+                                        <span class="fileupload-exists">Trocar</span>
+                                        {!! Form::hidden('currentAppleTouchIcon', $websiteSettings->appleTouchIcon) !!}
+                                        {!! Form::file('appleTouchIcon', ['id'=>'appleTouchIcon', 'accept'=>'image/png']) !!}
+                                    </span>
+                                    <a href="#" class="btn btn-primary btn-xs fileupload-exists" data-dismiss="fileupload" style="margin-left: 30px;">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <br />
                     <div class="form-group">
@@ -258,6 +330,68 @@ $(function(){
             }
         }
     });
+});
+$('.img-container > img').cropper({
+    aspectRatio: <?=($imageDetails['avatarWidth'])/($imageDetails['avatarHeight']);?>,
+    autoCropArea: 1,
+    minContainerWidth:<?=$imageDetails['avatarWidth'];?>,
+    minContainerHeight:<?=$imageDetails['avatarHeight'];?>,
+    minCropBoxWidth:<?=$imageDetails['avatarWidth'];?>,
+    minCropBoxHeight:<?=$imageDetails['avatarHeight'];?>,
+    mouseWheelZoom:false,
+    crop: function(e) {
+        $("input[name=avatarPositionX]").val(Math.round(e.x));
+        $("input[name=avatarPositionY]").val(Math.round(e.y));
+        $("input[name=avatarCropAreaW]").val(Math.round(e.width));
+        $("input[name=avatarCropAreaH]").val(Math.round(e.height));
+    }
+});
+$('.btn-cancel-upload').click(function(){
+    $('.btn-upload').removeClass('hidden');
+    $('.btn-cancel-upload').addClass('hidden');
+    $('.img-current').removeClass('hidden');
+    $('.img-container > img').attr('src', '');
+    $('.img-container').addClass('hidden');
+    $('input[type=file]#avatar').val('');
+});
+$(function () {
+    var $image = $('.img-container > img');
+    // Import image
+    var $inputImage = $('input[type=file]#avatar');
+    var URL = window.URL || window.webkitURL;
+    var blobURL;
+
+    if (URL) {
+        $inputImage.change(function () {
+            $('.btn-upload').addClass('hidden');
+            $('.btn-cancel-upload').removeClass('hidden');
+            $('.img-current').addClass('hidden');
+            $('.img-container').removeClass('hidden');
+
+            var files = this.files;
+            var file;
+
+            if (!$image.data('cropper')) {
+                return;
+            }
+
+            if (files && files.length) {
+                file = files[0];
+
+                if (/^image\/\w+$/.test(file.type)) {
+                    blobURL = URL.createObjectURL(file);
+                    $image.one('built.cropper', function () {
+                        URL.revokeObjectURL(blobURL); // Revoke when load complete
+                    }).cropper('reset').cropper('replace', blobURL);
+                    //$inputImage.val('');
+                } else {
+                    $body.tooltip('Por favor escolha a imagem.', 'warning');
+                }
+            }
+        });
+    } else {
+        $inputImage.prop('disabled', true).parent().addClass('disabled');
+    }
 });
 </script>
 @stop

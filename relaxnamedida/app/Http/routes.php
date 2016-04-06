@@ -21,6 +21,9 @@ Route::group(
             Route::delete('/frases', 'Admin\PhrasesController@delete');
             Route::put('/frases/alterar-status', 'Admin\PhrasesController@changeStatus');
 
+            Route::get('/baner-inicial', 'Admin\StartBannerController@index');
+            Route::put('/baner-inicial', 'Admin\StartBannerController@update');
+
             Route::get('/regulamento', 'Admin\RegulationController@index');
             Route::put('/regulamento', 'Admin\RegulationController@update');
 
@@ -67,14 +70,16 @@ Route::group(
     }
 );
 
-Route::get('/', 'Website\IndexController@index');
-Route::get('/home', 'Website\IndexController@redirectIndex');
+Route::post('/frases', 'Website\PhrasesController@create');
 
 Route::post('/contact', 'Website\ContactController@post');
 
 Route::post('/cities', 'Website\CitiesController@post');
 
 Route::put('/profile', 'Website\ProfileController@putUpdate');
+
+Route::get('/', 'Website\IndexController@index');
+Route::get('/home', 'Website\IndexController@redirectIndex');
 
 Route::controller('/auth', 'Auth\AuthController');
 Route::controller('/password', 'Auth\PasswordController');

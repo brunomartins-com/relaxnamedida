@@ -9,6 +9,16 @@ class JsonResources
 
     /**
      * @param $filename
+     * @return bool
+     */
+    public static function hasFile($filename)
+    {
+        $filename = database_path('resources') . DIRECTORY_SEPARATOR . $filename . '.json';
+        return is_file($filename);
+    }
+
+    /**
+     * @param $filename
      * @throws Exception
      * @return array
      */

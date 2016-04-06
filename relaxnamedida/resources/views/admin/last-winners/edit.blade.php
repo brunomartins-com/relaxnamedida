@@ -16,7 +16,7 @@
             </div>
             <div class="col-sm-5 text-right hidden-xs">
                 <ol class="breadcrumb push-10-t">
-                    <li><a href="{{ action('Admin\LastWinnersController@getIndex') }}" class="text-primary" title="Ganhadores Anteriores">Ganhadores 2014</a></li>
+                    <li><a href="{{ action('Admin\LastWinnersController@getIndex') }}" class="text-primary" title="Ganhadores Anteriores">Ganhadores Anteriores</a></li>
                     <li>{{ $winner->name }}</li>
                     <li>Editar</li>
                 </ol>

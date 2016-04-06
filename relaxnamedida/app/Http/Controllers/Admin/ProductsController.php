@@ -177,7 +177,6 @@ class ProductsController extends Controller
 
     public function getOrder()
     {
-
         $products = Product::orderBy('sortorder', 'ASC')->get();
 
         return view('admin.products.order')->with(compact('products'));

@@ -15,8 +15,8 @@ Contact: hello@brunomartins.com
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
     <title>@yield('title'){{ $websiteSettings['title'] }}</title>
-    <link rel="shortcut icon" href="{!! asset('assets/images/_upload/dados-do-site/'.$websiteSettings['favicon']) !!}" />
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/_upload/dados-do-site/'.$websiteSettings['appleTouchIcon']) }}" />
+    <link rel="shortcut icon" href="{!! asset('assets/images/_upload/dados-site/'.$websiteSettings['favicon']) !!}" />
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/_upload/dados-site/'.$websiteSettings['appleTouchIcon']) }}" />
     {!! $websiteSettings['googleAnalytics'] !!}
     <!-- Meta Tags -->
     <meta name="title" content="{{ $websiteSettings['title'] }}" />
@@ -119,30 +119,24 @@ Contact: hello@brunomartins.com
         <section class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
             <div class="phrases">
                 <h3>
-                    Faça o cadastro
-                    e responda:
+                    {{ $texts['frase1']  }}
                 </h3>
                 <h4 class="lobster-two">
-                    Porque a
-                    melhor forma
-                    de ficar relax
-                    é com o Teuto?
+                    {{ $texts['frase2']  }}
                 </h4>
                 <h5>
-                    {{ 'Você concorre
-                    a 3 vales-viagem pra ficar
-                    relax longe da rotina' }}
+                    {{ $texts['frase3']  }}
                 </h5>
             </div>
 
             <div class="clear margin-top-75"></div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
-                <a href="#para-participar" class="btn btn-block btn-main" title="Como participar?">Como participar?</a>
+                <a href="#para-participar" class="btn btn-block btn-main" title="Como participar?">{{ $texts['botao1']  }}</a>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
-                <a href="#quero-participar" class="btn btn-block btn-main" title="Quero Participar!">Quero Participar!</a>
+                <a href="#quero-participar" class="btn btn-block btn-main" title="Quero Participar!">{{ $texts['botao2']  }}</a>
             </div>
         </section>
 
@@ -417,7 +411,9 @@ Contact: hello@brunomartins.com
                     <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab4">
-                                {!! Form::open(['name'=>'form-registration', 'class' => 'form-registration' ,'enctype'=> 'multipart/form-data']) !!}
+                                {!! Form::open(['name'=>'form-new-phrase', 'class' => 'form-new-phrase',
+                                                   'action' => 'Website\PhrasesController@create',
+                                                   'enctype'=> 'multipart/form-data']) !!}
                                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                                     <p class="font-size-18">Cadastre quantas frases quiser e aumente suas chances. Só não se esqueça que, pra cada
                                         frase, você necessita de um novo cupom fiscal comprovando a compra de um dos
@@ -428,7 +424,7 @@ Contact: hello@brunomartins.com
                                     </div>
                                     <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
                                         <div class="form-group">
-                                            <input type="file" class="form-control input-main" required  accept="image/*" placeholder="Imagem cupom fiscal" />
+                                            <input name="receipt" type="file" class="form-control input-main" required  accept="image/*" placeholder="Imagem cupom fiscal" />
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -454,7 +450,7 @@ Contact: hello@brunomartins.com
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <label class="strong">Imagem cupom fiscal:</label>
-                                    <a href="/assets/_upload/cupons/{{ $phrase->receipt }}" target="_blank">
+                                    <a href="/assets/images/_upload/cupons/{{ $phrase->receipt }}" target="_blank">
                                         <img src="{{ asset('/assets/images/coupon.png') }}" alt="Cupom Fiscal">
                                     </a>
                                 </div>
@@ -567,29 +563,17 @@ Contact: hello@brunomartins.com
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="{{ asset('assets/images/_upload/products/A-Z-Small.png') }}" alt="A-Z-Small">
+                @foreach($products as $product)
+                    <div class="item @if($product->sortorder == 1) active @endif">
+                        <img src="{{ $productsFolder . $product->smallImage }}" alt="{{  $product->title }}-Small">
                     </div>
-                    <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/BioSoak-Small.png') }}" alt="BioSoakBig">
-                    </div>
-                    <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/Cicatriderm-Small.png') }}" alt="Cicatriderm-Small">
-                    </div>
-                    <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/MaxAir-Small.png') }}" alt="MaxAir-Small">
-                    </div>
-                    <div class="item">
-                        <img src="{{ asset('assets/images/_upload/products/Segurdent-Small.png') }}" alt="Segurdent-Small">
-                    </div>
+                @endforeach
                 </div>
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                @foreach($products as $product)
+                    <li data-target="#carousel-example-generic" data-slide-to="{{ $product->sortorder - 1 }}" class="@if($product->sortorder == 1) active @endif"></li>
+                @endforeach
                 </ol>
 
             <div class="margin-top-40 margin-bottom-30"></div>
@@ -844,18 +828,16 @@ Contact: hello@brunomartins.com
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                 @foreach($products as $product)
-                    @if($product->sortOrder == 1)
-                    <div class="item active">
-                    @else
-                    <div class="item ">
-                    @endif
+
+                    <div class="item @if($product->sortorder == 1) active @endif">
+
                         <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
                             <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">{{  $product->title }}</h2>
                             <p class="font-size-16">
                                 {{  $product->description }}
                                 </p>
                         </div>
-                        <img src="{{ $productsFolder . $product->bigImage }}" alt="Segurdent-Big">
+                        <img src="{{ $productsFolder . $product->bigImage }}" alt="{{  $product->title }}-Big">
                     </div>
                 @endforeach
                 </div>
@@ -917,7 +899,11 @@ Contact: hello@brunomartins.com
         </div>
         <!-- Image Warning  -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-50 margin-bottom-85 warning">
-            {!! $texts['warning'] !!}
+            Este concurso é válido para pessoas físicas, residentes e domiciliadas no território nacional, maiores de 18 anos desde que não se enquadre no conceito de
+            autoridade governamental. O participantes terá quantas chances quiser para participar da promoção, estando cada participação condicionada ao envio do cupom
+            fiscal de forma legível comprovando a compra dos produtos participantes, onde cada produto equivale a 1 (um) direto de resposta. Só será permitido 01 (um)
+            único cadastro de participante por CPF, as atividades do participante deverá ser efetuada sob o regime de senha e login, havendo a possibilidade de ilimitadas
+            participações no concurso. Veja todo o regulamento no menu "Regulamento".
         </div><!-- Image Warning -->
     </article>
 </section>

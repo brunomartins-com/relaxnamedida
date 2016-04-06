@@ -10,6 +10,11 @@
     "icon": "fa-paragraph"
   },
   {
+    "name": "Baner Inicial",
+    "url": "baner-inicial",
+    "icon": "fa-paragraph"
+  },
+  {
     "name": "Regulamento",
     "url": "regulamento",
     "icon": "fa-paragraph"

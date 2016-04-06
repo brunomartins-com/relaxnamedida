@@ -18,7 +18,7 @@ class IndexController extends Controller
     {
 
         $lastWinnersFolder = "assets/images/_upload/ganhadores-anteriores/";
-        $productsFolder    = "assets/images/_upload/produtos/";
+        $productsFolder    = "assets/images/_upload/products/";
 
         $winners2015 = LastWinners::where('year', 2015)->orderBy('position', 'ASC')->get();
         $winners2014 = LastWinners::where('year', 2014)->orderBy('position', 'ASC')->get();
