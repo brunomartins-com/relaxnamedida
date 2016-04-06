@@ -37,7 +37,13 @@ $(function() {
 $(document).ready(function(){
     //ACTION FOR TABS
     $("#nextStep").click(function(){
-        
+
+        if ($("#governmental").prop('checked')) {
+            alert("Autoridades governamentais não podem participar.")
+
+            return false;
+        }
+
         if ($("#form-register-1").valid()){
             $("#tab1").hide();
             $("#tab3").hide();
@@ -66,7 +72,7 @@ $(document).ready(function(){
                 contentType: false
             }).done(function (data) {
                 if (data.success == 1) {
-                    
+
                     $("#tab1").hide();
                     $("#tab2").hide();
                     $("#tab3").show();

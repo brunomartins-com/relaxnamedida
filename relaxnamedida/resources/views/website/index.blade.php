@@ -690,7 +690,7 @@ Contact: hello@brunomartins.com
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-top-5">
                                     <div class="clear margin-bottom-15">
                                         <label class="checkbox-main pull-left padding-top-5 padding-right-5">
-                                            <input name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
+                                            <input id="governmental" name="governmental" type="checkbox" class="margin-left-0" value="authority"> Você é autoridade governamental?
                                         </label>
                                         <a href="javascript:void('');" class="question-tooltip padding-top-5 pull-left" onmouseover="Tip('Autoridade Governamental &eacute; (i) Qualquer autoridade governamental eleita ou indicada; (ii) Qualquer empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, &oacute;rg&atilde;o p&uacute;blico ou empreendimento que exer&ccedil;a fun&ccedil;&otilde;es governamentais; (iii) Qualquer funcion&aacute;rio de partido pol&iacute;tico, seus empregados ou outras pessoas atuando em nome ou favor de partido pol&iacute;tico ou candidato a cargos p&uacute;blicos; (iv) Qualquer empregado ou pessoa que atue em nome ou favor de organiza&ccedil;&atilde;o p&uacute;blica internacional; (v) Qualquer outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legisla&ccedil;&atilde;o local; e (vi) Quaisquer m&eacute;dicos empregados por hospitais, cl&iacute;nicas ou outros institutos p&uacute;blicos ou sob controle governamental.')" onmouseout="UnTip()">( ? )</a>
                                     </div>
@@ -762,6 +762,7 @@ Contact: hello@brunomartins.com
                                     <div class="form-group">
                                         <?php
                                             //STATES
+                                            $states[''] = 'selecione o estado';
                                             $statesConsult = \App\Exceptions\Handler::readFile("states.json");
                                             foreach($statesConsult as $state):
                                                 $states[$state['uf']] = $state['uf'];
