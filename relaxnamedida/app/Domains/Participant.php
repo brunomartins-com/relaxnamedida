@@ -40,6 +40,17 @@ CanResetPasswordContract
         'mobile',
         'gender',
         'birthDate',
+        'cpf',
+        'password',
+        'zipCode',
+        'number',
+        'unit',
+        'reference',
+        'address',
+        'district',
+        'complement',
+        'state',
+        'city',
     ];
 
     /**

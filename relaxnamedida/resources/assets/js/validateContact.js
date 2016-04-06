@@ -9,10 +9,10 @@ $(function(){
                 required: true,
                 email: true
             },
-            'state': {
+            'phone': {
                 required: true
             },
-            'city': {
+            'subject': {
                 required: true
             },
             'message': {
@@ -27,11 +27,11 @@ $(function(){
                 required: 'Informe seu e-mail',
                 email: 'Informe um e-mail válido'
             },
-            'state': {
-                required: 'Informe seu Estado'
+            'phone': {
+                required: 'Informe seu telefone'
             },
-            'city': {
-                required: 'Informe sua cidade'
+            'subject': {
+                required: 'Informe o assunto'
             },
             'message': {
                 required: 'Digite sua mensagem'

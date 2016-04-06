@@ -38,11 +38,18 @@ $(function() {
 $(document).ready(function(){
     //ACTION FOR TABS
     $("#nextStep").click(function(){
-        $("#tab1").hide();
-        $("#tab3").hide();
-        $("#tab2").show();
-        $(".tabs ul li").removeClass("active");
-        $(".tabs ul li:odd").addClass("active");
+
+        $('#form-register-1').validate();
+        
+        if ($("#form-register-1").valid()){
+            $("#tab1").hide();
+            $("#tab3").hide();
+            $("#tab2").show();
+            $(".tabs ul li").removeClass("active");
+            $(".tabs ul li:odd").addClass("active");
+        }
+
+        return false;
     });
 
     $("#nextStep2").click(function(){
@@ -222,7 +229,7 @@ $(document).ready(function(){
     });
     
     //FILTER CITIES PER STATE
-    $("form#form-register select[name=state]").change(function(){
+    $("select[name=state].refreshCities").change(function(){
         var val = $(this).val();
         $.ajax({
             url: '/cities',
@@ -230,16 +237,16 @@ $(document).ready(function(){
             dataType: 'json',
             data: {'state': val, '_token': $('input[name=_token]').val()},
             beforeSend: function () {
-                $("select[name=city] option:selected").text('Carregando cidades...');
-                $("select[name=city]").attr('disabled', 'disabled');
+                $("select[name=city].city-refresh option:selected").text('Carregando cidades...');
+                $("select[name=city].city-refresh").attr('disabled', 'disabled');
             },
             success: function(data){
-                $("select[name=city]").removeAttr('disabled');
+                $("select[name=city].city-refresh").removeAttr('disabled');
                 var cities = '<option value="">Escolha a cidade...</option>';
                 $.each(data, function (key, val) {
                     cities += '<option value="' + val.name + '">' + val.name + '</option>';
                 });
-                $("select[name=city]").html(cities);
+                $("select[name=city].city-refresh").html(cities);
             }
         });
     });

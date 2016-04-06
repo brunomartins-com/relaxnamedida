@@ -6,7 +6,8 @@ elixir(function(mix) {
     mix.sass(['main.scss'], '../public_html/concursonamedida/assets/css/bootstrap.min.css');
     mix.sass(['custom.scss'], '../public_html/concursonamedida/assets/css/main.css');
     mix.scripts('jquery.js', '../public_html/concursonamedida/assets/js/jquery.min.js');
-    mix.scripts(['bootstrap.js', 'custom.js', 'jquery.validate.min.js', 'jquery.mask.min.js', 'jquery.easing.min.js', 'wz_tooltip.js'], '../public_html/concursonamedida/assets/js/main.min.js');
+
+    mix.scripts(['bootstrap.js', 'custom.js', 'jquery.validate.min.js', 'jquery.mask.min.js', 'jquery.easing.min.js', 'wz_tooltip.js', 'validateContact.js', 'validateRegistration.js'], '../public_html/concursonamedida/assets/js/main.min.js');
 
     mix.copy( "resources/assets/images/**", "../public_html/concursonamedida/assets/images");
 

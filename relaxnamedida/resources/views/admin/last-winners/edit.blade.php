@@ -1,6 +1,6 @@
 @extends('admin.sidebar-template')
 
-@section('title', 'Editar Produto | ')
+@section('title', 'Editar Ganhador 2014 | ')
 
 @section('page-content')
 @parent
@@ -11,13 +11,13 @@
         <div class="row items-push">
             <div class="col-sm-7">
                 <h1 class="page-heading">
-                    Produtos <small></small>
+                    Ganhadores Anteriores <small></small>
                 </h1>
             </div>
             <div class="col-sm-5 text-right hidden-xs">
                 <ol class="breadcrumb push-10-t">
-                    <li><a href="{{ action('Admin\ProductsController@getIndex') }}" class="text-primary" title="Produtos">Produtos</a></li>
-                    <li>{{ $product->title }}</li>
+                    <li><a href="{{ action('Admin\LastWinnersController@getIndex') }}" class="text-primary" title="Ganhadores Anteriores">Ganhadores 2014</a></li>
+                    <li>{{ $winner->name }}</li>
                     <li>Editar</li>
                 </ol>
             </div>
@@ -32,7 +32,7 @@
             <div class="block-header bg-primary-darker text-white">
                 <ul class="block-options">
                     <li>
-                        <button type="button" class="btn-back" data-url="{{ action('Admin\ProductsController@getIndex') }}"><i class="si si-action-undo"></i></button>
+                        <button type="button" class="btn-back" data-url="{{ action('Admin\LastWinnersController@getIndex') }}"><i class="si si-action-undo"></i></button>
                     </li>
                     <li>
                         <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
@@ -52,77 +52,83 @@
                 <!-- .block-content -->
                 <div class="block-content block-content-full">
                     {!! Form::open([
-                            'id' => 'products',
+                            'id' => 'winners',
                             'method' => 'put',
                             'class' => 'form-horizontal push-20-t',
                             'enctype' => 'multipart/form-data',
-                            'url' => action('Admin\ProductsController@putEdit')
+                            'url' => action('Admin\LastWinnersController@putEdit')
                             ])
                     !!}
-                    {!! Form::hidden('id', $product->id) !!}
+                    {!! Form::hidden('winnersId', $winner->id) !!}
+
+                    <div class="form-group">
+                        <div class="col-lg-3 col-md-5 col-sm-7 col-xs-9">
+                            <div class="form-input">
+                                {!! Form::label('', 'Ano / Posição') !!}
+                                <div class="form-control">
+                                    {{ $winner->year }} / {{ $winner->position }}º Lugar
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
                             <div class="form-input">
-                                {!! Form::label('title', 'Nome/Produto *') !!}
-                                {!! Form::text('title', $product->title, ['class'=>'form-control', 'id'=>'title', 'maxlength'=>45]) !!}
+                                {!! Form::label('name', 'Nome *') !!}
+                                {!! Form::text('name', $winner->name, ['class'=>'form-control', 'id'=>'name', 'maxlength'=>100]) !!}
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
                             <div class="form-input">
-                                {!! Form::label('description', 'Descrição *') !!}
-                                {!! Form::textarea('description', $product->description, ['class'=>'form-control', 'id'=>'description']) !!}
+                                {!! Form::label('city', 'Cidade *') !!}
+                                {!! Form::text('city', $winner->city, ['class'=>'form-control', 'id'=>'city', 'maxlength'=>100]) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 col-md-5 col-sm-7 col-xs-9">
+                            <div class="form-input">
+                                {!! Form::label('state', 'Estado *') !!}
+                                {!! Form::text('state', $winner->state, ['class'=>'form-control', 'id'=>'state', 'maxlength'=>2]) !!}
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
                             <div class="form-input">
-                                {!! Form::label('urlBuy', 'URL Compre Aqui *') !!}
-                                {!! Form::text('urlBuy', $product->urlBuy, ['class'=>'form-control', 'id'=>'urlBuy', 'placeholder' => 'http://', 'maxlength'=>255]) !!}
+                                {!! Form::label('motel', 'Hotel *') !!}
+                                {!! Form::text('motel', $winner->motel, ['id' => 'motel', 'class' => 'form-control', 'maxlength'=>300]) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                            <div class="form-input">
+                                {!! Form::label('phrase', 'Frase *') !!}
+                                {!! Form::textarea('phrase', $winner->phrase, ['id' => 'phrase', 'class' => 'form-control', 'maxlength'=>300]) !!}
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                            {!! Form::label('smallImage', 'Imagem Pequena') !!}
+                            {!! Form::label('image', 'Imagem') !!}
                             <div class="clearfix"></div>
                             <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="fileupload-new" style="max-width:350px; max-height:206px;">
-                                    <img  style="max-width:350px; max-height:206px;"src="{!! url($imageDetails['folder'].$product->smallImage)."?".time() !!}" alt="{{ $product->title }}" />
+                                <div class="fileupload-new" style="max-width: 468px; max-height: 347px;">
+                                    <img style="max-width: 468px; max-height: 347px;" src="{!! url($imageDetails['folder'].$winner->image)."?".time() !!}" alt="{{ $winner->title }}" />
                                 </div>
-                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 350px; max-height:206px; border-radius: 0; border:0; padding: 0;"></div>
-                                <div class="font-size-10 push-10-t">Tamanho: 350x206 pixels / Somente .png com transparência</div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width:468px; max-height:347px; border-radius: 0; border:0; padding: 0;"></div>
+                                <div class="font-size-10 push-10-t">Tamanho: 468x347 pixels / Somente images .png, .gif ou .jpeg</div>
                                 <div class="push-20-t">
                                 <span class="btn btn-primary btn-xs btn-file">
                                     <span class="fileupload-new">Selecionar Imagem</span>
                                     <span class="fileupload-exists">Trocar</span>
-                                    {!! Form::hidden('currentSmallImage', $product->smallImage) !!}
-                                    {!! Form::file('smallImage', ['id'=>'smallImage', 'accept'=>'image/png']) !!}
-                                </span>
-                                    <a href="#" class="btn btn-primary btn-xs fileupload-exists" data-dismiss="fileupload" style="margin-left: 30px;">Cancelar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                            {!! Form::label('bigImage', 'Imagem Grande') !!}
-                            <div class="clearfix"></div>
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="fileupload-new" style="max-width: 1110px; max-height: 635px;">
-                                    <img style="max-width: 1110px; max-height: 635px;" src="{!! url($imageDetails['folder'].$product->bigImage)."?".time() !!}" alt="{{ $product->title }}" />
-                                </div>
-                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width:1110px; max-height:635px; border-radius: 0; border:0; padding: 0;"></div>
-                                <div class="font-size-10 push-10-t">Tamanho: 1110x635 pixels / Somente .png com transparência</div>
-                                <div class="push-20-t">
-                                <span class="btn btn-primary btn-xs btn-file">
-                                    <span class="fileupload-new">Selecionar Imagem</span>
-                                    <span class="fileupload-exists">Trocar</span>
-                                    {!! Form::hidden('currentBigImage', $product->bigImage) !!}
-                                    {!! Form::file('bigImage', ['id'=>'bigImage', 'accept'=>'image/png']) !!}
+                                    {!! Form::hidden('currentImage', $winner->image) !!}
+                                    {!! Form::file('image', ['id'=>'image', 'accept'=>'image/*']) !!}
                                 </span>
                                     <a href="#" class="btn btn-primary btn-xs fileupload-exists" data-dismiss="fileupload" style="margin-left: 30px;">Cancelar</a>
                                 </div>
@@ -167,30 +173,41 @@ $(function(){
         },
         ignore: [],
         rules: {
-            'title': {
+            'name': {
                 required: true
             },
-            'description': {
+            'city': {
                 required: true
             },
-            'urlBuy': {
+            'state': {
+                required: true
+            },
+            'motel': {
                 required: true,
-                url: true
+            },
+            'phrase': {
+                required: true
             }
         },
         messages: {
-            'title': {
-                required: 'Informe o nome do produto'
+            'name': {
+                required: 'Informe o nome do ganhador'
             },
-            'description': {
-                required: 'Informe a descrição do produto'
+            'city': {
+                required: 'Informe a cidade do ganhador'
             },
-            'urlBuy': {
-                required: 'Informe o link para comprar o produto',
-                url: 'Informe uma URL válida'
+            'state': {
+                required: 'Informe o Estado do ganhador'
+            },
+            'phrase': {
+                required: "Informe a Frase do ganhador",
+            },
+            'motel': {
+                required: "Informe o Hotel da viagem",
             }
         }
     });
 });
+
 </script>
 @stop

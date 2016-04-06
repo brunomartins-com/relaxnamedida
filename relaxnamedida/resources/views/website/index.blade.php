@@ -138,7 +138,7 @@ Contact: hello@brunomartins.com
             <div class="clear margin-top-75"></div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
-                <a href="" class="btn btn-block btn-main" title="Como participar?">Como participar?</a>
+                <a href="#para-participar" class="btn btn-block btn-main" title="Como participar?">Como participar?</a>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
@@ -226,7 +226,8 @@ Contact: hello@brunomartins.com
                         <p class="font-size-18 strong">Respondemos rapidinho e você continua relax.</p>
                         <div class="horizontal-bar margin-top-25 margin-bottom-35"></div>
                     </div>
-                    <form name="form-register" action="" method="post" enctype="multipart/form-data">
+                    <form name="form-contact" class="form-contact" action="{{ action('Website\ContactController@post')  }}" method="post" enctype="multipart/form-data">
+                        {!! csrf_field() !!}
                         <div class="clear">
                             <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
                                 <div class="form-group">
@@ -245,7 +246,7 @@ Contact: hello@brunomartins.com
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <input name="Subject" type="text" class="form-control input-main" placeholder="Assunto">
+                                    <input name="subject" type="text" class="form-control input-main" placeholder="Assunto">
                                 </div>
                             </div>
                             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
@@ -253,7 +254,7 @@ Contact: hello@brunomartins.com
                                     <textarea name="message" rows="5" class="form-control input-main" placeholder="Mensagem"></textarea>
                                 </div>
                                 <span class="text-brown">Todos os campos são de preenchimento obrigatório</span>
-                                <button type="button" class="btn btn-main pull-right" title="Enviar">Enviar</button>
+                                <button type="submit" class="btn btn-main pull-right" title="Enviar">Enviar</button>
                             </div>
                         </div>
                     </form>
@@ -416,7 +417,7 @@ Contact: hello@brunomartins.com
                     <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab4">
-                                {!! Form::open(['name'=>'form-register', 'enctype'=> 'multipart/form-data']) !!}
+                                {!! Form::open(['name'=>'form-registration', 'class' => 'form-registration' ,'enctype'=> 'multipart/form-data']) !!}
                                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                                     <p class="font-size-18">Cadastre quantas frases quiser e aumente suas chances. Só não se esqueça que, pra cada
                                         frase, você necessita de um novo cupom fiscal comprovando a compra de um dos
@@ -710,7 +711,7 @@ Contact: hello@brunomartins.com
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
-                        <form id="form-register" name="form-register" action="" method="post" enctype="multipart/form-data">
+                        <form id="form-register-1" name="form-register-1" action="" method="post" enctype="multipart/form-data">
                             <div class="clear margin-top-35">
                                 <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
                                     <div class="form-group">
@@ -776,7 +777,7 @@ Contact: hello@brunomartins.com
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-right">
-                                    <button type="button" id="nextStep" class="btn btn-main" title="Próximo passo">Próximo passo</button>
+                                    <button type="button" id="nextStep" class="btn btn-main first-step" title="Próximo passo">Próximo passo</button>
                                 </div>
                             </div>
                         </form>
@@ -835,12 +836,12 @@ Contact: hello@brunomartins.com
                                                 $states[$state['uf']] = $state['uf'];
                                             endforeach;
                                         ?>
-                                        {!! Form::select('state', $states, '', ['class' => 'form-control input-main text-light-brown', 'required' => 'required']) !!}
+                                        {!! Form::select('state', $states, '', ['class' => 'form-control input-main text-light-brown refreshCities', 'required' => 'required']) !!}
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                                     <div class="form-group">
-                                        <select class="form-control input-main text-light-brown">
+                                        <select name="city" class="city-refresh form-control input-main text-light-brown">
                                             <option value="" selected>Cidade</option>
                                         </select>
                                     </div>

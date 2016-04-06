@@ -35,9 +35,13 @@ Route::group(
             Route::post('/produtos/novo', 'Admin\ProductsController@postAdd');
             Route::get('/produtos/ordem', 'Admin\ProductsController@getOrder');
 
-            Route::get('/ganhadores', 'Admin\IndexController@index');
+            Route::get('/ganhadores', 'Admin\WinnersController@getIndex');
+            Route::get('/ganhadores/editar/{winnersId}', 'Admin\WinnersController@getEdit');
+            Route::put('/ganhadores/editar', 'Admin\WinnersController@putEdit');
 
-            Route::get('/ganhadores-anterior', 'Admin\IndexController@index');
+            Route::get('/ganhadores-anterior', 'Admin\LastWinnersController@getIndex');
+            Route::get('/ganhadores-anterior/editar/{winnersId}', 'Admin\LastWinnersController@getEdit');
+            Route::put('/ganhadores-anterior/editar', 'Admin\LastWinnersController@putEdit');
 
             Route::get('/dados-site', 'Admin\WebsiteSettingsController@index');
             Route::post('/dados-site', 'Admin\WebsiteSettingsController@update');
@@ -65,6 +69,10 @@ Route::group(
 
 Route::get('/', 'Website\IndexController@index');
 Route::get('/home', 'Website\IndexController@redirectIndex');
+
+Route::post('/contact', 'Website\ContactController@post');
+
+Route::post('/cities', 'Website\CitiesController@post');
 
 Route::put('/profile', 'Website\ProfileController@putUpdate');
 

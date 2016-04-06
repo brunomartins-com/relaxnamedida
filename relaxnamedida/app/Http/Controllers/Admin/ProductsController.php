@@ -11,9 +11,6 @@ use Image;
 class ProductsController extends Controller
 {
     public $folder;
-    public $folderBull;
-    public $imageWidth;
-    public $imageHeight;
 
     public function __construct()
     {
