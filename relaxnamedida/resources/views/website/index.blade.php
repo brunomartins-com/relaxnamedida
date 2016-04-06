@@ -656,7 +656,7 @@ Contact: hello@brunomartins.com
                                 </div>
                                 <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input name="telephone" type="tel" class="form-control input-main" data-mask="(00) 0000-0000" placeholder="Telefone">
+                                        <input name="phone" type="tel" class="form-control input-main" data-mask="(00) 0000-0000" placeholder="Telefone">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
