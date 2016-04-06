@@ -514,90 +514,32 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab6">
+                            @foreach($winners2015 as $winner)
                             <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
-                                <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
-                                <h2 class="text-orange text-uppercase font-size-20 strong">Feira de Santana - Ba Resort vila galé</h2>
-                                <p class="strong font-size-12">Mais que um "Relax na Medida",
-                                    uma das maiores experiências
-                                    da minha vida! Muito obrigado
-                                    Laboratório Teuto!</p>
-                                <p class="strong font-size-12">Fabrício Antunes</p>
+                                <h2 class="text-orange text-uppercase font-size-36 strong">{{  $winner->position }}° Lugar</h2>
+                                <h2 class="text-orange text-uppercase font-size-20 strong">{{  $winner->city }} - {{  $winner->state }} {{  $winner->motel }}</h2>
+                                <p class="strong font-size-12">{{ $winner->phrase }}</p>
+                                <p class="strong font-size-12">{{  $winner->name }}</p>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
+                                <img style="max-width: 468px; max-height: 347px" src="{{ $lastWinnersFolder . $winner->image }}" class="img-responsive">
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
-
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
-                                <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
-                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
-                                <p class="strong font-size-12">Mais que um "Relax na Medida",
-                                    uma das maiores experiências
-                                    da minha vida! Muito obrigado
-                                    Laboratório Teuto!</p>
-                                <p class="strong font-size-12">Fabrício Antunes</p>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
-
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
-                                <h2 class="text-orange text-uppercase font-size-36 strong">3° Lugar</h2>
-                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
-                                <p class="strong font-size-12">Mais que um "Relax na Medida",
-                                    uma das maiores experiências
-                                    da minha vida! Muito obrigado
-                                    Laboratório Teuto!</p>
-                                <p class="strong font-size-12">Fabrício Antunes</p>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                            @endforeach
                         </div>
                         <div class="tab-pane" id="tab7">
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
-                                <h2 class="text-orange text-uppercase font-size-36 strong">1° Lugar</h2>
-                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
-                                <p class="strong font-size-12">Mais que um "Relax na Medida",
-                                    uma das maiores experiências
-                                    da minha vida! Muito obrigado
-                                    Laboratório Teuto!</p>
-                                <p class="strong font-size-12">Fabrício Antunes</p>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
-
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
-                                <h2 class="text-orange text-uppercase font-size-36 strong">2° Lugar</h2>
-                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
-                                <p class="strong font-size-12">Mais que um "Relax na Medida",
-                                    uma das maiores experiências
-                                    da minha vida! Muito obrigado
-                                    Laboratório Teuto!</p>
-                                <p class="strong font-size-12">Fabrício Antunes</p>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
-
-                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12 col-xs-12">
-                                <h2 class="text-orange text-uppercase font-size-36 strong">3° Lugar</h2>
-                                <h2 class="text-orange text-uppercase font-size-20 strong">Salvador - Ba Resort vila galé</h2>
-                                <p class="strong font-size-12">Mais que um "Relax na Medida",
-                                    uma das maiores experiências
-                                    da minha vida! Muito obrigado
-                                    Laboratório Teuto!</p>
-                                <p class="strong font-size-12">Fabrício Antunes</p>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <img src="{{ asset('assets/images/winners.png') }}" class="img-responsive">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                            @foreach($winners2014 as $winner)
+                                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
+                                    <h2 class="text-orange text-uppercase font-size-36 strong">{{  $winner->position }}° Lugar</h2>
+                                    <h2 class="text-orange text-uppercase font-size-20 strong">{{  $winner->city }} - {{  $winner->state }} {{  $winner->motel }}</h2>
+                                    <p class="strong font-size-12">{{ $winner->phrase }}</p>
+                                    <p class="strong font-size-12">{{  $winner->name }}</p>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                    <img style="max-width: 468px; max-height: 347px" src="{{ $lastWinnersFolder . $winner->image }}" class="img-responsive">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -692,7 +634,11 @@ Contact: hello@brunomartins.com
             <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Quero Participar</h2>
             <h3 class="text-white font-size-36 lobster-two">e concorrer a viagem dos sonhos.</h3>
         </header>
-
+        @if(!$websiteSettings['allowSignUp'])
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 margin-top-45 margin-bottom-35 font-size-18">
+            {!! $texts['sign-up-ended'] !!}
+        </div>
+        @else
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 margin-top-45 margin-bottom-35 font-size-18">
             Preencha corretamente o cadastro de participação. Tudo preenchido e enviado, vá até o seu e-mail e confirme sua
             inscrição. Faça seu login, envie uma foto do cupom fiscal dos produtos Teuto participantes e responda à pergunta
@@ -869,6 +815,7 @@ Contact: hello@brunomartins.com
                 </div>
             </div>
         </div>
+            @endif
     </article>
 </section>
 <section id="regulamento" class="regulament margin-bottom-30">
@@ -880,59 +827,7 @@ Contact: hello@brunomartins.com
         </header>
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 margin-top-70">
             <div class="well margin-bottom-120">
-                <p>
-                <b>a) Razão social da pessoa jurídica requerente: </b>Laboratório Teuto Brasileiro S/A, localizada a Avenida VP 7 D,
-                Módulo 11, Quadra 13, DAIA, Anápolis/GO<br>
-                <b>b) Logomarca da pessoa jurídica requerente</b><br>
-                Uma imagem vai aqui <br>
-                <b>c) CNPJ/MF: 17.159.229/0001-76</b><br>
-                <b>d) Data de início e de término da promoção comercial:</b> 27/12/2013 A 27/03/2014<br>
-                <b>e) Período de participação:</b> 27/12/2013 A 07/03/2014<br>
-                <b>f) Descrição das condições de participação:<br><br>
-
-                    - Descrição detalhada da operação</b><br><br><br>
-
-
-                    1.1 Este concurso é válido para pessoas fisicas, residentes e domiciliadas no território nacional, maiores de 18
-                anos, desde que não se enquadre no conceito de autoridade governamental<br><br>
-
-
-                Autoridade Governamental significa: (i) qualquer autoridade governamental eleita ou indicada, (ii) qualquer
-                empregado ou outra pessoa atuando em nome ou favor de autoridade governamental, órgão público ou
-                empreendimento que exerça funções governamentais; (iii) qualquer funcionário de partido político, seus
-                empregados ou outras pessoas atuando em nome ou favor de partido político ou candidato a cargos públicos; (iv)
-                qualquer empregado ou pessoa que atue em nome ou favor de organização pública internacional; (v) qualquer
-                outra pessoa que de outra forma se enquadre no conceito de autoridade governamental nos termos da legislação
-                local; e (vi) quaisquer médicos empregados por hospitais, clínicas ou outros institutos públicos ou sob controle
-                governamental. A expressão "governamental" abrangerá todos os níveis e instâncias de governos no Brasil (ou
-                seja, órgãos executivos, legistativos ou judiciários em instância local, regional ou nacional). É preciso ter em mente
-                    <br><br><br>
-
-                continua...
-
-                    <br><br><br>
-                Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico. Com mais de 2000 anos,
-                suas raízes podem ser encontradas em uma obra de literatura latina clássica datada de 45 AC. Richard McClintock,
-                um professor de latim do Hampden-Sydney College na Virginia, pesquisou uma das mais obscuras palavras em latim,
-                consectetur, oriunda de uma passagem de Lorem Ipsum, e, procurando por entre citações da palavra na literatura
-                clássica, descobriu a sua indubitável origem. Lorem Ipsum vem das seções 1.10.32 e 1.10.33 do "de Finibus Bonorum
-                et Malorum" (Os Extremos do Bem e do Mal), de Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética
-                muito popular na época da Renascença. A primeira linha de Lorem Ipsum, "Lorem Ipsum dolor sit amet..." vem de
-                uma linha na seção 1.10.32.
-
-                O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido abaixo para os interessados.
-                Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cicero também foram reproduzidas abaixo em sua
-                forma exata original, acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.
-
-                Existem muitas variações disponíveis de passagens de Lorem Ipsum, mas a maioria sofreu algum tipo de alteração,
-                seja por inserção de passagens com humor, ou palavras aleatórias que não parecem nem um pouco convincentes.
-                Se você pretende usar uma passagem de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso escrito
-                escondido no meio do texto. Todos os geradores de Lorem Ipsum na internet tendem a repetir pedaços predefinidos
-                conforme necessário, fazendo deste o primeiro gerador de Lorem Ipsum autêntico da internet. Ele usa um dicionário
-                com mais de 200 palavras em Latim combinado com um punhado de modelos de estrutura de frases para gerar um
-                Lorem Ipsum com aparência razoável, livre de repetições, inserções de humor, palavras não características, etc.
-
-                </p>
+                {!! $texts['regulation'] !!}
             </div>
         </div>
     </article>
@@ -948,76 +843,21 @@ Contact: hello@brunomartins.com
             <div id="carousel-2" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
+                @foreach($products as $product)
+                    @if($product->sortOrder == 1)
                     <div class="item active">
+                    @else
+                    <div class="item ">
+                    @endif
                         <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
-                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
+                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">{{  $product->title }}</h2>
                             <p class="font-size-16">
-                                É ideal para o seu conforto, com duração de
-                                até 12 horas. O fixador impede a passagem
-                                de partículas e é de fácil aplicação, basta
-                                aplicar o produto sobre a dentadura limpa e
-                                úmida e em seguida introduzir a dentadura
-                                na boca, pressionando por alguns segundos.
+                                {{  $product->description }}
                                 </p>
                         </div>
-                        <img src="{{ asset('assets/images/_upload/products/Segurdent-Big.png') }}" alt="Segurdent-Big">
+                        <img src="{{ $productsFolder . $product->bigImage }}" alt="Segurdent-Big">
                     </div>
-                    <div class="item">
-                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
-                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
-                            <p class="font-size-16">
-                                É ideal para o seu conforto, com duração de
-                                até 12 horas. O fixador impede a passagem
-                                de partículas e é de fácil aplicação, basta
-                                aplicar o produto sobre a dentadura limpa e
-                                úmida e em seguida introduzir a dentadura
-                                na boca, pressionando por alguns segundos.
-                            </p>
-                        </div>
-                        <img src="{{ asset('assets/images/_upload/products/BioSoak-Big.png') }}" alt="BioSoakBig">
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
-                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
-                            <p class="font-size-16">
-                                É ideal para o seu conforto, com duração de
-                                até 12 horas. O fixador impede a passagem
-                                de partículas e é de fácil aplicação, basta
-                                aplicar o produto sobre a dentadura limpa e
-                                úmida e em seguida introduzir a dentadura
-                                na boca, pressionando por alguns segundos.
-                            </p>
-                        </div>
-                        <img src="{{ asset('assets/images/_upload/products/Cicatriderm-Big.png') }}" alt="Cicatriderm-Big">
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
-                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
-                            <p class="font-size-16">
-                                É ideal para o seu conforto, com duração de
-                                até 12 horas. O fixador impede a passagem
-                                de partículas e é de fácil aplicação, basta
-                                aplicar o produto sobre a dentadura limpa e
-                                úmida e em seguida introduzir a dentadura
-                                na boca, pressionando por alguns segundos.
-                            </p>
-                        </div>
-                        <img src="{{ asset('assets/images/_upload/products/MaxAir-Big.png') }}" alt="MaxAir-Big">
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-4 col-lg-offset-6 col-md-4 col-md-offset-6 col-sm-12 col-xs-12 description-products">
-                            <h2 class="text-orange text-uppercase font-size-36 strong padding-top-10">Segurdent</h2>
-                            <p class="font-size-16">
-                                É ideal para o seu conforto, com duração de
-                                até 12 horas. O fixador impede a passagem
-                                de partículas e é de fácil aplicação, basta
-                                aplicar o produto sobre a dentadura limpa e
-                                úmida e em seguida introduzir a dentadura
-                                na boca, pressionando por alguns segundos.
-                            </p>
-                        </div>
-                        <img src="{{ asset('assets/images/_upload/products/A-Z-Big.png') }}" alt="A-Z-Big">
-                    </div>
+                @endforeach
                 </div>
 
                 <!-- Controls -->
@@ -1077,11 +917,7 @@ Contact: hello@brunomartins.com
         </div>
         <!-- Image Warning  -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-50 margin-bottom-85 warning">
-            Este concurso é válido para pessoas físicas, residentes e domiciliadas no território nacional, maiores de 18 anos desde que não se enquadre no conceito de
-            autoridade governamental. O participantes terá quantas chances quiser para participar da promoção, estando cada participação condicionada ao envio do cupom
-            fiscal de forma legível comprovando a compra dos produtos participantes, onde cada produto equivale a 1 (um) direto de resposta. Só será permitido 01 (um)
-            único cadastro de participante por CPF, as atividades do participante deverá ser efetuada sob o regime de senha e login, havendo a possibilidade de ilimitadas
-            participações no concurso. Veja todo o regulamento no menu "Regulamento".
+            {!! $texts['warning'] !!}
         </div><!-- Image Warning -->
     </article>
 </section>
