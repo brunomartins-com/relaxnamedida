@@ -74,14 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                            <div class="form-input">
-                                {!! Form::label('urlBuy', 'URL Compre Aqui *') !!}
-                                {!! Form::text('urlBuy', '', ['class'=>'form-control', 'id'=>'urlBuy', 'placeholder' => 'http://', 'maxlength'=>255]) !!}
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
                             {!! Form::label('smallImage', 'Imagem Pequena') !!}
@@ -166,10 +159,6 @@
                 'description': {
                     required: true
                 },
-                'urlBuy': {
-                    required: true,
-                    url: true
-                },
                 'image': {
                     required: true
                 }
@@ -180,10 +169,6 @@
                 },
                 'description': {
                     required: 'Informe a descrição do produto'
-                },
-                'urlBuy': {
-                    required: 'Informe o link para comprar o produto',
-                    url: 'Informe uma URL válida'
                 },
                 'image': {
                     required: 'Escolha uma imagem para o produto'

@@ -36,7 +36,6 @@ class ProductsController extends Controller
         $this->validate($request, [
             'title'       => 'required|max:100',
             'description' => 'required',
-            'urlBuy'      => 'required',
             'bigImage'    => 'required|image|mimes:png',
             'smallImage'  => 'required|image|mimes:png',
         ],
@@ -55,7 +54,6 @@ class ProductsController extends Controller
         $product              = new Product();
         $product->title       = $request->title;
         $product->description = $request->description;
-        $product->urlBuy      = $request->urlBuy;
 
         //IMAGE
         $extension      = $request->smallImage->getClientOriginalExtension();
@@ -97,7 +95,6 @@ class ProductsController extends Controller
         $this->validate($request, [
             'title'       => 'required|max:100',
             'description' => 'required',
-            'urlBuy'      => 'required',
             'bigImage'    => 'image|mimes:png',
             'smallImage'  => 'image|mimes:png',
         ],
@@ -115,7 +112,6 @@ class ProductsController extends Controller
         $product              = Product::find($request->id);
         $product->title       = $request->title;
         $product->description = $request->description;
-        $product->urlBuy      = $request->urlBuy;
 
         if ($request->smallImage) {
             //DELETE OLD IMAGE
