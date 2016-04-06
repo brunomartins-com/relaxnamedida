@@ -24,9 +24,17 @@
         body{
             width: 100%;
             height: 1200px;
-            background: url('/assets/images/logo-concurso-relax-na-medida.png') no-repeat center top;
+            background: url('/assets/images/bg-header.jpg') no-repeat center top;
         }
     </style>
 </head>
-<body></body>
+<body>
+<br/>
+<center>
+<h1 class="center"><img src="/assets/images/logo-concurso-relax-na-medida.png" alt="Concurso Relax Na Medida"></h1>
+<h3 class="text-white font-size-36 lobster-two">Estamos em manutenção.</h3>
+</center>
+
+
+</body>
 </html>
