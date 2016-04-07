@@ -955,6 +955,7 @@ Contact: hello@brunomartins.com
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic" />
 <script type="text/javascript" src="{!! asset('assets/js/jquery.min.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('assets/js/jquery.mobile.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/main.min.js') !!}"></script>
 @if(Session::has('message'))
 <script>

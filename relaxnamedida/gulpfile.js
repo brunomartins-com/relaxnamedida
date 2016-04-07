@@ -6,6 +6,7 @@ elixir(function(mix) {
     mix.sass(['main.scss'], '../public_html/concursonamedida/assets/css/bootstrap.min.css');
     mix.sass(['custom.scss'], '../public_html/concursonamedida/assets/css/main.css');
     mix.scripts('jquery.js', '../public_html/concursonamedida/assets/js/jquery.min.js');
+    mix.scripts('jquery.mobile.min.js', '../public_html/concursonamedida/assets/js/jquery.mobile.min.js');
 
     mix.scripts(
         [

@@ -298,4 +298,12 @@ $(document).ready(function(){
             }
         });
     });
+
+    //MOBILE NAVIGATION CAROUSEL
+    $(".carousel").swiperight(function() {
+        $(".carousel").carousel('prev');
+    });
+    $(".carousel").swipeleft(function() {
+        $(".carousel").carousel('next');
+    });
 });
