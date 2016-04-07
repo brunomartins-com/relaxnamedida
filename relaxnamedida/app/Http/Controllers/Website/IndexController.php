@@ -7,6 +7,7 @@ use App\Domains\Texts;
 use App\Domains\WebsiteSettings;
 use App\Helpers\JsonResources;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class IndexController extends Controller
 {
@@ -38,6 +39,13 @@ class IndexController extends Controller
             $websiteSettings = JsonResources::readFile('websiteSettings');
         } else {
             $websiteSettings = WebsiteSettings::find(1);
+        }
+
+        if (Auth::check('users') && Auth::user('users')->active == 0) {
+            Auth::logout('users');
+            $status = 'Seu email ainda não foi confimado, verifique sua caixa de email.';
+
+            return redirect('/')->with(compact('status'));
         }
 
         return view('website.index')

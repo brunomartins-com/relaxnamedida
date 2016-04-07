@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Domains\Product;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Image;
@@ -69,6 +70,8 @@ class ProductsController extends Controller
         $bigImage->save($this->folder . $nameBigImage);
 
         $product->bigImage = $nameBigImage;
+
+        $product->sortorder = DB::table('products')->max('sortorder') + 1;
 
         $product->save();
 
