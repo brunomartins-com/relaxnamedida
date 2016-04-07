@@ -73,11 +73,11 @@ $(document).ready(function(){
             }).done(function (data) {
                 if (data.success == 1) {
 
+                    $("#tab3").show();
                     $("#tab1").hide();
                     $("#tab2").hide();
-                    $("#tab3").show();
                     $(".tabs ul li").removeClass("active");
-                    $(".tabs ul li:odd").addClass("active");
+                    $(".tabs ul li#conclusion").addClass("active");
 
                     return false;
                 }

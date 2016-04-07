@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Domains\Participant;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
@@ -14,8 +15,9 @@ class RegistrationController extends Controller
 
         $dados = array_merge($form1, $form2);
 
-        $dados['zipCode']  = $dados['zipcode'] . $dados['tdp'];
-        $dados['password'] = bcrypt($dados['password']);
+        $dados['zipCode']   = $dados['zipcode'] . $dados['tdp'];
+        $dados['password']  = bcrypt($dados['password']);
+        $dados['birthDate'] = Carbon::createFromFormat('d/m/Y', $dados['birthDate']);
 
         if (count(Participant::where('email', $dados['email'])->get()) > 0) {
             return [

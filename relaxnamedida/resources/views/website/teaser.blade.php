@@ -5,6 +5,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="author" content="Bruno Martins">
     <title>@yield('title'){{ $websiteSettings['title'] }}</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href="{!! asset('assets/images/dados-do-site/'.$websiteSettings['favicon']) !!}" rel="shortcut icon" />
     <link href="{{ asset('assets/images/dados-do-site/'.$websiteSettings['appleTouchIcon']) }}" rel="apple-touch-icon" />
     <link href="{!! asset('assets/css/main.css') !!}" rel="stylesheet" type="text/css" />
@@ -32,7 +33,7 @@
 <br/>
 <center>
 <h1 class="center"><img src="/assets/images/logo-concurso-relax-na-medida.png" alt="Concurso Relax Na Medida"></h1>
-<h3 class="text-white font-size-36 lobster-two">Estamos em manutenção.</h3>
+<h3 class="font-size-36" style="color: #4D2C1E; font-family: 'Roboto Slab', serif;">Estamos em manutenção.</h3>
 </center>
 
 

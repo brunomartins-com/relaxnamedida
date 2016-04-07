@@ -635,8 +635,8 @@ Contact: hello@brunomartins.com
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs lobster-two">
                         <li class="active"><a id="personal-data">Dados Pessoais</a></li>
-                        <li><a id="address">Endereço</a></li>
-                        <li><a id="conclusion">Conclusão</a></li>
+                        <li class=""><a id="address">Endereço</a></li>
+                        <li class="" id="conclusion"><a id="conclusion">Conclusão</a></li>
                     </ul>
                 </div>
                 <div class="tab-content">
@@ -679,7 +679,7 @@ Contact: hello@brunomartins.com
                             <div class="clear">
                                 <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input name="birthDate" type="date" class="form-control input-main" data-mask="00/00/0000" placeholder="Data de Nascimento">
+                                        <input name="birthDate" type="text" class="form-control input-main" data-mask="00/00/0000" placeholder="Data de Nascimento">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -780,7 +780,6 @@ Contact: hello@brunomartins.com
                                 </div>
                                 <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
                                     <div class="form-group pull-right">
-                                        {{--<a href="#tab2" id="nextStep" class="btn btn-main" data-toggle="tab" title="Próximo Passo">Próximo passo</a>--}}
                                         <button type="button" id="nextStep2" class="btn btn-main" title="Próximo passo">Próximo passo</button>
                                     </div>
                                 </div>
