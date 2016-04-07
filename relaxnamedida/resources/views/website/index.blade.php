@@ -168,7 +168,7 @@ Contact: hello@brunomartins.com
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
                         <div class="form-login">
-                            <form name="form-login" action="{{ action('Auth\AuthController@postLogin') }}" method="post" enctype="multipart/form-data">
+                            <form id="form-login" name="form-login" action="{{ action('Auth\AuthController@postLogin') }}" method="post" enctype="multipart/form-data">
                                 {!! csrf_field() !!}
                                 <div class="form-group">
                                     <input name="email" type="email" required class="form-control input-main" placeholder="E-mail">
@@ -181,7 +181,7 @@ Contact: hello@brunomartins.com
                             </form>
                         </div>
                         <div class="recover-password" style="display: none">
-                            <form name="form-recovery" action="{{ action('Auth\PasswordController@postEmail') }}" method="post" enctype="multipart/form-data">
+                            <form id="form-recovery-password" name="form-recovery" action="{{ action('Auth\PasswordController@postEmail') }}" method="post" enctype="multipart/form-data">
                                 {!! csrf_field() !!}
                                 <div class="form-group">
                                     <input name="email" required type="email" class="form-control input-main" placeholder="Email">

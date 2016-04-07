@@ -41,6 +41,12 @@
   },
 
   {
+    "name": "Meus Dados",
+    "url": "meus-dados",
+    "icon": "fa-user"
+  },
+
+  {
     "name": "Dados do Site",
     "url": "dados-site",
     "icon": "fa-gears"
