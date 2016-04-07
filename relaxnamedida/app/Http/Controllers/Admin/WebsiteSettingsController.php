@@ -67,10 +67,10 @@ class WebsiteSettingsController extends Controller
 
         $websiteSettings->title           = $request->title;
         $websiteSettings->email           = $request->email;
-        $websiteSettings->avatar          = $request->avatar;
-        $websiteSettings->favicon         = $request->favicon;
-        $websiteSettings->appleTouchIcon  = $request->appleTouchIcon;
         $websiteSettings->facebook        = $request->facebook;
+        $websiteSettings->instagram       = $request->instagram;
+        $websiteSettings->description     = $request->description;
+        $websiteSettings->keywords        = $request->keywords;
         $websiteSettings->instagram       = $request->instagram;
         $websiteSettings->twitter         = $request->twitter;
         $websiteSettings->googleAnalytics = $request->googleAnalytics;

@@ -43,7 +43,7 @@ Contact: hello@brunomartins.com
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:url" content="{{ \URL::current() }}" />
     <meta property="og:site_name" content="{{ $websiteSettings['title'] }}" />
-    <meta property="og:image" content="{{ asset('assets/images/_upload/websiteSettings/'.$websiteSettings['avatar']) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/_upload/dados-site/'.$websiteSettings['avatar']) }}" />
     <meta property="og:description" content="{{ $websiteSettings['description'] }}" />
 
     @yield('head')
@@ -67,17 +67,22 @@ Contact: hello@brunomartins.com
             <li><a href="" data-toggle="modal" data-target=".winners" title="Ganhadores 2014/15">Ganhadores 2014/15</a></li>
             <li><a href="" data-toggle="modal" data-target=".contact-us" title="Fale Conosco">Fale Conosco</a></li>
         </ul>
-        @if (!Auth::check('users'))
-            <button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>
+        @if(!$websiteSettings['allowSignUp'])
+            <button class="btn btn-transparent hidden-xs pull-right" onclick="alert('Insrições Encerradas!')">Fazer login</button>
         @else
-            <div class="btn hidden-xs pull-right intranet">
-                <ul class="intranet">
-                    <li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">Meus Dados</a></li>
-                    <li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">Minhas Frases</a></li>
-                    <li><a href="{{ action('Auth\AuthController@getLogout') }}" data-popover="true" data-content="Sair" class="sair">Sair</a></li>
-                </ul>
-            </div>
+            @if (!Auth::check('users'))
+                <button class="btn btn-transparent hidden-xs pull-right" data-toggle="modal" data-target=".login">Fazer login</button>
+            @else
+                <div class="btn hidden-xs pull-right intranet">
+                    <ul class="intranet">
+                        <li><a href="" data-toggle="modal" data-target=".my-data"  data-popover="true" data-content="Meus Dados" class="meus-dados">Meus Dados</a></li>
+                        <li><a href="" data-toggle="modal" data-target=".my-moods"  data-popover="true" data-content="Minhas Frases" class="frases">Minhas Frases</a></li>
+                        <li><a href="{{ action('Auth\AuthController@getLogout') }}" data-popover="true" data-content="Sair" class="sair">Sair</a></li>
+                    </ul>
+                </div>
+            @endif
         @endif
+
 
 
         <select id="menu" class="input-transparent visible-xs">
@@ -89,6 +94,7 @@ Contact: hello@brunomartins.com
             <option data-type="2" value=".winners">Ganhadores 2014/15</option>
             <option data-type="2" value=".contact-us">Fale Conosco</option>
 
+            @if(!$websiteSettings['allowSignUp'])
             <optgroup label="Área Restrita">
                 @if (!Auth::check('users'))
                 <option data-type="2" value=".login">Fazer Login</option>
@@ -98,6 +104,7 @@ Contact: hello@brunomartins.com
                 <option data-type="0" value="/sair">Sair</option>
                 @endif
             </optgroup>
+            @endif
         </select>
     </nav>
     <div class="container">
@@ -155,6 +162,7 @@ Contact: hello@brunomartins.com
         </section>
     </div>
 </header><!-- /HEADER -->
+@if($websiteSettings['allowSignUp'])
 <!-- Login -->
 <div class="modal fade login" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
     <div class="modal-dialog" role="document">
@@ -198,6 +206,7 @@ Contact: hello@brunomartins.com
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- Login -->
+@endif
 
 <!-- Contact-us -->
 <div class="modal fade contact-us" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
