@@ -1,6 +1,6 @@
 @extends('admin.sidebar-template')
 
-@section('title', 'Regulamento | ')
+@section('title', 'Inscrições Encerradas | ')
 
 @section('page-content')
 @parent
