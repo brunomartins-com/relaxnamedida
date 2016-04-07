@@ -10,7 +10,7 @@
     <link href="{{ asset('assets/images/dados-do-site/'.$websiteSettings['appleTouchIcon']) }}" rel="apple-touch-icon" />
     <link href="{!! asset('assets/css/main.css') !!}" rel="stylesheet" type="text/css" />
     {!! $websiteSettings['googleAnalytics'] !!}
-    <!-- Meta Tags -->
+            <!-- Meta Tags -->
     <meta name="title" content="@yield('title'){{ $websiteSettings['title'] }}" />
     <!-- Tags Facebook -->
     <meta property="og:title" content="@yield('title'){{ $websiteSettings['title'] }}" />
@@ -24,18 +24,17 @@
     <style type="text/css">
         body{
             width: 100%;
-            height: 1200px;
+            max-height: 1200px;
+            margin: 0;
+            padding: 0;
             background: url('/assets/images/bg-header.jpg') no-repeat center top;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 <br/>
-<center>
 <h1 class="center"><img src="/assets/images/logo-concurso-relax-na-medida.png" alt="Concurso Relax Na Medida"></h1>
-<h3 class="font-size-36" style="color: #4D2C1E; font-family: 'Roboto Slab', serif;">Estamos em manutenção.</h3>
-</center>
-
-
+<h3 class="font-size-36 brown font-roboto">Estamos em manutenção.</h3>
 </body>
 </html>
