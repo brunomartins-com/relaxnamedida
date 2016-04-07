@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 use App\Domains\LastWinners;
 use App\Domains\Product;
 use App\Domains\Texts;
+use App\Domains\WebsiteSettings;
 use App\Helpers\JsonResources;
 use App\Http\Controllers\Controller;
 
@@ -33,7 +34,11 @@ class IndexController extends Controller
         $texts = $temp;
         unset($temp);
 
-        $websiteSettings = JsonResources::readFile("websiteSettings");
+        if (JsonResources::hasFile('websiteSettings')) {
+            $websiteSettings = JsonResources::readFile('websiteSettings');
+        } else {
+            $websiteSettings = WebsiteSettings::find(1);
+        }
 
         return view('website.index')
             ->with(compact('websiteSettings', 'lastWinnersFolder', 'winners2015', 'winners2014', 'texts',
