@@ -39,7 +39,7 @@ class PhrasesController extends Controller
 
     public function delete(Request $request)
     {
-        $phrase = Phrase::find($request->get('userId'));
+        $phrase = Phrase::find($request->get('phraseId'));
 
         if (is_file($this->uploadPath . $phrase->receipt)) {
             unlink($this->uploadPath . $phrase->receipt);
