@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
+use Mail;
 
 class RegistrationController extends Controller
 {
@@ -58,9 +59,9 @@ class RegistrationController extends Controller
         $participant->save();
 
         $contact = [
-            'name'  => $request->name,
-            'email' => $request->email,
-            'token' => $this->makeConfirmationToken($request->email),
+            'name'  => $participant->name,
+            'email' => $participant->email,
+            'token' => $this->makeConfirmationToken($participant->email),
         ];
 
         Mail::send('emails.participant-activation', ['contact' => $contact], function (Message $message) use ($contact) {
