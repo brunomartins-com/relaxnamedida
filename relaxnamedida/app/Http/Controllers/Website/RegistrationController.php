@@ -15,18 +15,20 @@ class RegistrationController extends Controller
         return md5('relaxnamedida-' . $email);
     }
 
-    public function getConfirmation($email, $token = null)
+    public function getConfirmation($email = null, $token = null)
     {
-        if ($this->makeConfirmationToken($email) === $token) {
-            $participant = Participant::where('email', '=', $email)->first();
+        $participant = Participant::where('email', '=', $email)->first();
 
-            $participant->active = 1;
-            $participant->save();
-
-            return redirect(url('/'), ['status' => 'Seu cadastro foi confirmado com sucesso!']);
+        if (null === $email
+            || null === $token
+            || $this->makeConfirmationToken($email) !== $token
+            || null === $participant) {
+            return redirect('/')->with('status', 'Token de confirmação inválido ou já utilizado!');
         }
 
-        return redirect(url('/'), ['status' => 'Token de confirmação inválido ou já utilizado!']);
+        $participant->active = 1;
+        $participant->save();
+        return redirect('/')->with('status', 'Seu cadastro foi confirmado com sucesso!');
     }
 
     public function postRegister(Request $request)
