@@ -74,7 +74,7 @@ Route::post('/frases', 'Website\PhrasesController@create');
 
 Route::post('/contact', 'Website\ContactController@post');
 
-Route::get('/confirmation', 'Website\RegistrationController@getConfirmation');
+Route::get('/confirmation/{email}/{token}', 'Website\RegistrationController@getConfirmation');
 Route::post('/register', 'Website\RegistrationController@postRegister');
 
 Route::post('/cities', 'Website\CitiesController@post');
