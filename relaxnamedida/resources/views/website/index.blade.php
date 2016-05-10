@@ -273,7 +273,7 @@ Contact: hello@brunomartins.com
 <div class="modal fade my-data" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">x
+            <div class="modal-header">
                 <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
                 <h4 class="modal-title"></h4>
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
