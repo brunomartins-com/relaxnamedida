@@ -23,7 +23,7 @@ class RegistrationController extends Controller
             $participant->active = 1;
             $participant->save();
 
-            return redirect(url('/', ['status' => 'Seu cadastro foi confirmado com sucesso!']));
+            return redirect(url('/'), ['status' => 'Seu cadastro foi confirmado com sucesso!']);
         }
 
         return redirect(url('/'), ['status' => 'Token de confirmação inválido ou já utilizado!']);
