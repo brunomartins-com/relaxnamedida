@@ -65,7 +65,7 @@ $(document).ready(function(){
             data.append('form2',$("#form-register-2").serialize());
 
             $.ajax({
-                url: "/register",
+                url: url+"register",
                 method: "POST",
                 data: data,
                 processData: false,
@@ -177,7 +177,7 @@ $(document).ready(function(){
                 };
                 $.ajax({
                     type : "PUT",
-                    url: "/profile",
+                    url: url+"profile",
                     data: data,
                     dataType: "json",
                     success: function(d){
@@ -216,7 +216,7 @@ $(document).ready(function(){
             };
             $.ajax({
                 type: "PUT",
-                url: "/profile",
+                url: url+"profile",
                 data: data,
                 dataType: "json",
                 success: function (d) {
@@ -275,12 +275,12 @@ $(document).ready(function(){
             }
         }
     });
-    
+
     //FILTER CITIES PER STATE
     $("select[name=state].refreshCities").change(function(){
         var val = $(this).val();
         $.ajax({
-            url: '/cities',
+            url: url+'cities',
             type: 'POST',
             dataType: 'json',
             data: {'state': val, '_token': $('input[name=_token]').val()},

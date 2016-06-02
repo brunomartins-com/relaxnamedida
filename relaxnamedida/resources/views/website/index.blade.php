@@ -496,14 +496,14 @@ Contact: hello@brunomartins.com
                 <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
                 <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
                     <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Ganhadores</h2>
-                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedores das edições anteriores..</h3>
+                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedores das edições anteriores.</h3>
                 </header>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                         <p class="font-size-22 strong vacation">
-                            O Laboratório Teuto acompanhou as viagens inesqueciveis dos
+                            O Laboratório Teuto acompanhou as viagens inesquecíveis dos
                             vencedores pra você conferir de perto.
                         </p>
 
