@@ -954,6 +954,9 @@ Contact: hello@brunomartins.com
 <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic" />
+<script>
+var url = <?php echo url(); ?>
+</script>
 <script type="text/javascript" src="{!! asset('assets/js/jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/jquery.mobile.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/main.min.js') !!}"></script>
@@ -964,19 +967,19 @@ alert('{!! Session::get('message') !!}');
 @endif
 
 @if(Session::has('status'))
-    <script>
-        alert('{!! Session::get('status') !!}');
-    </script>
+<script>
+    alert('{!! Session::get('status') !!}');
+</script>
 @endif
 
 @if (count($errors) > 0)
-    <script>
-        var errors = '';
-        @foreach ($errors->all() as $error)
-        errors += '{!!   $error !!} \n';
-        @endforeach
+<script>
+    var errors = '';
+    @foreach ($errors->all() as $error)
+    errors += '{!!   $error !!} \n';
+    @endforeach
     alert(errors);
-    </script>
+</script>
 @endif
 
 @yield('javascript')
