@@ -66,7 +66,7 @@
                         <th>Frase</th>
                         <th>Participante</th>
                         <th>Status</th>
-                        <th class="text-center sorting-none" style="width: 90px;">Ações</th>
+                        <th class="text-center sorting-none" style="width: 128px;">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -85,8 +85,8 @@
                             </td>
                             <td class="text-center">
 
-                                {!! Form::button('<i class="fa fa-search"></i> ', ['title'=>'Comprovante', 'data-toggle'=>'tooltip', 'class'=>'btn btn-xs btn-info',
-                                    'onclick'=>'window.open(\'/' . $phrase->recipbt . '\', \'_self\')']) !!}
+                                {!! Form::button('<i class="fa fa-barcode"></i> ', ['title'=>'Comprovante', 'data-toggle'=>'tooltip', 'class'=>'btn btn-xs btn-inverse',
+                                    'onclick'=>'window.open(\'/assets/images/_upload/cupons/' . $phrase->receipt . '\', \'_blank\')']) !!}
 
                                 {!! Form::open([
                                     'id' => 'textStatus'.$phrase->id,
