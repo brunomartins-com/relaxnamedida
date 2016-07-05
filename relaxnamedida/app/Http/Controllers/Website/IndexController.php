@@ -6,6 +6,7 @@ use App\Domains\Phrase;
 use App\Domains\Product;
 use App\Domains\Texts;
 use App\Domains\WebsiteSettings;
+use App\Domains\Winners;
 use App\Helpers\JsonResources;
 use App\Http\Controllers\Controller;
 use Auth;
@@ -23,6 +24,7 @@ class IndexController extends Controller
         $lastWinnersFolder = "assets/images/_upload/ganhadores-anteriores/";
         $productsFolder    = "assets/images/_upload/products/";
 
+        $winners = Winners::orderBy('position', 'ASC')->get();
         $winners2015 = LastWinners::where('year', 2015)->orderBy('position', 'ASC')->get();
         $winners2014 = LastWinners::where('year', 2014)->orderBy('position', 'ASC')->get();
 
@@ -52,7 +54,7 @@ class IndexController extends Controller
         }
 
         return view('website.index')
-            ->with(compact('websiteSettings', 'lastWinnersFolder', 'winners2015', 'winners2014', 'texts',
+            ->with(compact('websiteSettings', 'lastWinnersFolder', 'winners', 'winners2015', 'winners2014', 'texts',
                 'productsFolder', 'products', 'allPhrases'));
     }
 }

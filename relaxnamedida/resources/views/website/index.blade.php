@@ -59,13 +59,18 @@ Contact: hello@brunomartins.com
 <header class="header">
     <nav class="navigation">
         <ul class="pull-left hidden-xs">
+
             {{--<li><a class="page-scroll" href="#quero-participar" title="Quero Participar">Quero Participar</a></li>--}}
+            @if($websiteSettings['showWinners'])
+            <li><a href="" data-toggle="modal" data-target=".winners-now" title="Ganhadores 2016">Ganhadores 2016</a></li>
+            @else
             <li><a href="" data-toggle="modal" data-target=".all-phrases" title="Frases Participantes">Frases Participantes</a></li>
+            @endif
             <li><a class="page-scroll" href="#regulamento" title="Regulamento">Regulamento</a></li>
             <li><a class="page-scroll" href="#produtos" title="Produtos">Produtos</a></li>
             <br class="visible-sm">
             <li><a class="page-scroll" href="#premios" title="Prêmios">Prêmios</a></li>
-            <li><a href="" data-toggle="modal" data-target=".winners" title="Ganhadores 2014/15">Ganhadores 2014/15</a></li>
+            <li><a href="" data-toggle="modal" data-target=".winners-last" title="Ganhadores 2014/15">Ganhadores 2014/15</a></li>
             <li><a href="" data-toggle="modal" data-target=".contact-us" title="Fale Conosco">Fale Conosco</a></li>
         </ul>
         @if(!$websiteSettings['allowSignUp'])
@@ -86,11 +91,15 @@ Contact: hello@brunomartins.com
         <select id="menu" class="input-transparent visible-xs">
             <option value="#">Menu...</option>
             {{--<option data-type="1" value="#quero-participar">Quero Participar</option>--}}
+            @if($websiteSettings['showWinners'])
+            <option data-type="2" value=".winners-now">Ganhadores 2016</option>
+            @else
             <option data-type="2" value=".all-phrases">Frases Participantes</option>
+            @endif
             <option data-type="1" value="#regulamento">Regulamento</option>
             <option data-type="1" value="#produtos">Produtos</option>
             <option data-type="1" value="#premios">Prêmios</option>
-            <option data-type="2" value=".winners">Ganhadores 2014/15</option>
+            <option data-type="2" value=".winners-last">Ganhadores 2014/15</option>
             <option data-type="2" value=".contact-us">Fale Conosco</option>
 
             @if(!$websiteSettings['allowSignUp'])
@@ -488,7 +497,48 @@ Contact: hello@brunomartins.com
 @endif
 
 <!-- My Winners -->
-<div class="modal fade winners" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade winners-now winners" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
+                <h4 class="modal-title"></h4>
+                <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
+                <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Ganhadores</h2>
+                    <h3 class="text-white font-size-36 lobster-two">Conheça os vencedores da 4ª edição</h3>
+                </header>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                        <p class="font-size-22 strong vacation">
+                            Confira os três ganhadores da 4ª edição do Concurso Relax na Medida
+                            que vão fazer as malas e curtir uma viagem super relax,
+                        </p>
+
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                    <div class="">
+                        @foreach($winners as $winner)
+                            <div class="col-lg-4 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
+                                <h2 class="text-orange text-uppercase font-size-36 strong">{{  $winner->position }}° Lugar</h2>
+                                <p class="text-orange text-uppercase font-size-16 strong">{{  $winner->name }}</p>
+                                <h2 class="text-orange text-uppercase font-size-14 strong">{{  $winner->city }}/{{  $winner->state }}</h2>
+                            </div>
+                            <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+                                <p class="strong font-size-15">{{ $winner->phrase }}</p>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade winners winners-last" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -520,6 +570,7 @@ Contact: hello@brunomartins.com
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="horizontal-bar margin-top-30 margin-bottom-20"></div></div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab6">
+
                             @foreach($winners2015 as $winner)
                             <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-4 col-xs-12">
                                 <h2 class="text-orange text-uppercase font-size-36 strong">{{  $winner->position }}° Lugar</h2>
