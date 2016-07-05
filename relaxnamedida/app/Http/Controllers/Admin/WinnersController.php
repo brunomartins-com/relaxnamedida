@@ -30,7 +30,7 @@ class WinnersController extends Controller
             'name'   => 'required|max:100',
             'city'   => 'required|max:100',
             'state'  => 'required|max:2|min:2',
-            'phrase' => 'required|max:300',
+            'phrase' => 'required|max:350',
         ],
             [
                 'name.required'   => 'Informe o nome do ganhador',

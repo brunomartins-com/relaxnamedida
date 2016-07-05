@@ -99,7 +99,7 @@
                         <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
                             <div class="form-input">
                                 {!! Form::label('phrase', 'Frase *') !!}
-                                {!! Form::textarea('phrase', $winner->phrase, ['id' => 'phrase', 'class' => 'form-control', 'maxlength'=>300]) !!}
+                                {!! Form::textarea('phrase', $winner->phrase, ['id' => 'phrase', 'class' => 'form-control', 'maxlength'=>350]) !!}
                             </div>
                         </div>
                     </div>
