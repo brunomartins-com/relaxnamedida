@@ -59,7 +59,8 @@ Contact: hello@brunomartins.com
 <header class="header">
     <nav class="navigation">
         <ul class="pull-left hidden-xs">
-            <li><a class="page-scroll" href="#quero-participar" title="Quero Participar">Quero Participar</a></li>
+            {{--<li><a class="page-scroll" href="#quero-participar" title="Quero Participar">Quero Participar</a></li>--}}
+            <li><a href="" data-toggle="modal" data-target=".all-phrases" title="Frases Participantes">Frases Participantes</a></li>
             <li><a class="page-scroll" href="#regulamento" title="Regulamento">Regulamento</a></li>
             <li><a class="page-scroll" href="#produtos" title="Produtos">Produtos</a></li>
             <br class="visible-sm">
@@ -82,12 +83,10 @@ Contact: hello@brunomartins.com
                 </div>
             @endif
         @endif
-
-
-
         <select id="menu" class="input-transparent visible-xs">
             <option value="#">Menu...</option>
-            <option data-type="1" value="#quero-participar">Quero Participar</option>
+            {{--<option data-type="1" value="#quero-participar">Quero Participar</option>--}}
+            <option data-type="2" value=".all-phrases">Frases Participantes</option>
             <option data-type="1" value="#regulamento">Regulamento</option>
             <option data-type="1" value="#produtos">Produtos</option>
             <option data-type="1" value="#premios">Prêmios</option>
@@ -135,25 +134,26 @@ Contact: hello@brunomartins.com
                     {{ $texts['frase3']  }}
                 </h5>
             </div>
-
             <div class="clear margin-top-75"></div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
-                <a href="#para-participar" class="btn btn-block btn-main" title="Como participar?">{{ $texts['botao1']  }}</a>
+                {{--<a href="#para-participar" class="btn btn-block btn-main" title="Como participar?">{{ $texts['botao1']  }}</a>--}}
+                <a href="" data-toggle="modal" data-target=".all-phrases" class="btn btn-block btn-main" title="Frases Participantes">Frases Participantes</a>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 hidden-xs remove-padding-l margin-top-10">
-                <a href="#quero-participar" class="btn btn-block btn-main" title="Quero Participar!">{{ $texts['botao2']  }}</a>
+                {{--<a href="#quero-participar" class="btn btn-block btn-main" title="Quero Participar!">{{ $texts['botao2']  }}</a>--}}
             </div>
         </section>
 
         <section class="visible-xs col-xs-5 margin-top-10 home-buttons-xs">
             <div class="col-xs-12 remove-padding-l margin-top-10">
-                <a href="" class="btn btn-block btn-main" title="Como participar?">Como<br class="line-break"> participar?</a>
+                {{--<a href="" class="btn btn-block btn-main" title="Como participar?">Como<br class="line-break"> participar?</a>--}}
+                <a href="" data-toggle="modal" data-target=".all-phrases" class="btn btn-block btn-main" title="Frases Participantes">Frases<br class="line-break"> Participantes?</a>
             </div>
 
             <div class="col-xs-12 remove-padding-l margin-top-10">
-                <a href="" class="btn btn-block btn-main" title="Quero Participar!">Quero<br class="line-break"> Participar!</a>
+                {{--<a href="" class="btn btn-block btn-main" title="Quero Participar!">Quero<br class="line-break"> Participar!</a>--}}
             </div>
         </section>
 
@@ -268,6 +268,7 @@ Contact: hello@brunomartins.com
     </div>
 </div>
 <!-- Contact Us -->
+
 @if (Auth::check('users'))
 <!-- My Data -->
 <div class="modal fade my-data" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -554,6 +555,44 @@ Contact: hello@brunomartins.com
 </div>
 <!-- Winners -->
 
+<!-- Phrases -->
+<div class="modal fade all-phrases" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close font-size-40 text-white" data-dismiss="modal" aria-label="Close"><span></span></button>
+                <h4 class="modal-title"></h4>
+                <div class="horizontal-bar margin-top-50 margin-bottom-15"></div>
+                <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+                    <h2 class="text-yellow text-uppercase font-size-36 strong padding-top-10">Frases Participantes</h2>
+                    <h3 class="text-white font-size-36 lobster-two">que estão concorrendo à viagem dos sonhos.</h3>
+                </header>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="horizontal-bar margin-top-50 margin-bottom-25"></div>
+                    <div class="tab-pane" id="tab5">
+                        <div class="all-phrases-container">
+                        @foreach($allPhrases as $allPhrase)
+                            <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-12">
+                                <p>{{ $allPhrase->message }}</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+
+                                <label class="strong">Participante:</label>
+                                <div>{{ $allPhrase->participant->name }}</div>
+                            </div>
+                            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12"><hr></div>
+                        @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal-bar margin-top-40 margin-bottom-50"></div>
+        </div>
+    </div>
+</div>
+<!-- Phrases -->
 
 <!-- PARA PARTICIPAR -->
 <section id="para-participar" class="for-participate">
@@ -955,7 +994,7 @@ Contact: hello@brunomartins.com
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic" />
 <script>
-var url = <?php echo url(); ?>
+var url = '<?php echo url(); ?>/';
 </script>
 <script type="text/javascript" src="{!! asset('assets/js/jquery.min.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('assets/js/jquery.mobile.min.js') !!}"></script>
